@@ -12,18 +12,6 @@ html {
 body {
 }
 
-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4.2rem;
-  padding: 1.5rem 3rem;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  gap: 1rem;
-}
-
 li {
   list-style: none;
 }
@@ -43,7 +31,7 @@ li {
   --font-w-regular: 400;
   --font-w-medium: 500;
   --font-w-semiBold: 600;
-  --font-w-Bold: 700;
+  --font-w-bold: 700;
   --font-w-extraBold: 800;
   --font-w-black: 900;
 
@@ -64,7 +52,7 @@ li {
 
   /* colors */
   --color-primary: #ff4500;
-  --color-primary-hover: #ff5e3a;
+  --color-primary-hover: #ff7050;
   --color-primary-tint: #fff5f1;
   --color-blue: #1122aa;
   --color-blue-tint: #eaecfd;

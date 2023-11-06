@@ -7,7 +7,7 @@ interface buttonProps {
 }
 
 function Button({ children, type }: buttonProps) {
-  return <button className={`${Styles.Button} ${Styles[`${type}`]}`}>{children}</button>;
+  return <button className={`${Styles.button} ${Styles[`${type}`]}`}>{children}</button>;
 }
 
 export default Button;
