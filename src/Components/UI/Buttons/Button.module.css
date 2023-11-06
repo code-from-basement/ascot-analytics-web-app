@@ -13,6 +13,9 @@
   gap: 1rem;
   transition: var(--transition);
 }
+.button svg {
+  font-size: var(--font-s-md);
+}
 
 .btn-primary {
   background-color: var(--color-primary);

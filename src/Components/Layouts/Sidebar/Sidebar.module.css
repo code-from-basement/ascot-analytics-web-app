@@ -8,4 +8,22 @@
   justify-content: flex-start;
   flex-direction: column;
   border-right: 1px solid var(--color-gray-400);
+  gap: 2rem;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logoImage {
+  width: 70%;
+  margin: var(--spacing-md);
+}
+
+.row:nth-of-type(3) {
+  margin-top: auto;
 }

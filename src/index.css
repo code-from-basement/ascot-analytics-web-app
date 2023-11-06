@@ -93,7 +93,7 @@ li {
   --border-radius-circle: 999px;
 
   /* box-shadow */
-  --box-shadow: 0 3rem 5rem #00000015;
+  --box-shadow: 0 3rem 3rem #00000015;
 
   /* opacity */
   --opacity-0: 0;
