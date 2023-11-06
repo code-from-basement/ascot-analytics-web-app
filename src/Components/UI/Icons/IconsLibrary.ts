@@ -13,7 +13,7 @@ import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
-
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 export {
   DeleteRoundedIcon,
   AccountCircleRoundedIcon,
@@ -30,4 +30,5 @@ export {
   CloseRoundedIcon,
   BarChartOutlinedIcon,
   ExitToAppRoundedIcon,
+  AccountCircleOutlinedIcon,
 };
