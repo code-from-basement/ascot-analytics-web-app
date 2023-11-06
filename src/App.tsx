@@ -1,13 +1,19 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
-import Button from "./Components/UI/Buttons/Buttons";
+import Application from "./Components/Pages/Application/Application";
+import Login from "./Components/Pages/Login/Login";
+import HomePage from "./Components/Pages/HomePage/HomePage";
 
 function App() {
   return (
-    <div className="app">
-      <h1>APP</h1>
-
-      <Button type="btn-outline">Add to list</Button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route index element={<Navigate to="application" />} />
+        <Route path="application" element={<Application />} />
+        <Route path="login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

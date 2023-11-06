@@ -1,2 +1,9 @@
 .application {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  max-height: min-content;
+  background-color: transparent;
+  grid-template-columns: 30rem 1fr;
+  grid-template-rows: minmax(6rem, 8vh) 1fr;
 }

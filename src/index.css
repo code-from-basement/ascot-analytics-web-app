@@ -7,6 +7,7 @@
 html {
   font-size: 62.5%;
   font-family: var(--font-inter);
+  color: var(--color-gray-900);
 }
 
 body {
@@ -92,7 +93,7 @@ li {
   --border-radius-circle: 999px;
 
   /* box-shadow */
-  --box-shadow: 0 3rem 6rem #00000015;
+  --box-shadow: 0 3rem 5rem #00000015;
 
   /* opacity */
   --opacity-0: 0;
@@ -115,4 +116,22 @@ li {
 
   /* transition */
   --transition: all 0.2s ease-out;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-trans);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-600);
+  border-radius: 999px;
+  position: absolute;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-gray-700);
 }

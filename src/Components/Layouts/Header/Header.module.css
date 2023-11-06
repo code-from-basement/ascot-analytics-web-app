@@ -1,3 +1,9 @@
-.header{
-    
+.header {
+  grid-column: 2/-1;
+  grid-row: 1/2;
+  background-color: var(--color-trans);
+  padding: var(--padding-section);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
