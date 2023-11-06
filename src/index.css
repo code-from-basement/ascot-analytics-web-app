@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--font-inter);
+}
+
+body {
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.2rem;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  gap: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  /* font-size */
+  --font-s-xxs: 1.2rem;
+  --font-s-xs: 1.4rem;
+  --font-s-sm: 1.6rem;
+  --font-s-md: 1.8rem;
+  --font-s-lg: 2.5rem;
+  --font-s-xl: 3.2rem;
+  --font-s-xxl: 4rem;
+
+  /* font-weight */
+  --font-w-light: 300;
+  --font-w-regular: 400;
+  --font-w-medium: 500;
+  --font-w-semiBold: 600;
+  --font-w-Bold: 700;
+  --font-w-extraBold: 800;
+  --font-w-black: 900;
+
+  /* padding */
+  --padding-xs: 1rem;
+  --padding-sm: 1.5rem;
+  --padding-md: 3rem;
+  --padding-lg: 4.5rem;
+  --padding-container-xl: 0 4vw;
+  --padding-section: 2rem;
+
+  /* spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* colors */
+  --color-primary: #ff4500;
+  --color-primary-hover: #ff5e3a;
+  --color-primary-tint: #fff5f1;
+  --color-blue: #1122aa;
+  --color-blue-tint: #eaecfd;
+  --color-green: #16d5bc;
+  --color-purple: #744df5;
+  --color-purple-tint: #f6f3fe;
+  --color-red: #ff2e2e;
+  --color-red-tint: #fdeeee;
+
+  /* color-gray */
+  --color-gray-100: #f5f5f7;
+  --color-gray-200: #efefef;
+  --color-gray-300: #dfdfe0;
+  --color-gray-400: #cfcfd0;
+  --color-gray-500: #bebec1;
+  --color-gray-600: #aeaeb1;
+  --color-gray-700: #8e8e92;
+  --color-gray-800: #6e6e73;
+  --color-gray-900: #222224;
+
+  --color-white: #ffffff;
+  --color-trans: transparent;
+
+  /* font */
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+
+  /* Icon size */
+  --icon-size-32: 3.2rem;
+  --icon-size-24: 2.4rem;
+  --icon-size-16: 1.6rem;
+
+  /* border */
+  --border-radius-sm: 0.6rem;
+  --border-radius-md: 1.2rem;
+  --border-radius-lg: 2.4rem;
+  --border-radius-circle: 999px;
+
+  /* box-shadow */
+  --box-shadow: 0 3rem 6rem #00000015;
+
+  /* opacity */
+  --opacity-0: 0;
+  --opacity-25: 0.25;
+  --opacity-50: 0.5;
+  --opacity-75: 0.75;
+  --opacity-100: 1;
+
+  /* z-index */
+  --z-index-0: 0;
+  --z-index-100: 100;
+  --z-index-200: 200;
+  --z-index-300: 300;
+  --z-index-400: 400;
+  --z-index-500: 500;
+  --z-index-600: 600;
+  --z-index-700: 700;
+  --z-index-800: 800;
+  --z-index-900: 900;
+
+  /* transition */
+  --transition: all 0.2s ease-out;
+}
