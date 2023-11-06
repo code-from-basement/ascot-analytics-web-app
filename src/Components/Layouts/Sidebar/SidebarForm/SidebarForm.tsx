@@ -9,7 +9,7 @@ function SidebarForm() {
     <div className={Styles.form}>
       <ThemeProvider theme={selectInputTheme}>
         <FormControl variant="outlined">
-          <InputLabel id="country">Country</InputLabel>
+          <InputLabel>Country</InputLabel>
           <Select labelId="country" id="country" label="country-------">
             <MenuItem value="SelectCountry">Select a country</MenuItem>
             <MenuItem value="sweden">Sweden</MenuItem>
