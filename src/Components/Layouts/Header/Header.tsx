@@ -1,32 +1,30 @@
 import Styles from "./Header.module.css";
 import React from "react";
-import { AccountCircleOutlinedIcon, AccountCircleRoundedIcon } from "../../UI/Icons/IconsLibrary";
-import {useGlobalContext} from "../../../Context/GlobalContext";
-
-interface Props{
-    dateGen:string;
-}
+import { AccountCircleOutlinedIcon, LogoutIcon } from "../../UI/Icons/IconsLibrary";
+import Button from "../../UI/Buttons/Buttons";
 
 function Header() {
-  const { dateGen}: any = useGlobalContext() as Props;
 
-  return (
-  <div className={Styles.header}>
-    <div className={Styles.column}>
+return (
+<div className={Styles.header}>
+    <div className={Styles.titleContainer}>
         <div className={Styles.title}>
             <h1>ASC<span>O</span>T</h1>
             <p>Adult social care outcomes toolkit</p>
         </div>
-        {/* <div className={Styles.date}>
-            {dateGen}
-        </div> */}
     </div>
-    <div className={Styles.column}>
-        <div className={Styles.userName}><AccountCircleOutlinedIcon/>Pernilla Bell</div>
-        <div className={Styles.email}>pernilla.bell@gmail.com</div>
+    <div className={Styles.rightContainer}>
+        <div className={Styles.userContainer}>
+            <div className={Styles.userName}><AccountCircleOutlinedIcon/>Pernilla Bell</div>
+            <div className={Styles.email}>pernilla.bell@gmail.com</div>
+        </div>
+        <div className={Styles.logoutContainer}>
+            <Button type="btn-link">Logout<LogoutIcon/></Button>
+
+        </div>
     </div>
     
-    </div>
+</div>
     );
 }
 
