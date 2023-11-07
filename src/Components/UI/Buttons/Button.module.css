@@ -14,7 +14,7 @@
   transition: var(--transition);
 }
 .button svg {
-  font-size: var(--font-s-md);
+  font-size: var(--font-s-lg);
 }
 
 .btn-primary {
