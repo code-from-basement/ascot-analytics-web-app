@@ -1,0 +1,6 @@
+.tableList {
+  width: 100%;
+  background-color: red;
+  padding: var(--spacing-sm);
+  height: 100%;
+}

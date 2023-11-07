@@ -5,5 +5,8 @@
   overflow-y: scroll;
   position: relative;
   display: flex;
+  flex-direction: column;
   padding: var(--spacing-md);
+  align-items: center;
+  gap: var(--spacing-md);
 }
