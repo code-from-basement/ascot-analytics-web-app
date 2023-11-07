@@ -27,3 +27,12 @@
 .row:nth-of-type(3) {
   margin-top: auto;
 }
+
+.copyright{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: var(--opacity-50);
+  text-align: center;
+  line-height: 1.5; 
+}

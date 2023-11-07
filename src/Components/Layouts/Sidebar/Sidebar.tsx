@@ -6,6 +6,8 @@ import { HeadsetMicRoundedIcon } from "./../../UI/Icons/IconsLibrary";
 import { FormControl, FormLabel, Select } from "@mui/material";
 import SidebarForm from "./SidebarForm/SidebarForm";
 
+const year = new Date().getFullYear();
+
 function Sidebar() {
   return (
     <div className={Styles.sidebar}>
@@ -21,6 +23,7 @@ function Sidebar() {
           Contact Support
         </Button>
       </div>
+      <p className={Styles.copyright}>{`Copyright © 2021- ${year} Hestia Agora - All Rights Reserved.`}</p>
     </div>
   );
 }
