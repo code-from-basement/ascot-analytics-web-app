@@ -8,10 +8,11 @@
   justify-content: space-between;
   color: var(--color-gray-900);
 }
-.column{
+
+.titleContainer{
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   gap: var(--spacing-xs);
 }
@@ -19,16 +20,12 @@
 .title{
   display:flex;
   flex-direction: column; 
-  font-family: var(--font-popping) !important; 
-  
+  font-family: var(--font-popping) !important;  
 }
-
 .title p{
   font-size: var(--font-s-xxs);
   font-weight: var(--font-w-light);
-  letter-spacing: -0.5px;
-
- 
+  letter-spacing: -0.5px; 
 }
 .title h1{
   font-weight: var(--font-w-light);
@@ -37,15 +34,16 @@
   letter-spacing: -1px;
 }
 .title h1 span{
-  color:var(--color-purple);
+  color:var(--color-primary);
 }
 
-/* .date{
-  color: var(--color-gray-700);
-  font-size: var(--font-s-xs);
-  font-weight: var(--font-w-light);
-  gap: var(--spacing-sm);
-} */
+.rightContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:var(--spacing-md)
+}
+
 .userName{
   display: flex;
   align-items: center;
@@ -55,11 +53,23 @@
 }
 .userName svg{
   font-size: var(--font-s-lg);
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transform: translateX(-2px);
+  color: var(--color-gray-900);
+  
 }
 .email{
   color: var(--color-gray-700);
   font-size: var(--font-s-xs);
   font-weight: var(--font-w-light);
   letter-spacing: -0.5px;
-
+  margin-top: 0.3rem;
+}
+.logoutContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
