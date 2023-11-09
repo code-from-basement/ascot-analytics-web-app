@@ -1,6 +1,11 @@
 .tableList {
   width: 100%;
-  background-color: red;
   padding: var(--spacing-sm);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--padding-xs);
+  overflow: scroll;
 }

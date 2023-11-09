@@ -1,0 +1,8 @@
+.tableItem {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-gray-100);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+  overflow: hidden;
+}

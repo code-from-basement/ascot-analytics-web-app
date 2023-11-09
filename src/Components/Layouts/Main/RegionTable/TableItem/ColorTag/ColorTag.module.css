@@ -1,0 +1,9 @@
+.colorTag {
+  width: 0.8rem;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 100%;
+  transform: translate(0, -50%);
+}
