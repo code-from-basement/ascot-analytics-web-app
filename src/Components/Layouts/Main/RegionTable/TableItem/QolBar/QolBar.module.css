@@ -1,0 +1,52 @@
+.bar {
+  position: relative;
+  width: 100%;
+  max-width: 90%;
+
+  height: 100%;
+  border-radius: var(--border-radius-sm);
+  border: 2px solid var(--color-gray-300);
+  display: flex;
+  background-color: var(--color-gray-100);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.bar:hover .bar__filler {
+  background-color: var(--color-green);
+}
+.bar:hover {
+  background-color: var(--color-white);
+}
+
+.bar:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.bar__filler {
+  background-color: var(--color-gray-400);
+  width: 50%;
+  transition: var(--transition);
+}
+
+.bar__percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: var(--transition);
+  font-size: var(--fonts-size-md);
+}
+
+.bar::after {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 100%;
+
+  background-color: #ffffff25;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: var(--transition);
+}

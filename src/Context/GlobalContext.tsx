@@ -8,7 +8,7 @@ interface globalContextProps {
 }
 
 function GlobalProvider({ children }: globalContextProps) {
-  const colors = ["#4f772d", "#1122aa", "#16d5bc ", "#744df5"];
+  const colors = ["#ffd166", "#ef476f", "#16d5bc ", "#744df5"];
 
   //date Generator function
   const event = new Date(Date.now());

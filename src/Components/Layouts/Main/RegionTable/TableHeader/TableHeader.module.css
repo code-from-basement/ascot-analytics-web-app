@@ -1,12 +1,43 @@
 .tableHeader {
-  display: grid;
-  grid-template-columns: 10% 15% 15% 15% 35% 10%;
-  place-items: center;
   width: 100%;
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.5fr) minmax(100px, 0.8fr) minmax(100px, 0.8fr) minmax(100px, 0.8fr) minmax(300px, 1.7fr) minmax(100px, 0.3fr);
 }
 .tableHeader h2 {
   color: var(--color-gray-900);
 }
 .tableHeader h3 {
   color: var(--color-gray-700);
+}
+
+.header__title {
+  align-self: center;
+  justify-self: start;
+}
+
+.header__country {
+  align-self: center;
+  justify-self: center;
+}
+
+.header__region {
+  align-self: center;
+  justify-self: center;
+}
+
+.header__municipality {
+  align-self: center;
+  justify-self: center;
+}
+
+.header__qofBar {
+  align-self: center;
+  justify-self: center;
+}
+
+.header__remove {
+  justify-self: end;
+  align-self: center;
+
+  margin-right: var(--spacing-md);
 }

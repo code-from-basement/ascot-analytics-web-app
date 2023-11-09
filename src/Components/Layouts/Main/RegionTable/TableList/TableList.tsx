@@ -8,7 +8,6 @@ function TableList() {
       <TableItem />
       <TableItem />
       <TableItem />
-      <TableItem />
     </div>
   );
 }

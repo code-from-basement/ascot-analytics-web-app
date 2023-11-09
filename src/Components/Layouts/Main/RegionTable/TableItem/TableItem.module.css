@@ -1,8 +1,67 @@
 .tableItem {
-  width: 100%;
-  padding: var(--spacing-md);
-  border: 2px solid var(--color-gray-100);
-  border-radius: var(--border-radius-sm);
   position: relative;
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(15rem, 0.5fr) minmax(100px, 0.8fr) minmax(100px, 0.8fr) minmax(100px, 0.8fr) minmax(300px, 1.7fr) minmax(100px, 0.3fr);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem 0;
+  transition: var(--transition);
+  font-size: var(--font-s-xs);
+  align-content: center;
   overflow: hidden;
+}
+
+.tableItem:hover {
+  border: 2px solid var(--color-gray-300);
+}
+
+.tableItem__title {
+  align-self: center;
+  justify-self: start;
+}
+
+.tableItem__country {
+  align-self: center;
+  justify-self: center;
+  font-size: var(--font-s-xs);
+}
+
+.tableItem__region {
+  align-self: center;
+  justify-self: center;
+}
+
+.tableItem__municipality {
+  align-self: center;
+  justify-self: center;
+}
+
+.tableItem__qofBar {
+  align-self: stretch;
+  justify-self: center;
+  width: 100%;
+}
+
+.tableItem__remove {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: var(--spacing-md);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+}
+.tableItem__remove svg {
+  font-size: var(--icon-size-24);
+  color: var(--color-gray-900);
+  transition: var(--transition);
+}
+
+.tableItem__remove svg:hover {
+  background-color: var(--color-gray-200);
+  color: var(--color-red);
 }
