@@ -14,6 +14,8 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import PasswordRoundedIcon from "@mui/icons-material/PasswordRounded";
+import HelpOutlineRoundedIcon from "@mui/icons-material/HelpOutlineRounded";
 export {
   DeleteRoundedIcon,
   AccountCircleRoundedIcon,
@@ -31,4 +33,6 @@ export {
   BarChartOutlinedIcon,
   ExitToAppRoundedIcon,
   AccountCircleOutlinedIcon,
+  PasswordRoundedIcon,
+  HelpOutlineRoundedIcon,
 };
