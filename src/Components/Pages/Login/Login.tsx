@@ -17,11 +17,11 @@ const formValidationData = {
   username: {
     value: true,
     emailReGexPattern: /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
-    emailRequireMessage: "Invalid Username, please try again",
+    emailRequireMessage: "*Invalid Username, please try again",
   },
   password: {
     value: true,
-    passwordRequireMessage: "Invalid password, please try again",
+    passwordRequireMessage: "*Invalid password, please try again",
   },
 };
 

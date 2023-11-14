@@ -11,7 +11,6 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
-
   gap: var(--spacing-md);
   width: 50%;
   min-width: 90rem;
@@ -81,9 +80,12 @@
   width: 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: var(--spacing-sm);
+}
+
+.formRow:nth-of-type(3) {
+  margin-bottom: var(--spacing-xs);
 }
 
 .form svg {
@@ -100,6 +102,7 @@
 .form label {
   width: 100%;
   font-size: var(--font-s-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .form input {
@@ -125,16 +128,17 @@
   border-radius: var(--border-radius-sm);
   border: none;
   outline: none;
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-md);
   background-color: var(--color-primary);
   color: var(--color-white);
   font-weight: var(--font-w-semiBold);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-sm);
   cursor: pointer;
   transition: var(--transition);
+  gap: var(--spacing-sm);
+  margin-top: 4rem;
 }
 
 .form button:hover {
@@ -152,6 +156,6 @@
 
 .inputControlErrorTextMessage {
   color: red;
-  font-size: var(--font-s-xs);
-  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-s-xxs);
+  padding: var(--spacing-xs) 0;
 }
