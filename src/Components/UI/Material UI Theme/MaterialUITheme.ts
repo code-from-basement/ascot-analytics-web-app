@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material";
 
+/* Theme for the select input */
 export const selectInputTheme = createTheme({
   components: {
     MuiFormControl: {
@@ -71,6 +72,24 @@ export const selectInputTheme = createTheme({
           fontSize: "var(--font-s-xs)",
           borderRadius: "var(--border-radius-sm)",
           transition: "var(--transition)",
+        },
+      },
+    },
+  },
+});
+
+/* Theme for the Loading Layout */
+export const loadingTheme =createTheme({
+  components: {
+    MuiCircularProgress: {
+      defaultProps: {
+        size: 60,
+        thickness: 5,
+      },
+      styleOverrides: {
+        root: {
+          color: "var(--color-primary)",
+
         },
       },
     },
