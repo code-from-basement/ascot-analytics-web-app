@@ -26,7 +26,7 @@ function Login() {
           <div className={Styles.contentRow}>
             <p>
               <HelpOutlineRoundedIcon />
-              &nbsp; For more information check <a href="#">www.hestiaagora.com </a>
+              &nbsp;For more information check&nbsp;<a href="#">www.hestiaagora.com </a>
             </p>
           </div>
         </div>
