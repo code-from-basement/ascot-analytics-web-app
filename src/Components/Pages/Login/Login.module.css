@@ -75,7 +75,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  /* gap: var(--spacing-sm); */
 }
 .formRow {
   width: 100%;
@@ -113,6 +113,11 @@
   color: var(--color-gray-900);
 }
 
+.form input::placeholder {
+  color: var(--color-gray-600);
+  font-size: var(--font-s-xs);
+}
+
 .form button {
   width: 100%;
   height: 4.2rem;
@@ -143,4 +148,10 @@
 .form button svg {
   font-size: var(--font-s-lg);
   color: var(--color-white);
+}
+
+.inputControlErrorTextMessage {
+  color: red;
+  font-size: var(--font-s-xs);
+  margin-bottom: var(--spacing-sm);
 }
