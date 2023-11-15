@@ -16,6 +16,16 @@ import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import PasswordRoundedIcon from "@mui/icons-material/PasswordRounded";
 import HelpOutlineRoundedIcon from "@mui/icons-material/HelpOutlineRounded";
+import CallIcon from '@mui/icons-material/Call';
+import PinDropIcon from '@mui/icons-material/PinDrop';
+import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
+
 export {
   DeleteRoundedIcon,
   AccountCircleRoundedIcon,
@@ -35,4 +45,13 @@ export {
   AccountCircleOutlinedIcon,
   PasswordRoundedIcon,
   HelpOutlineRoundedIcon,
+  CallIcon,
+  PinDropIcon,
+  EmailRoundedIcon,
+  InstagramIcon,
+  FacebookRoundedIcon,
+  TwitterIcon,
+  YouTubeIcon,
+  LinkedInIcon
+
 };

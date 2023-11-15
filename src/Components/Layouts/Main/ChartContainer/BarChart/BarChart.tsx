@@ -48,25 +48,27 @@ function BarChart() {
     ],
   }
 
-  const options={
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'right'as const,
+      },
+    },
     // scales: {
+    //   x: {
+    //     grid: {
+    //       display: false,
+    //     },
+        
+    //   },
     //   y: {
-    //     beginAtZero: true,
-    //     ticks: {
-    //       stepSize: 1,
-    //       fontColor: "#ff0000"
-    //     }
-    //   }
+    //     grid: {
+    //       display: false,
+    //     },
+    //   },
     // },
-    // plugins: {
-    //   legend: {
-    //     labels: {
-    //       fontColor: "#ff0000"
-    //     }
-    //   }
-    // }
-
-  }
+  };
 
   return <div className={Styles.barChart}>
     <div className={Styles.title}>

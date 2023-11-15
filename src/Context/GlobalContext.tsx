@@ -22,19 +22,26 @@ function GlobalProvider({ children }: globalContextProps) {
   /* Loading Layout */
   const [isLoading, setIsLoading] = useState(false);
 
+  
+  /* Contact support Layout */
+  const [showContact, setShowContact] = useState(true);
+
   return (
     <GlobalContext.Provider
       value={{
         dateGen,
         colors,
         isLoading,
+        showContact,
         setIsLoading,
+        setShowContact,
       }}
     >
       {children}
     </GlobalContext.Provider>
   );
 }
+
 
 //
 function useGlobalContext() {
