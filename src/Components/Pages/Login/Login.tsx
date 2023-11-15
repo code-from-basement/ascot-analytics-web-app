@@ -3,6 +3,7 @@ import hestiaLogo from "./../../../assets/Image/hestiaAgora-logo.png";
 import { PasswordRoundedIcon, HelpOutlineRoundedIcon, LoginRoundedIcon } from "./../../UI/Icons/IconsLibrary";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useGlobalContext } from "../../../Context/GlobalContext";
 
 /**Type Declaration */
 type formValues = {
@@ -10,30 +11,39 @@ type formValues = {
   password: string;
   message: string;
   id: string | undefined;
+  loginDate: string;
 };
+//-------------------/
 
 /**Form Validation data pattern-values-messages */
 const formValidationData = {
   username: {
     value: true,
     emailReGexPattern: /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
-    emailRequireMessage: "*Invalid Username, please try again",
+    emailErrorMessage: "*Please enter you email address.",
+    emailPatternErrorMessage: "*Please enter a valid email address. example@example.com",
   },
   password: {
     value: true,
-    passwordRequireMessage: "*Invalid password, please try again",
+    passwordRequireMessage: "*Invalid password, please try again.",
   },
 };
+// ----------------------------------------------//
 
 function Login() {
-  const loginForm = useForm<formValues>(); //use useFrom from "React Hook Form"
+  const loginForm = useForm<formValues>({
+    defaultValues: {
+      username: "",
+      password: "",
+    },
+  }); //use useFrom from "React Hook Form"
   const { register, handleSubmit, formState } = loginForm; //destructure register & handle submit & formState from loginForm variable
 
   const { errors } = formState;
 
   /**Submit form handler function */
   const onSubmitHandler = (data: formValues) => {
-    console.log(data);
+    const modData = { ...data, loginDateInfo: new Date().toUTCString() };
   };
 
   return (
@@ -75,12 +85,16 @@ function Login() {
             <label htmlFor="username">Username:</label>
             <input
               placeholder="Please enter you email address"
-              type="text"
+              type="email"
               id="username"
               {...register("username", {
+                pattern: {
+                  value: formValidationData.username.emailReGexPattern,
+                  message: formValidationData.username.emailPatternErrorMessage,
+                },
                 required: {
                   value: formValidationData.username.value,
-                  message: formValidationData.username.emailRequireMessage,
+                  message: formValidationData.username.emailErrorMessage,
                 },
               })}
             />
