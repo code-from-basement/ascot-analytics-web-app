@@ -43,7 +43,7 @@ function Login() {
 
   /**Submit form handler function */
   const onSubmitHandler = (data: formValues) => {
-    const modData = { ...data, loginDateInfo: new Date().toUTCString() };
+    const modData = { ...data, loginDateInfo: new Date().toUTCString() }; //adding new key to object, contains date of login
   };
 
   return (
