@@ -6,7 +6,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: calc(40% - var(--spacing-md)) calc(60% - var(--spacing-md));
+  grid-template-rows: calc(45% - var(--spacing-md)) calc(55% - var(--spacing-md));
   padding: var(--spacing-md) var(--spacing-md) 0 var(--spacing-md);
   grid-gap: var(--spacing-md);
 }
