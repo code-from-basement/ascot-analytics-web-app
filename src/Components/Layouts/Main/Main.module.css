@@ -4,9 +4,9 @@
   background-color: var(--color-gray-100);
   overflow-y: scroll;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: var(--spacing-md);
-  align-items: center;
-  gap: var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: calc(40% - var(--spacing-md)) calc(60% - var(--spacing-md));
+  padding: var(--spacing-md) var(--spacing-md) 0 var(--spacing-md);
+  grid-gap: var(--spacing-md);
 }

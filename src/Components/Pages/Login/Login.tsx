@@ -3,7 +3,6 @@ import hestiaLogo from "./../../../assets/Image/hestiaAgora-logo.png";
 import { PasswordRoundedIcon, HelpOutlineRoundedIcon, LoginRoundedIcon } from "./../../UI/Icons/IconsLibrary";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useGlobalContext } from "../../../Context/GlobalContext";
 
 /**Type Declaration */
 type formValues = {
@@ -51,7 +50,7 @@ function Login() {
       <section className={Styles.loginPanel}>
         <div className={Styles.content}>
           <div className={Styles.contentRow}>
-            <img className={Styles.brandImage} src={hestiaLogo} alt="" />
+            <img className={Styles.brandImage} src={hestiaLogo} alt="brand logo image" />
           </div>
 
           <div className={Styles.contentRow}>

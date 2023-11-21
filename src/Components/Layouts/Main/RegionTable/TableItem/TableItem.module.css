@@ -1,15 +1,16 @@
 .tableItem {
   position: relative;
   display: grid;
-  width: 100%;
+  /* width: 100%; */
+
   grid-template-columns: minmax(15rem, 0.5fr) minmax(100px, 0.8fr) minmax(100px, 0.8fr) minmax(100px, 0.8fr) minmax(300px, 1.7fr) minmax(100px, 0.3fr);
   border: 2px solid var(--color-gray-200);
   border-radius: var(--border-radius-sm);
   padding: 1rem 0;
-  transition: var(--transition);
   font-size: var(--font-s-xs);
   align-content: center;
   overflow: hidden;
+  /* transition: var(--transition); */
 }
 
 .tableItem:hover {

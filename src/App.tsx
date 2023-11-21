@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route index element={<Navigate to="application" />} />
-        <Route path="application" element={<Application />} >
+        <Route path="application" element={<Application />}>
           <Route path="barchart" element={<BarChart />} />
           <Route path="linechart" element={<LineChart />} />
         </Route>
