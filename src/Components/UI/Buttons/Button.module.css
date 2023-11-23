@@ -1,4 +1,5 @@
 .button {
+  width: 100%;
   border-radius: var(--border-radius-sm);
   display: flex;
   align-items: center;
@@ -48,7 +49,7 @@
   cursor: not-allowed !important;
 }
 
-.btn-link{
+.btn-link {
   padding: 1.5rem 1.5rem;
   gap: 0.5rem;
   border-radius: var(--border-radius-sm);
@@ -58,9 +59,9 @@
   font-size: var(--font-s-sm);
   transition: var(--transition);
 }
-.btn-link:hover{
+.btn-link:hover {
   background-color: var(--color-gray-100);
 }
-.btn-link:active{
+.btn-link:active {
   background-color: var(--color-gray-200);
 }

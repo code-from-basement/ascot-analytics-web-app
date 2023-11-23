@@ -28,11 +28,13 @@
   margin-top: auto;
 }
 
-.copyright{
+.copyright {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: var(--opacity-50);
+  opacity: var(--opacity-75);
   text-align: center;
-  line-height: 1.5; 
+  line-height: 1.5;
+  font-size: 0.8rem;
 }

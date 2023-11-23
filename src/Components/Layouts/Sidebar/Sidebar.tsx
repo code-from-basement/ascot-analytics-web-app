@@ -18,7 +18,7 @@ function Sidebar() {
         <SidebarForm />
       </div>
       <div className={Styles.row}>
-        <Button type="btn-outline">
+        <Button onClick={() => {}} type="btn-outline">
           <HeadsetMicRoundedIcon />
           Contact Support
         </Button>

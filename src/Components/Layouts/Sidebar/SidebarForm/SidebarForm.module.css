@@ -10,3 +10,32 @@
   display: flex;
   gap: var(--spacing-sm);
 }
+
+.form__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background-color: var(--color-gray-100);
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+  height: 4.6rem;
+}
+.form__header h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.form__header svg {
+  font-size: var(--icon-size-24);
+}
+
+.divider {
+  background-color: var(--color-gray-300);
+  border-radius: var(--border-radius-circle);
+  height: 1px;
+}
