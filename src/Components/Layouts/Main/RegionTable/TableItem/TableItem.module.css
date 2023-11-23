@@ -17,7 +17,7 @@
   border: 2px solid var(--color-gray-200);
   border-radius: var(--border-radius-sm);
   padding: 1rem 0;
-  font-size: var(--font-s-xs);
+  font-size: var(--font-s-xxs);
   align-content: center;
   overflow: hidden;
   /* transition: var(--transition); */
