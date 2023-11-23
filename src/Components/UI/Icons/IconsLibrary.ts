@@ -26,6 +26,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ReplayRoundedIcon from "@mui/icons-material/ReplayRounded";
 import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
+import FormatListBulletedRoundedIcon from "@mui/icons-material/FormatListBulletedRounded";
 
 export {
   DeleteRoundedIcon,
@@ -56,4 +57,5 @@ export {
   LinkedInIcon,
   ReplayRoundedIcon,
   TuneRoundedIcon,
+  FormatListBulletedRoundedIcon,
 };

@@ -11,11 +11,10 @@ import { useGlobalContext } from "../../../Context/GlobalContext";
 const year = new Date().getFullYear();
 
 function Sidebar() {
-
-  const {setShowContact}:any = useGlobalContext();
-  const handleClick = () =>{
+  const { setShowContact }: any = useGlobalContext();
+  const handleClick = () => {
     setShowContact(true);
-  }
+  };
 
   return (
     <div className={Styles.sidebar}>
