@@ -3,7 +3,17 @@
   display: grid;
   /* width: 100%; */
 
-  grid-template-columns: minmax(15rem, 0.5fr) minmax(100px, 0.8fr) minmax(100px, 0.8fr) minmax(100px, 0.8fr) minmax(300px, 1.7fr) minmax(100px, 0.3fr);
+  grid-template-columns: 
+  minmax(100px, 0.4fr)
+  minmax(100px, 0.4fr) 
+  minmax(100px, 0.5fr) 
+  minmax(300px, 0.7fr) 
+  minmax(100px, 0.3fr) 
+  minmax(100px, 0.3fr)
+  minmax(100px, 0.8fr)
+  minmax(100px, 0.8fr)
+  minmax(100px, 0.4fr);
+
   border: 2px solid var(--color-gray-200);
   border-radius: var(--border-radius-sm);
   padding: 1rem 0;
@@ -17,20 +27,23 @@
   border: 2px solid var(--color-gray-300);
 }
 
-.tableItem__title {
+/* .tableItem__title {
   align-self: center;
   justify-self: start;
-}
+} */
 
 .tableItem__country {
   align-self: center;
-  justify-self: center;
+  justify-self: start;
   font-size: var(--font-s-xs);
+  margin-left: 4rem;
+
 }
 
 .tableItem__region {
   align-self: center;
   justify-self: center;
+
 }
 
 .tableItem__municipality {
@@ -42,6 +55,22 @@
   align-self: stretch;
   justify-self: center;
   width: 100%;
+}
+.tableItem__ageGroup{
+  align-self: center;
+  justify-self: center;
+}
+.tableItem__gender{
+  align-self: center;
+  justify-self: center;
+}
+.tableItem__livingSituation{
+  align-self: center;
+  justify-self: center;
+}
+.tableItem__assistance{
+    align-self: center;
+  justify-self: center;
 }
 
 .tableItem__remove {
