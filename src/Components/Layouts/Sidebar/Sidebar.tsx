@@ -5,10 +5,17 @@ import Button from "../../UI/Buttons/Buttons";
 import { HeadsetMicRoundedIcon } from "./../../UI/Icons/IconsLibrary";
 import { FormControl, FormLabel, Select } from "@mui/material";
 import SidebarForm from "./SidebarForm/SidebarForm";
+import ContactSupport from "../../UI/Contact Support/ContactSupport";
+import { useGlobalContext } from "../../../Context/GlobalContext";
 
 const year = new Date().getFullYear();
 
 function Sidebar() {
+  const { setShowContact }: any = useGlobalContext();
+  const handleClick = () => {
+    setShowContact(true);
+  };
+
   return (
     <div className={Styles.sidebar}>
       <div className={Styles.row}>
@@ -18,7 +25,7 @@ function Sidebar() {
         <SidebarForm />
       </div>
       <div className={Styles.row}>
-        <Button onClick={() => {}} type="btn-outline">
+        <Button onClick={handleClick} type="btn-outline">
           <HeadsetMicRoundedIcon />
           Contact Support
         </Button>

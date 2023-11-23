@@ -5,13 +5,17 @@ import contactImage from '../../../assets/ContactImage/Strong.jpeg'
 import { CallIcon, CloseRoundedIcon, EmailRoundedIcon, FacebookRoundedIcon, InstagramIcon, PinDropIcon } from '../Icons/IconsLibrary'
 import logoImage from "../../../assets/Image/hestiaAgora-logo.png"
 import LinkedIn from '@mui/icons-material/LinkedIn'
+import { useGlobalContext } from '../../../Context/GlobalContext'
 
 function ContactSupport() {
 
   const [ closed, setClosed] = useState(false);
 
+  const {setShowContact}:any = useGlobalContext();
+
   const handleClose =() =>{
     setClosed(true)
+    setShowContact(false);
   }
 
   const boxRef = useRef();
@@ -19,7 +23,8 @@ function ContactSupport() {
   useEffect (()=>{
     document.addEventListener("mousedown",(even)=>{
       if (!boxRef.current.contains(even.target)){
-        setClosed(true)
+        setClosed(true);
+        setShowContact(false);
       }
     })
   },[])
