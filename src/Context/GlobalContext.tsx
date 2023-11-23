@@ -24,7 +24,7 @@ function GlobalProvider({ children }: globalContextProps) {
 
   
   /* Contact support Layout */
-  const [showContact, setShowContact] = useState(true);
+  const [showContact, setShowContact] = useState(false);
 
   return (
     <GlobalContext.Provider
