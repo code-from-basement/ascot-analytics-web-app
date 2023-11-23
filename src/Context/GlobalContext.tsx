@@ -5,9 +5,27 @@ const GlobalContext = createContext();
 interface globalContextProps {
   children: React.ReactNode;
   value: string;
+  country: undefined | string;
+  region: undefined | string;
+  municipality: undefined | string;
+  ageGroup: undefined | string;
+  gender: undefined | string;
+  livingSituation: undefined | string;
+  assistance: undefined | string;
 }
 
 function GlobalProvider({ children }: globalContextProps) {
+  const [formSelectedData, setFormSelectedData] = useState({
+    country: "",
+    region: "",
+    municipality: "",
+    ageGroup: "",
+    gender: "",
+    livingSituation: "",
+    assistance: "",
+  });
+
+  /* colors */
   const colors = ["#ffd166", "#ef476f", "#16d5bc ", "#744df5"];
 
   /* date Generator function */
@@ -22,7 +40,6 @@ function GlobalProvider({ children }: globalContextProps) {
   /* Loading Layout */
   const [isLoading, setIsLoading] = useState(false);
 
-  
   /* Contact support Layout */
   const [showContact, setShowContact] = useState(false);
 
@@ -33,15 +50,16 @@ function GlobalProvider({ children }: globalContextProps) {
         colors,
         isLoading,
         showContact,
+        formSelectedData,
         setIsLoading,
         setShowContact,
+        setFormSelectedData,
       }}
     >
       {children}
     </GlobalContext.Provider>
   );
 }
-
 
 //
 function useGlobalContext() {

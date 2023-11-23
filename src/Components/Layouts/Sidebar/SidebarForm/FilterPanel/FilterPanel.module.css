@@ -23,6 +23,7 @@
   border-radius: var(--border-radius-sm);
   transition: var(--transition);
   cursor: pointer;
+  height: 4.2rem;
 }
 .filterPanel__header__open {
   background-color: var(--color-gray-300);
