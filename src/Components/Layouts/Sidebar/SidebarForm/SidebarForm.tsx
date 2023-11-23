@@ -5,8 +5,17 @@ import { selectInputTheme } from "../../../UI/Material UI Theme/MaterialUITheme"
 import { AddCircleOutlineRoundedIcon, FormatListBulletedRoundedIcon } from "../../../UI/Icons/IconsLibrary";
 import Button from "../../../UI/Buttons/Buttons";
 import FilterPanel from "./FilterPanel/FilterPanel";
+import { useGlobalContext } from "../../../../Context/GlobalContext";
 
 function SidebarForm() {
+  const { setFormSelectedData, formSelectedData } = useGlobalContext();
+
+  const onChangeFormDataHandler = (e) => {
+    setFormSelectedData((prevData) => {
+      return { ...prevData, [e.target.name]: e.target.value };
+    });
+  };
+
   return (
     <div className={Styles.form}>
       <div className={Styles.form__header}>
@@ -17,7 +26,7 @@ function SidebarForm() {
       <ThemeProvider theme={selectInputTheme}>
         <FormControl variant="outlined">
           <InputLabel id="country">Country</InputLabel>
-          <Select id="country" labelId="country" label="country" required>
+          <Select id="country" labelId="country" label="country" name="country" required value={formSelectedData.country} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="sweden">Sweden</MenuItem>
             <MenuItem value="england">England</MenuItem>
             <MenuItem value="finland">Finland</MenuItem>
@@ -25,13 +34,13 @@ function SidebarForm() {
         </FormControl>
         <FormControl variant="outlined">
           <InputLabel id="region">Region</InputLabel>
-          <Select labelId="region" id="region" label="region">
+          <Select labelId="region" id="region" label="region" name="region" value={formSelectedData.region} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="skane">Skane</MenuItem>
           </Select>
         </FormControl>
         <FormControl variant="outlined">
-          <InputLabel id="city">City</InputLabel>
-          <Select labelId="city" id="city" label="city">
+          <InputLabel id="municipality">City</InputLabel>
+          <Select labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="lund">Lund</MenuItem>
             <MenuItem value="malmo">Malmo</MenuItem>
           </Select>
