@@ -16,7 +16,9 @@ function SidebarForm() {
     });
   };
 
-  const onClickAddNewItem = fetchingNewItem();
+  const onClickAddNewItem = () => {
+    fetchingNewItem();
+  };
 
   return (
     <div className={Styles.form}>

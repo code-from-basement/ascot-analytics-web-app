@@ -61,6 +61,9 @@ function LineChart() {
       },
 
       xaxis: {
+        labels: {
+          rotate: 45,
+        },
         categories: ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"],
       },
       yaxis: {
@@ -94,7 +97,7 @@ function LineChart() {
         data: [0.11, 0.2, 0.5, 0.4, 0.2, 0.27, 0.87, 0.21],
       },
       {
-        name: "series-2",
+        name: "series-3",
         data: [0.81, 0.8, 0.25, 0.22, 0.21, 0.22, 0.77, 0.41],
       },
     ],

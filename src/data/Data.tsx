@@ -19,6 +19,9 @@ const database = [
   },
 ];
 
+const string = JSON.stringify(database);
+console.log(string);
+
 /**first fetched data format after start the page, first time load the page  */
 const PageFirstLoad = {
   countryList: [], //list of  available country  in your database, for using in drop down menu
@@ -73,3 +76,20 @@ function Data() {
 }
 
 export default Data;
+
+[
+  {
+    id: 1,
+    info: { country: "sweden", region: "skane", municipality: "malmo", ageGroup: "60-64", gender: "", assistance: "", livingSituation: "" },
+    qolAvg: 0.8,
+    lineChart: [{ name: "malmo", data: [0.2, 0.3, 0.4, 0.2] }],
+    barChart: [{ name: "malmo", data: [0.1, 0.9, 0.2, 0.2, 0.2, 0.3, 0.5, 0.7] }],
+  },
+  {
+    id: 2,
+    info: { country: "sweden", region: "skane", municipality: "lund", ageGroup: "", gender: "", assistance: "", livingSituation: "" },
+    qolAvg: 0.8,
+    lineChart: [{ name: "lund", data: [0.1, 0.4, 0.5, 0.2] }],
+    barChart: [{ name: "lund", data: [0.1, 0.9, 0.2, 0.2, 0.2, 0.3, 0.5, 0.7] }],
+  },
+];

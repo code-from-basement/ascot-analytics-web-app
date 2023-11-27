@@ -44,17 +44,19 @@ function GlobalProvider({ children }: globalContextProps) {
   const [showContact, setShowContact] = useState(false);
 
   /**Add new item to the list (fetching) */
-  const fetchingNewItem = async () => {
-    const response = await fetch("hestia-agora.com/ascot/filteredresponse/", {
+  async function fetchingNewItem() {
+    const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+
+      mode: "no-cors",
       body: JSON.stringify(formSelectedData),
     });
-
-    console.log(response);
-  };
+    const data = await response.json();
+    console.log(data);
+  }
 
   return (
     <GlobalContext.Provider
