@@ -41,8 +41,8 @@ function SidebarForm() {
         <FormControl variant="outlined">
           <InputLabel id="municipality">City</InputLabel>
           <Select labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="lund">Lund</MenuItem>
-            <MenuItem value="malmo">Malmo</MenuItem>
+            <MenuItem value="Lund">Lund</MenuItem>
+            <MenuItem value="Malmö">Malmö</MenuItem>
           </Select>
         </FormControl>
         <div className={Styles.divider}>&nbsp;</div>
