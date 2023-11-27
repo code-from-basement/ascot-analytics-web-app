@@ -52,9 +52,13 @@
 }
 
 .tableItem__qofBar {
+  display: flex;
   align-self: stretch;
   justify-self: center;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  
 }
 .tableItem__ageGroup{
   align-self: center;

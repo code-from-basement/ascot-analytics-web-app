@@ -1,12 +1,13 @@
 .bar {
+  display: flex;
   position: relative;
   width: 90%;
   max-width: 90%;
-
   height: 80%;
+  align-items: stretch;
+  justify-content: flex-start;
   border-radius: var(--border-radius-sm);
   border: 2px solid var(--color-gray-300);
-  display: flex;
   background-color: var(--color-gray-100);
   overflow: hidden;
   transition: var(--transition);
