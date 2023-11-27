@@ -19,8 +19,6 @@ function FilterPanel() {
     });
   };
 
-  console.log(formSelectedData);
-
   return (
     <div className={`${Styles.filterPanel} ${showFIlterPanel && Styles.filterPanel__open}`}>
       <div className={`${Styles.filterPanel__header} ${showFIlterPanel && Styles.filterPanel__header__open}`} onClick={toggleFilterPanel}>
