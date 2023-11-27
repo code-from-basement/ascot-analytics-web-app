@@ -46,18 +46,18 @@ function FilterPanel() {
           <FormControl variant="outlined">
             <InputLabel id="gender">Gender</InputLabel>
             <Select labelId="gender" id="gender" label="gender" name="gender" value={formSelectedData.gender} onChange={(e) => onChangeFormDataHandler(e)}>
-              <MenuItem value="male">Male</MenuItem>
-              <MenuItem value="female">Female</MenuItem>
-              <MenuItem value="other">Other</MenuItem>
+              <MenuItem value="Male">Male</MenuItem>
+              <MenuItem value="Female">Female</MenuItem>
+              <MenuItem value="Other">Other</MenuItem>
             </Select>
           </FormControl>
         </div>
         <FormControl variant="outlined">
-          <InputLabel id="living-situation">Living Situation</InputLabel>
-          <Select labelId="living-situation" id="living-situation" label="living-situation" name="livingSituation" value={formSelectedData.livingSituation} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="home">Living at home</MenuItem>
-            <MenuItem value="home with care">Living at home with home care</MenuItem>
-            <MenuItem value="nursing home">Living in a nursing home</MenuItem>
+          <InputLabel id="Living situation">Living situation</InputLabel>
+          <Select labelId="Living situation" id="Living situation" label="Living situation" name="Living situation" value={formSelectedData.livingSituation} onChange={(e) => onChangeFormDataHandler(e)}>
+            <MenuItem value="Living at home">Living at home</MenuItem>
+            <MenuItem value="Living at home with home care">Living at home with home care</MenuItem>
+            <MenuItem value="Living in a nursing home">Living in a nursing home</MenuItem>
           </Select>
         </FormControl>
         <FormControl variant="outlined">
