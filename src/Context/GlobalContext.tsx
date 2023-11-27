@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const GlobalContext = createContext();
 
@@ -43,6 +43,19 @@ function GlobalProvider({ children }: globalContextProps) {
   /* Contact support Layout */
   const [showContact, setShowContact] = useState(false);
 
+  /**Add new item to the list (fetching) */
+  const fetchingNewItem = async () => {
+    const response = await fetch("hestia-agora.com/ascot/filteredresponse/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formSelectedData),
+    });
+
+    console.log(response);
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -54,6 +67,7 @@ function GlobalProvider({ children }: globalContextProps) {
         setIsLoading,
         setShowContact,
         setFormSelectedData,
+        fetchingNewItem,
       }}
     >
       {children}

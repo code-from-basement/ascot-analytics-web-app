@@ -6,7 +6,7 @@ import { KeyboardArrowDownRoundedIcon, TuneRoundedIcon } from "../../../../UI/Ic
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function FilterPanel() {
-  const { setFormSelectedData, formSelectedData } = useGlobalContext();
+  const { formSelectedData, setFormSelectedData } = useGlobalContext();
   const [showFIlterPanel, setShowFilterPanel] = useState<null | boolean>(false);
 
   const toggleFilterPanel = () => {

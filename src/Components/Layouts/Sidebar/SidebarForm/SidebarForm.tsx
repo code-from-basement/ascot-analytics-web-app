@@ -8,13 +8,15 @@ import FilterPanel from "./FilterPanel/FilterPanel";
 import { useGlobalContext } from "../../../../Context/GlobalContext";
 
 function SidebarForm() {
-  const { setFormSelectedData, formSelectedData } = useGlobalContext();
+  const { setFormSelectedData, formSelectedData, fetchingNewItem } = useGlobalContext();
 
   const onChangeFormDataHandler = (e) => {
     setFormSelectedData((prevData) => {
       return { ...prevData, [e.target.name]: e.target.value };
     });
   };
+
+  const onClickAddNewItem = fetchingNewItem();
 
   return (
     <div className={Styles.form}>
@@ -50,7 +52,7 @@ function SidebarForm() {
         <FilterPanel />
 
         <br />
-        <Button onClick={() => {}} type="btn-primary">
+        <Button onClick={onClickAddNewItem} type="btn-primary">
           Add municipality
           <AddCircleOutlineRoundedIcon />
         </Button>
