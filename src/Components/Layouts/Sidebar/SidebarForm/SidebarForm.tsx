@@ -43,7 +43,7 @@ function SidebarForm() {
           </Select>
         </FormControl>
         <FormControl variant="outlined">
-          <InputLabel id="municipality">City</InputLabel>
+          <InputLabel id="municipality">Municipality</InputLabel>
           <Select labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="Lund">Lund</MenuItem>
             <MenuItem value="Malmö">Malmö</MenuItem>
