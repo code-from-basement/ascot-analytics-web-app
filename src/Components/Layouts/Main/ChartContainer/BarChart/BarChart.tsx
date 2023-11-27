@@ -1,5 +1,6 @@
 import React from "react";
 import Styles from "./BarChart.module.css";
+import ApexCharts from 'apexcharts'
 
 function BarChart() {
   return (
