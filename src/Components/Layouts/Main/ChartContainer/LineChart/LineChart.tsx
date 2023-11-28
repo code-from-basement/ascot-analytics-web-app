@@ -30,6 +30,27 @@ function LineChart() {
       dataLabels: {
         enabled: false,
       },
+      markers: {
+        size: 5,
+        colors: undefined,
+        strokeColors: 'transparent',
+        strokeWidth: 2,
+        strokeOpacity: 0.9,
+        strokeDashArray: 0,
+        fillOpacity: 1,
+        discrete: [],
+        shape: "circle",
+        radius: 1,
+        offsetX: 0,
+        offsetY: 0,
+        onClick: undefined,
+        onDblClick: undefined,
+        showNullDataPoints: true,
+        hover: {
+          size: undefined,
+          sizeOffset: 2
+        }
+    },
       // noData: {
       //   text: "",
       //   align: "center",
@@ -56,7 +77,7 @@ function LineChart() {
         },
       },
       chart: {
-        id: "basic-bar",
+        id: "basic-line",
         background: "transparent",
       },
 
@@ -64,7 +85,7 @@ function LineChart() {
         labels: {
           rotate: 45,
         },
-        categories: ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"],
+        categories: [2020, 2021, 2022, 2023],
       },
       yaxis: {
         title: {
@@ -89,23 +110,24 @@ function LineChart() {
 
     series: [
       {
-        name: "series-1",
-        data: [0.2, 0.3, 0.5, 0.23, 0.9, 0.1, 0.9, 0.1],
+        name: "Malmö",
+        data: [0.2, 0.43, 0.85, 0.23],
       },
       {
-        name: "series-2",
-        data: [0.11, 0.2, 0.5, 0.4, 0.2, 0.27, 0.87, 0.21],
+        name: "Lund",
+        data: [0.11, 0.52, 0.75, 0.4],
       },
       {
-        name: "series-3",
-        data: [0.81, 0.8, 0.25, 0.22, 0.21, 0.22, 0.77, 0.41],
+        name: "Eslöv",
+        data: [0.95, 0.8, 0.65, 0.32],
       },
     ],
   });
+  
 
   return (
     <div className={Styles.lineChart}>
-      <Chart options={state.options} series={state.series} width={1500} height={320} type="bar" />
+      <Chart options={state.options} series={state.series} width={950} height={320} type="line" />
     </div>
   );
 }

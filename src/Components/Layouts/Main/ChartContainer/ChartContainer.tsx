@@ -8,10 +8,10 @@ function ChartContainer() {
       <nav className={Styles.chartNavbar}>
         <h2>Information chart</h2>
         <NavLink to="/application/barchart" className={({ isActive, isPending }) => (isPending ? Styles.pending : isActive ? Styles.active : "")}>
-          Latest year
+          Bar Chart
         </NavLink>
         <NavLink to="/application/linechart" className={({ isActive, isPending }) => (isPending ? Styles.pending : isActive ? Styles.active : "")}>
-          Yearly
+          Line Chart
         </NavLink>
       </nav>
       <div className={Styles.dividedLine}>
