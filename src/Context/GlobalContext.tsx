@@ -50,12 +50,10 @@ function GlobalProvider({ children }: globalContextProps) {
       headers: {
         "Content-Type": "application/json",
       },
-
-      mode: "no-cors",
       body: JSON.stringify(formSelectedData),
     });
     const data = await response.json();
-    console.log(data);
+    console.log(JSON.stringify(formSelectedData));
   }
 
   return (
