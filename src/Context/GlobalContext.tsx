@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const GlobalContext = createContext();
 
@@ -51,7 +51,7 @@ function GlobalProvider({ children }: globalContextProps) {
         "Content-Type": "application/json",
       },
 
-      // mode: "no-cors",
+      mode: "no-cors",
       body: JSON.stringify(formSelectedData),
     });
     const data = await response.json();
