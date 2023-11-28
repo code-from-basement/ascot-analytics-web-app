@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const GlobalContext = createContext();
 
@@ -47,11 +47,7 @@ function GlobalProvider({ children }: globalContextProps) {
   async function fetchingNewItem() {
     const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formSelectedData),
     });
     const data = await response.json();
