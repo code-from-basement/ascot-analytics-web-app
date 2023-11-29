@@ -18,6 +18,9 @@ function GlobalProvider({ children }: globalContextProps) {
   //**List Item  */
   const [listItem, setListItem] = useState([]);
   //
+  const lengthOfListItem = +listItem.length;
+  //
+
   const [formSelectedData, setFormSelectedData] = useState({
     country: "",
     region: "",
@@ -50,7 +53,9 @@ function GlobalProvider({ children }: globalContextProps) {
     year: "numeric",
   });
   //
-
+  /**error handling during fetching m,ore then 4 items */
+  const [limitationListItemError, setLimitationListItemError] = useState(false);
+  //
   /* Loading Layout */
   const [isLoading, setIsLoading] = useState(false);
   /* Contact support Layout */
@@ -58,6 +63,10 @@ function GlobalProvider({ children }: globalContextProps) {
 
   /**Add new item to the list (fetching) */
   async function fetchingNewItem() {
+    if (lengthOfListItem === 4) {
+      setLimitationListItemError(true);
+      return;
+    }
     try {
       const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
         method: "POST",
@@ -87,10 +96,15 @@ function GlobalProvider({ children }: globalContextProps) {
         isLoading,
         showContact,
         formSelectedData,
+        listItem,
+        lengthOfListItem,
+        limitationListItemError,
         setIsLoading,
         setShowContact,
         setFormSelectedData,
         fetchingNewItem,
+        setListItem,
+        setLimitationListItemError,
       }}
     >
       {children}

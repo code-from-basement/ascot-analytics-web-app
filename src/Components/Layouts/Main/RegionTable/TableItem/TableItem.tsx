@@ -1,11 +1,23 @@
 import Styles from "./TableItem.module.css";
+import React, { useEffect } from "react";
 import ColorTag from "./ColorTag/ColorTag";
 import { DeleteRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
 
-import React from "react";
 import QolBar from "./QolBar/QolBar";
+import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
-function TableItem() {
+function TableItem({ id }) {
+  const { listItem, setListItem, setLimitationListItemError, lengthOfListItem } = useGlobalContext();
+
+  const onClickItemDeleteHandler = (id: number) => {
+    setListItem(listItem.filter((item) => item.id !== id));
+    //
+    if (lengthOfListItem <= 4) {
+      setLimitationListItemError(false);
+    }
+    //
+  };
+
   return (
     <div className={Styles.tableItem}>
       <ColorTag />
@@ -20,7 +32,7 @@ function TableItem() {
       <p className={Styles.tableItem__gender}>Gender</p>
       <p className={Styles.tableItem__livingSituation}>Living Situation</p>
       <p className={Styles.tableItem__assistance}>Assistance</p>
-      <button className={Styles.tableItem__remove}>
+      <button className={Styles.tableItem__remove} onClick={() => onClickItemDeleteHandler(id)}>
         <DeleteRoundedIcon />
       </button>
     </div>
