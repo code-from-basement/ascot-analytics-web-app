@@ -15,6 +15,9 @@ interface globalContextProps {
 }
 
 function GlobalProvider({ children }: globalContextProps) {
+  //**List Item  */
+  const [listItem, setListItem] = useState([]);
+  //
   const [formSelectedData, setFormSelectedData] = useState({
     country: "",
     region: "",
@@ -24,6 +27,16 @@ function GlobalProvider({ children }: globalContextProps) {
     livingSituation: "",
     assistance: "",
   });
+
+  // const formSelectedDataArr = [
+  //   { country: formSelectedData.country },
+  //   { region: formSelectedData.region },
+  //   { municipality: formSelectedData.municipality },
+  //   { ageGroup: formSelectedData.ageGroup },
+  //   { gender: formSelectedData.gender },
+  //   { livingSituation: formSelectedData.livingSituation },
+  //   { assistance: formSelectedData.assistance },
+  // ];
 
   /* colors */
   const colors = ["#ffd166", "#ef476f", "#16d5bc ", "#744df5"];
@@ -36,25 +49,35 @@ function GlobalProvider({ children }: globalContextProps) {
     day: "numeric",
     year: "numeric",
   });
+  //
 
   /* Loading Layout */
   const [isLoading, setIsLoading] = useState(false);
-
   /* Contact support Layout */
   const [showContact, setShowContact] = useState(false);
 
   /**Add new item to the list (fetching) */
   async function fetchingNewItem() {
-    const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formSelectedData),
-    });
-    const data = await response.json();
-    console.log(JSON.stringify(formSelectedData));
+    try {
+      const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formSelectedData),
+      });
+      const data = await response.json();
+      setListItem((prevData) => {
+        return [...prevData, { ["id"]: Math.random(), data }];
+      });
+    } catch {
+      console.log("error");
+    } finally {
+      console.log("finalized");
+    }
   }
+
+  console.log(listItem);
 
   return (
     <GlobalContext.Provider

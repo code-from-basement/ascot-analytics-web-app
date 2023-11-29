@@ -1,10 +1,10 @@
 import Styles from "./SidebarForm.module.css";
 import React from "react";
+import Button from "../../../UI/Buttons/Buttons";
+import FilterPanel from "./FilterPanel/FilterPanel";
 import { FormControl, Select, InputLabel, MenuItem, ThemeProvider } from "@mui/material";
 import { selectInputTheme } from "../../../UI/Material UI Theme/MaterialUITheme";
 import { AddCircleOutlineRoundedIcon, FormatListBulletedRoundedIcon } from "../../../UI/Icons/IconsLibrary";
-import Button from "../../../UI/Buttons/Buttons";
-import FilterPanel from "./FilterPanel/FilterPanel";
 import { useGlobalContext } from "../../../../Context/GlobalContext";
 
 function SidebarForm() {

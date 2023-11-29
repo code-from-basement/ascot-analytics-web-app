@@ -1,5 +1,5 @@
 import Styles from "./FilterPanel.module.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FormControl, Select, InputLabel, MenuItem, ThemeProvider } from "@mui/material";
 import { selectInputTheme } from "./../../../../UI/Material UI Theme/MaterialUITheme";
 import { KeyboardArrowDownRoundedIcon, TuneRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
@@ -9,15 +9,19 @@ function FilterPanel() {
   const { formSelectedData, setFormSelectedData } = useGlobalContext();
   const [showFIlterPanel, setShowFilterPanel] = useState<null | boolean>(false);
 
+  /**toggle function to open and close th emore option filter panel in sidebar */
   const toggleFilterPanel = () => {
     setShowFilterPanel(!showFIlterPanel);
   };
+  //
 
+  /*updating formSelectedData which use for fetching to add new item to list */
   const onChangeFormDataHandler = (e) => {
     setFormSelectedData((prevData) => {
       return { ...prevData, [e.target.name]: e.target.value };
     });
   };
+  //
 
   return (
     <div className={`${Styles.filterPanel} ${showFIlterPanel && Styles.filterPanel__open}`}>
