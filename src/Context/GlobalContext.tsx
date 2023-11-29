@@ -76,8 +76,8 @@ function GlobalProvider({ children }: globalContextProps) {
       console.log("finalized");
     }
   }
-
   console.log(listItem);
+  //
 
   return (
     <GlobalContext.Provider
