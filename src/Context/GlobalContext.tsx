@@ -31,15 +31,19 @@ function GlobalProvider({ children }: globalContextProps) {
     assistance: "",
   });
 
-  // const formSelectedDataArr = [
-  //   { country: formSelectedData.country },
-  //   { region: formSelectedData.region },
-  //   { municipality: formSelectedData.municipality },
-  //   { ageGroup: formSelectedData.ageGroup },
-  //   { gender: formSelectedData.gender },
-  //   { livingSituation: formSelectedData.livingSituation },
-  //   { assistance: formSelectedData.assistance },
-  // ];
+  /*the object use for main fetching*/
+
+  const formSelectedDataArr = {
+    filters: [
+      { country: formSelectedData.country },
+      { region: formSelectedData.region },
+      { municipality: formSelectedData.municipality },
+      { ageGroup: formSelectedData.ageGroup },
+      { gender: formSelectedData.gender },
+      { livingSituation: formSelectedData.livingSituation },
+      { assistance: formSelectedData.assistance },
+    ],
+  };
 
   /* colors */
   const colors = ["#ffd166", "#ef476f", "#16d5bc ", "#744df5"];
@@ -73,7 +77,7 @@ function GlobalProvider({ children }: globalContextProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formSelectedData),
+        body: JSON.stringify(formSelectedDataArr),
       });
       const data = await response.json();
       setListItem((prevData) => {
@@ -83,9 +87,11 @@ function GlobalProvider({ children }: globalContextProps) {
       console.log("error");
     } finally {
       console.log("finalized");
+      console.log(JSON.stringify(formSelectedDataArr));
     }
   }
   console.log(listItem);
+
   //
 
   return (

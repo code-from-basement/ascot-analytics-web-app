@@ -39,12 +39,12 @@ function FilterPanel() {
             <Select labelId="age" id="age" label="age group" name="ageGroup" value={formSelectedData.ageGroup} onChange={(e) => onChangeFormDataHandler(e)}>
               <MenuItem value="65-69">65-69</MenuItem>
               <MenuItem value="70-74">70-74</MenuItem>
-              <MenuItem value="70-74">70-74</MenuItem>
               <MenuItem value="75-79">75-79</MenuItem>
               <MenuItem value="80-84">80-84</MenuItem>
               <MenuItem value="85-89">85-89</MenuItem>
               <MenuItem value="90-94">90-94</MenuItem>
-              <MenuItem value="95+">Above 95+</MenuItem>
+              <MenuItem value="95-99">95-99</MenuItem>
+              <MenuItem value="99+">Above 95+</MenuItem>
             </Select>
           </FormControl>
           <FormControl variant="outlined">
@@ -56,18 +56,20 @@ function FilterPanel() {
             </Select>
           </FormControl>
         </div>
+
         <FormControl variant="outlined">
           <InputLabel id="Living situation">Living situation</InputLabel>
-          <Select labelId="Living situation" id="Living situation" label="Living situation" name="Living situation" value={formSelectedData.livingSituation} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="Living at home">Living at home</MenuItem>
-            <MenuItem value="Living at home with home care">Living at home with home care</MenuItem>
-            <MenuItem value="Living in a nursing home">Living in a nursing home</MenuItem>
+          <Select labelId="Living situation" id="Living situation" label="Living situation" name="livingSituation" value={formSelectedData.livingSituation} onChange={(e) => onChangeFormDataHandler(e)}>
+            <MenuItem value="Living_at_home">Living at home</MenuItem>
+            <MenuItem value="Living_at_home_with_home_care">Living at home with home care</MenuItem>
+            <MenuItem value="Living_in_a_nursing_home">Living in a nursing home</MenuItem>
           </Select>
         </FormControl>
+
         <FormControl variant="outlined">
           <InputLabel id="assistance">Assistance</InputLabel>
           <Select labelId="assistance" id="assistance" label="assistance" name="assistance" value={formSelectedData.assistance} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="">I did’t have any help</MenuItem>
+            <MenuItem value="1">I did’t have any help</MenuItem>
             <MenuItem value="2">Someone else read the questions to me</MenuItem>
             <MenuItem value="3">Someone else translate the questions to me</MenuItem>
             <MenuItem value="4">Someone else wrote down the answer for me</MenuItem>

@@ -31,9 +31,7 @@ function SidebarForm() {
         <FormControl variant="outlined">
           <InputLabel id="country">Country</InputLabel>
           <Select id="country" labelId="country" label="country" name="country" required value={formSelectedData.country} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="sweden">Sweden</MenuItem>
-            <MenuItem value="england">England</MenuItem>
-            <MenuItem value="finland">Finland</MenuItem>
+            <MenuItem value="Sweden">Sweden</MenuItem>
           </Select>
         </FormControl>
         <FormControl variant="outlined">
