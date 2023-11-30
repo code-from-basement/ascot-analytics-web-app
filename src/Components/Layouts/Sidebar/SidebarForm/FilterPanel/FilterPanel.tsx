@@ -36,7 +36,7 @@ function FilterPanel() {
         <div className={Styles.ageGender}>
           <FormControl variant="outlined">
             <InputLabel id="age">Age group</InputLabel>
-            <Select labelId="age" id="age" label="age group" name="ageGroup" value={formSelectedData.ageGroup} onChange={(e) => onChangeFormDataHandler(e)}>
+            <Select required labelId="age" id="age" label="age group" name="ageGroup" value={formSelectedData.ageGroup} onChange={(e) => onChangeFormDataHandler(e)}>
               <MenuItem value="65-69">65-69</MenuItem>
               <MenuItem value="70-74">70-74</MenuItem>
               <MenuItem value="75-79">75-79</MenuItem>
@@ -47,9 +47,10 @@ function FilterPanel() {
               <MenuItem value="99+">Above 95+</MenuItem>
             </Select>
           </FormControl>
+
           <FormControl variant="outlined">
             <InputLabel id="gender">Gender</InputLabel>
-            <Select labelId="gender" id="gender" label="gender" name="gender" value={formSelectedData.gender} onChange={(e) => onChangeFormDataHandler(e)}>
+            <Select required labelId="gender" id="gender" label="gender" name="gender" value={formSelectedData.gender} onChange={(e) => onChangeFormDataHandler(e)}>
               <MenuItem value="Male">Male</MenuItem>
               <MenuItem value="Female">Female</MenuItem>
               <MenuItem value="Other">Other</MenuItem>
@@ -68,7 +69,7 @@ function FilterPanel() {
 
         <FormControl variant="outlined">
           <InputLabel id="assistance">Assistance</InputLabel>
-          <Select labelId="assistance" id="assistance" label="assistance" name="assistance" value={formSelectedData.assistance} onChange={(e) => onChangeFormDataHandler(e)}>
+          <Select required labelId="assistance" id="assistance" label="assistance" name="assistance" value={formSelectedData.assistance} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="1">I did’t have any help</MenuItem>
             <MenuItem value="2">Someone else read the questions to me</MenuItem>
             <MenuItem value="3">Someone else translate the questions to me</MenuItem>

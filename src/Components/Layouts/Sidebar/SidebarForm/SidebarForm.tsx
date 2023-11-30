@@ -30,23 +30,27 @@ function SidebarForm() {
       <ThemeProvider theme={selectInputTheme}>
         <FormControl variant="outlined">
           <InputLabel id="country">Country</InputLabel>
-          <Select id="country" labelId="country" label="country" name="country" required value={formSelectedData.country} onChange={(e) => onChangeFormDataHandler(e)}>
+          <Select required id="country" labelId="country" label="country" name="country" value={formSelectedData.country} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="Sweden">Sweden</MenuItem>
           </Select>
         </FormControl>
+
         <FormControl variant="outlined">
           <InputLabel id="region">Region</InputLabel>
-          <Select labelId="region" id="region" label="region" name="region" value={formSelectedData.region} onChange={(e) => onChangeFormDataHandler(e)}>
+          <Select required labelId="region" id="region" label="region" name="region" value={formSelectedData.region} onChange={(e) => onChangeFormDataHandler(e)}>
+            <MenuItem value="">None</MenuItem>
             <MenuItem value="skane">Skane</MenuItem>
           </Select>
         </FormControl>
+
         <FormControl variant="outlined">
           <InputLabel id="municipality">Municipality</InputLabel>
-          <Select labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
+          <Select required labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="Lund">Lund</MenuItem>
             <MenuItem value="Malmö">Malmö</MenuItem>
           </Select>
         </FormControl>
+
         <div className={Styles.divider}>&nbsp;</div>
 
         <FilterPanel />
