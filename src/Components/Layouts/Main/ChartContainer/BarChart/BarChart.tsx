@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "./BarChart.module.css";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
+import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function BarChart() {
+  const { barChartData } = useGlobalContext();
+
   const [state, setState] = useState({
     options: {
       colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
@@ -88,26 +91,13 @@ function BarChart() {
       },
     },
 
-    series: [
-      {
-        name: "Malmö",
-        data: [0.2, 0.3, 0.5, 0.23, 0.9, 0.1, 0.9, 0.1],
-      },
-      {
-        name: "Lund",
-        data: [0.11, 0.2, 0.5, 0.4, 0.2, 0.27, 0.87, 0.21],
-      },
-      {
-        name: "Eslöv",
-        data: [0.81, 0.8, 0.25, 0.22, 0.21, 0.22, 0.77, 0.41],
-      },
-    ],
+    // series: [],
   });
 
   return (
     <div className={Styles.barChart}>
       <div className={Styles.title}>Total Quality of life</div>
-      <Chart options={state.options} series={state.series} width={1500} height={320} type="bar" />
+      <Chart options={state.options} series={barChartData} width={1500} height={320} type="bar" />
     </div>
   );
 }

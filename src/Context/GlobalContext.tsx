@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const GlobalContext = createContext();
 
@@ -45,8 +45,26 @@ function GlobalProvider({ children }: globalContextProps) {
     ],
   };
 
+  /**rendering charts */
+  const [lineChartData, setLineChartData] = useState();
+  const [barChartData, setBarChartData] = useState();
+
+  useEffect(() => {
+    const series = listItem.map((item) => {
+      return { name: item.data.lineChart.name, data: item.data.lineChart.data };
+    });
+    setLineChartData(series);
+  }, [listItem]);
+
+  useEffect(() => {
+    const series = listItem.map((item) => {
+      return { name: item.data.barChart.name, data: item.data.barChart.data };
+    });
+    setBarChartData(series);
+  }, [listItem]);
+
   /* colors */
-  const colors = ["#ffd166", "#ef476f", "#16d5bc ", "#744df5"];
+  const colors = ["#4895ef", "#ef476f", "#16d5bc", "#744df5"];
 
   /* date Generator function */
   const event = new Date(Date.now());
@@ -105,6 +123,8 @@ function GlobalProvider({ children }: globalContextProps) {
         listItem,
         lengthOfListItem,
         limitationListItemError,
+        lineChartData,
+        barChartData,
         setIsLoading,
         setShowContact,
         setFormSelectedData,

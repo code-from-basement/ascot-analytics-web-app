@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "./LineChart.module.css";
-import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
+import Chart from "react-apexcharts";
+import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function LineChart() {
+  const { lineChartData } = useGlobalContext();
+
+  console.log(lineChartData, "line chart");
+
   const [state, setState] = useState({
     options: {
       colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
@@ -108,26 +113,11 @@ function LineChart() {
         max: 1,
       },
     },
-
-    series: [
-      {
-        name: "Malmö",
-        data: [0.2, 0.43, 0.85, 0.23],
-      },
-      {
-        name: "Lund",
-        data: [0.11, 0.52, 0.75, 0.4],
-      },
-      {
-        name: "Eslöv",
-        data: [0.95, 0.8, 0.65, 0.32],
-      },
-    ],
   });
 
   return (
     <div className={Styles.lineChart}>
-      <Chart options={state.options} series={state.series} width={1500} height={320} type="line" />
+      <Chart options={state.options} series={lineChartData} width={1500} height={320} type="line" />
     </div>
   );
 }
