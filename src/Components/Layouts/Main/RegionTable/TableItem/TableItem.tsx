@@ -6,11 +6,11 @@ import { DeleteRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
 import QolBar from "./QolBar/QolBar";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
-function TableItem({ id }) {
-  const { listItem, setListItem, setLimitationListItemError, lengthOfListItem } = useGlobalContext();
+function TableItem({ id,country, region, municipality, ageGroup, gender, livingSituation, assistance, qolAvg }:any) {
+  const { listItem, setListItem, setLimitationListItemError, lengthOfListItem } : any= useGlobalContext();
 
   const onClickItemDeleteHandler = (id: number) => {
-    setListItem(listItem.filter((item) => item.id !== id));
+    setListItem(listItem.filter((item :any) => item.id !== id));
     //
     if (lengthOfListItem <= 4) {
       setLimitationListItemError(false);
@@ -22,16 +22,24 @@ function TableItem({ id }) {
     <div className={Styles.tableItem}>
       <ColorTag />
       {/* <p className={Styles.tableItem__title}>&nbsp;</p> */}
-      <p className={Styles.tableItem__country}>Country</p>
-      <p className={Styles.tableItem__region}>region</p>
-      <p className={Styles.tableItem__municipality}>Municipality</p>
+      <p className={Styles.tableItem__country}>{country}</p>
+      <p className={Styles.tableItem__region}>{region}</p>
+      <p className={Styles.tableItem__municipality}>{municipality}</p>
       <div className={Styles.tableItem__qofBar}>
-        <QolBar />
+        <QolBar qolAvg={qolAvg} />
       </div>
-      <p className={Styles.tableItem__ageGroup}>Age group</p>
-      <p className={Styles.tableItem__gender}>Gender</p>
-      <p className={Styles.tableItem__livingSituation}>Living Situation</p>
-      <p className={Styles.tableItem__assistance}>Assistance</p>
+      <p className={Styles.tableItem__ageGroup}>
+        {ageGroup ? ageGroup : "-"}
+      </p>
+      <p className={Styles.tableItem__gender}>
+        {gender ? gender : "-"}
+      </p>
+      <p className={Styles.tableItem__livingSituation}>
+        {livingSituation ? livingSituation : "-"}
+      </p>
+      <p className={Styles.tableItem__assistance}>
+        {assistance ? assistance : "-"}
+      </p>
       <button className={Styles.tableItem__remove} onClick={() => onClickItemDeleteHandler(id)}>
         <DeleteRoundedIcon />
       </button>
