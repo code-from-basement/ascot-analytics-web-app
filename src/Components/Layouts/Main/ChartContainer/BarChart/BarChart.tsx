@@ -4,9 +4,9 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
 function BarChart() {
-
   const [state, setState] = useState({
     options: {
+      colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
       states: {
         normal: {
           filter: {

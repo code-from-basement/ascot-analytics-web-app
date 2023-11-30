@@ -6,6 +6,7 @@ import { ApexOptions } from "apexcharts";
 function LineChart() {
   const [state, setState] = useState({
     options: {
+      colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
       states: {
         normal: {
           filter: {
@@ -33,7 +34,7 @@ function LineChart() {
       markers: {
         size: 5,
         colors: undefined,
-        strokeColors: 'transparent',
+        strokeColors: "transparent",
         strokeWidth: 2,
         strokeOpacity: 0.9,
         strokeDashArray: 0,
@@ -48,9 +49,9 @@ function LineChart() {
         showNullDataPoints: true,
         hover: {
           size: undefined,
-          sizeOffset: 2
-        }
-    },
+          sizeOffset: 2,
+        },
+      },
       // noData: {
       //   text: "",
       //   align: "center",
@@ -123,11 +124,10 @@ function LineChart() {
       },
     ],
   });
-  
 
   return (
     <div className={Styles.lineChart}>
-      <Chart options={state.options} series={state.series} width={950} height={320} type="line" />
+      <Chart options={state.options} series={state.series} width={1500} height={320} type="line" />
     </div>
   );
 }
