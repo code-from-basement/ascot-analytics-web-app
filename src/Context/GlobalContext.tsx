@@ -50,9 +50,9 @@ function GlobalProvider({ children }: globalContextProps) {
   const [lineChartData, setLineChartData] = useState();
   const [barChartData, setBarChartData] = useState();
 
-  const yearForChart = listItem.map((item)=>{
-    return (item.data.lineChart.year);
-  });
+  // const yearForChart = listItem.map((item)=>{
+  //   return (item.data.lineChart.year);
+  // });
 
   useEffect(() => {
     const series = listItem.map((item) => {
@@ -130,7 +130,7 @@ function GlobalProvider({ children }: globalContextProps) {
         limitationListItemError,
         lineChartData,
         barChartData,
-        yearForChart,
+        // yearForChart,
         setIsLoading,
         setShowContact,
         setFormSelectedData,
