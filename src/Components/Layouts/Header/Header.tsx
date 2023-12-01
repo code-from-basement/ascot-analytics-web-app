@@ -19,7 +19,7 @@ return (
             <div className={Styles.email}>pernilla.bell@gmail.com</div>
         </div>
         <div className={Styles.logoutContainer}>
-            <Button type="btn-link">Logout<LogoutIcon/></Button>
+            <Button type="btn-link" onClick={()=>{}}>Logout<LogoutIcon/></Button>
 
         </div>
     </div>

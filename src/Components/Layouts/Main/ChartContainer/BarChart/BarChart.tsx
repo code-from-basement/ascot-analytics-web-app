@@ -5,7 +5,7 @@ import { ApexOptions } from "apexcharts";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function BarChart() {
-  const { barChartData } = useGlobalContext();
+  const { barChartData } :any = useGlobalContext();
 
   const [state, setState] = useState({
     options: {
@@ -69,6 +69,14 @@ function BarChart() {
           rotate: 45,
         },
         categories: ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"],
+        // tooltip: {
+        //   enabled: true,
+        //   offsetX: 0,
+        //   offsetY: 0,
+        //   style: {
+        //     fontSize: "1rem",
+        //   },
+        // }
       },
       yaxis: {
         title: {

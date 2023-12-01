@@ -17,7 +17,7 @@ function ContactSupport() {
     setShowContact(false);
   };
 
-  const boxRef = useRef();
+  const boxRef:any = useRef();
 
   useEffect(() => {
     document.addEventListener("mousedown", (even) => {

@@ -4,10 +4,10 @@ import TableItem from "../TableItem/TableItem";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function TableList() {
-  const { listItem, limitationListItemError } = useGlobalContext();
+  const { listItem, limitationListItemError } :any = useGlobalContext();
   return (
     <div className={Styles.tableList}>
-      {listItem && listItem.map((item) => 
+      {listItem && listItem.map((item:any) => 
         <TableItem key={item.id} 
           item={item} 
           id={item.id} 
@@ -19,7 +19,7 @@ function TableList() {
           livingSituation={item.data.info.livingSituation}
           assistance={item.data.info.assistance}
           qolAvg={item.data.qolAvg}
-           />
+        />
       )}
       {limitationListItemError && <h1>error</h1>}
     </div>

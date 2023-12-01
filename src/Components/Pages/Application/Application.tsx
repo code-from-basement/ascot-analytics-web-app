@@ -7,7 +7,7 @@ import ContactSupport from "../../UI/Contact Support/ContactSupport";
 import { useGlobalContext } from "../../../Context/GlobalContext";
 
 function Application() {
-     const {showContact}:any = useGlobalContext();
+  const {showContact}:any = useGlobalContext();
  
   return (
     <div className={Styles.application}>

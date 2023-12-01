@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-const GlobalContext = createContext();
 
 interface globalContextProps {
   children: React.ReactNode;
@@ -13,6 +12,8 @@ interface globalContextProps {
   livingSituation: undefined | string;
   assistance: undefined | string;
 }
+// const GlobalContext = createContext<globalContextProps|null>(null);
+const GlobalContext = createContext();
 
 function GlobalProvider({ children }: globalContextProps) {
   //**List Item  */
@@ -48,6 +49,10 @@ function GlobalProvider({ children }: globalContextProps) {
   /**rendering charts */
   const [lineChartData, setLineChartData] = useState();
   const [barChartData, setBarChartData] = useState();
+
+  const yearForChart = listItem.map((item)=>{
+    return (item.data.lineChart.year);
+  });
 
   useEffect(() => {
     const series = listItem.map((item) => {
@@ -125,6 +130,7 @@ function GlobalProvider({ children }: globalContextProps) {
         limitationListItemError,
         lineChartData,
         barChartData,
+        yearForChart,
         setIsLoading,
         setShowContact,
         setFormSelectedData,

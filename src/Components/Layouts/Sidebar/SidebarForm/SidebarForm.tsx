@@ -8,10 +8,10 @@ import { AddCircleOutlineRoundedIcon, FormatListBulletedRoundedIcon } from "../.
 import { useGlobalContext } from "../../../../Context/GlobalContext";
 
 function SidebarForm() {
-  const { setFormSelectedData, formSelectedData, fetchingNewItem, limitationListItemError } = useGlobalContext();
+  const { setFormSelectedData, formSelectedData, fetchingNewItem, limitationListItemError } :any = useGlobalContext();
 
-  const onChangeFormDataHandler = (e) => {
-    setFormSelectedData((prevData) => {
+  const onChangeFormDataHandler = (e:any) => {
+    setFormSelectedData((prevData : any) => {
       return { ...prevData, [e.target.name]: e.target.value };
     });
   };
@@ -39,7 +39,7 @@ function SidebarForm() {
           <InputLabel id="region">Region</InputLabel>
           <Select required labelId="region" id="region" label="region" name="region" value={formSelectedData.region} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="">None</MenuItem>
-            <MenuItem value="skane">Skane</MenuItem>
+            <MenuItem value="Skåne">Skane</MenuItem>
           </Select>
         </FormControl>
 

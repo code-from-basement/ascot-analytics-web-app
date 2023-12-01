@@ -6,7 +6,7 @@ import { KeyboardArrowDownRoundedIcon, TuneRoundedIcon } from "../../../../UI/Ic
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function FilterPanel() {
-  const { formSelectedData, setFormSelectedData } = useGlobalContext();
+  const { formSelectedData, setFormSelectedData } :any = useGlobalContext();
   const [showFIlterPanel, setShowFilterPanel] = useState<null | boolean>(false);
 
   /**toggle function to open and close th emore option filter panel in sidebar */
@@ -16,8 +16,8 @@ function FilterPanel() {
   //
 
   /*updating formSelectedData which use for fetching to add new item to list */
-  const onChangeFormDataHandler = (e) => {
-    setFormSelectedData((prevData) => {
+  const onChangeFormDataHandler = (e:any) => {
+    setFormSelectedData((prevData :any) => {
       return { ...prevData, [e.target.name]: e.target.value };
     });
   };

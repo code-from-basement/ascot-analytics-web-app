@@ -4,7 +4,7 @@ import react from "react";
 
 function ColorTag() {
   const context = useGlobalContext();
-  const { colors } = context;
+  const { colors } :any = context;
 
   const randomNum = Math.floor(Math.random() * 4);
 
