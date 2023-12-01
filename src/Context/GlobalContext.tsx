@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { SnackbarAlert } from "../Components/UI/Snackbar/SnackbarAlert";
 
 
 interface globalContextProps {
@@ -108,9 +109,11 @@ function GlobalProvider({ children }: globalContextProps) {
       });
     } catch {
       console.log("error");
+      <SnackbarAlert severity="error" message="Error, please try again later." />;
     } finally {
       console.log("finalized");
       console.log(JSON.stringify(formSelectedDataArr));
+      <SnackbarAlert severity="success" message="New item added to the list." />;
     }
   }
   console.log(listItem);
