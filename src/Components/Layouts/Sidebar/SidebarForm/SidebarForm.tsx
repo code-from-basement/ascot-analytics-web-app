@@ -8,44 +8,56 @@ import { AddCircleOutlineRoundedIcon, FormatListBulletedRoundedIcon } from "../.
 import { useGlobalContext } from "../../../../Context/GlobalContext";
 
 function SidebarForm() {
-  const { setFormSelectedData, formSelectedData, fetchingNewItem, limitationListItemError } :any = useGlobalContext();
+  const { setFormSelectedData, formSelectedData, fetchingNewItem, limitationListItemError }: any = useGlobalContext();
 
-  const onChangeFormDataHandler = (e:any) => {
-    setFormSelectedData((prevData : any) => {
+  /**on change function to create formSelectedData */
+  const onChangeFormDataHandler = (e: any) => {
+    setFormSelectedData((prevData: any) => {
       return { ...prevData, [e.target.name]: e.target.value };
     });
   };
 
-  const onClickAddNewItem = () => {
+  /**on submit handler*/
+  const onClickAddNewItem = (e) => {
+    e.preventDefault();
     fetchingNewItem();
+    setFormSelectedData({
+      country: "",
+      region: "",
+      municipality: "",
+      ageGroup: "",
+      gender: "",
+      livingSituation: "",
+      surveyFiller: "",
+    });
   };
 
   return (
-    <div className={Styles.form}>
+    <form className={Styles.form} onSubmit={onClickAddNewItem}>
       <div className={Styles.form__header}>
         <h3 className={Styles.form__title}>
           <FormatListBulletedRoundedIcon /> Select a municipality:
         </h3>
       </div>
       <ThemeProvider theme={selectInputTheme}>
-        <FormControl variant="outlined">
+        <FormControl variant="outlined" required>
           <InputLabel id="country">Country</InputLabel>
-          <Select required id="country" labelId="country" label="country" name="country" value={formSelectedData.country} onChange={(e) => onChangeFormDataHandler(e)}>
+          <Select id="country" labelId="country" label="country" name="country" value={formSelectedData.country} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="Sweden">Sweden</MenuItem>
           </Select>
         </FormControl>
 
         <FormControl variant="outlined">
           <InputLabel id="region">Region</InputLabel>
-          <Select required labelId="region" id="region" label="region" name="region" value={formSelectedData.region} onChange={(e) => onChangeFormDataHandler(e)}>
+          <Select labelId="region" id="region" label="region" name="region" value={formSelectedData.region} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="">None</MenuItem>
             <MenuItem value="Skane">Skane</MenuItem>
           </Select>
         </FormControl>
 
-        <FormControl variant="outlined">
+        <FormControl variant="outlined" required>
           <InputLabel id="municipality">Municipality</InputLabel>
-          <Select required labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
+          <Select labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="Lund">Lund</MenuItem>
             <MenuItem value="Malmö">Malmö</MenuItem>
           </Select>
@@ -56,12 +68,12 @@ function SidebarForm() {
         <FilterPanel />
 
         <br />
-        <Button onClick={onClickAddNewItem} type="btn-primary">
-          {limitationListItemError ? "please, remove an item" : "add municipality"}
-          <AddCircleOutlineRoundedIcon />
+        <Button type="btn-primary">
+          {limitationListItemError ? "please, remove an item" : "Add municipality"}
+          {limitationListItemError ? "" : <AddCircleOutlineRoundedIcon />}
         </Button>
       </ThemeProvider>
-    </div>
+    </form>
   );
 }
 
