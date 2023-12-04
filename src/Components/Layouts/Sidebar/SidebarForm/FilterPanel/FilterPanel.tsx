@@ -6,7 +6,7 @@ import { KeyboardArrowDownRoundedIcon, TuneRoundedIcon } from "../../../../UI/Ic
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function FilterPanel() {
-  const { formSelectedData, setFormSelectedData } :any = useGlobalContext();
+  const { formSelectedData, setFormSelectedData }: any = useGlobalContext();
   const [showFIlterPanel, setShowFilterPanel] = useState<null | boolean>(false);
 
   /**toggle function to open and close th emore option filter panel in sidebar */
@@ -16,8 +16,8 @@ function FilterPanel() {
   //
 
   /*updating formSelectedData which use for fetching to add new item to list */
-  const onChangeFormDataHandler = (e:any) => {
-    setFormSelectedData((prevData :any) => {
+  const onChangeFormDataHandler = (e: any) => {
+    setFormSelectedData((prevData: any) => {
       return { ...prevData, [e.target.name]: e.target.value };
     });
   };
@@ -36,7 +36,7 @@ function FilterPanel() {
         <div className={Styles.ageGender}>
           <FormControl variant="outlined">
             <InputLabel id="age">Age group</InputLabel>
-            <Select required labelId="age" id="age" label="age group" name="ageGroup" value={formSelectedData.ageGroup} onChange={(e) => onChangeFormDataHandler(e)}>
+            <Select labelId="age" id="age" label="age group" name="ageGroup" value={formSelectedData.ageGroup} onChange={(e) => onChangeFormDataHandler(e)}>
               <MenuItem value="65-69">65-69</MenuItem>
               <MenuItem value="70-74">70-74</MenuItem>
               <MenuItem value="75-79">75-79</MenuItem>
@@ -50,7 +50,7 @@ function FilterPanel() {
 
           <FormControl variant="outlined">
             <InputLabel id="gender">Gender</InputLabel>
-            <Select required labelId="gender" id="gender" label="gender" name="gender" value={formSelectedData.gender} onChange={(e) => onChangeFormDataHandler(e)}>
+            <Select labelId="gender" id="gender" label="gender" name="gender" value={formSelectedData.gender} onChange={(e) => onChangeFormDataHandler(e)}>
               <MenuItem value="Male">Male</MenuItem>
               <MenuItem value="Female">Female</MenuItem>
               <MenuItem value="Other">Other</MenuItem>
@@ -69,7 +69,7 @@ function FilterPanel() {
 
         <FormControl variant="outlined">
           <InputLabel id="assistance">Assistance</InputLabel>
-          <Select required labelId="assistance" id="assistance" label="assistance" name="surveyFiller" value={formSelectedData.assistance} onChange={(e) => onChangeFormDataHandler(e)}>
+          <Select labelId="assistance" id="assistance" label="assistance" name="surveyFiller" value={formSelectedData.assistance} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="1">I did’t have any help</MenuItem>
             <MenuItem value="2">Someone else read the questions to me</MenuItem>
             <MenuItem value="3">Someone else translate the questions to me</MenuItem>
