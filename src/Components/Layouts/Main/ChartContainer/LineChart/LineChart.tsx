@@ -5,9 +5,7 @@ import Chart from "react-apexcharts";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function LineChart() {
-  const { lineChartData,yearForChart} :any = useGlobalContext();
-
-  console.log(lineChartData, "line chart");
+  const { lineChartData, yearForChart }: any = useGlobalContext();
 
   const [state, setState] = useState({
     options: {
@@ -91,7 +89,7 @@ function LineChart() {
         labels: {
           rotate: 45,
         },
-        categories: [2020,2021,2022,2023],
+        categories: [2020, 2021, 2022, 2023],
         // categories: yearForChart,
       },
       yaxis: {
@@ -113,7 +111,7 @@ function LineChart() {
         min: 0,
         max: 1,
       },
-    }
+    },
   });
 
   return (

@@ -4,6 +4,7 @@ import { FormControl, Select, InputLabel, MenuItem, ThemeProvider } from "@mui/m
 import { selectInputTheme } from "./../../../../UI/Material UI Theme/MaterialUITheme";
 import { KeyboardArrowDownRoundedIcon, TuneRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
+import { SnackbarAlert } from "../../../../UI/Snackbar/SnackbarAlert";
 
 function FilterPanel() {
   const { formSelectedData, setFormSelectedData }: any = useGlobalContext();
@@ -69,13 +70,13 @@ function FilterPanel() {
 
         <FormControl variant="outlined">
           <InputLabel id="assistance">Assistance</InputLabel>
-          <Select labelId="assistance" id="assistance" label="assistance" name="surveyFiller" value={formSelectedData.assistance} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="1">I did’t have any help</MenuItem>
-            <MenuItem value="2">Someone else read the questions to me</MenuItem>
-            <MenuItem value="3">Someone else translate the questions to me</MenuItem>
-            <MenuItem value="4">Someone else wrote down the answer for me</MenuItem>
-            <MenuItem value="5">I talked through the questions with someone</MenuItem>
-            <MenuItem value="6">Someone else translate the questions to me</MenuItem>
+          <Select labelId="assistance" id="assistance" label="assistance" name="surveyFiller" value={formSelectedData.surveyFiller} onChange={(e) => onChangeFormDataHandler(e)}>
+            <MenuItem value="noHelp">I did’t have any help</MenuItem>
+            <MenuItem value="someone">Someone else read the questions to me</MenuItem>
+            <MenuItem value="someTranslate">Someone else translate the questions to me</MenuItem>
+            <MenuItem value="wrote">Someone else wrote down the answer for me</MenuItem>
+            <MenuItem value="talkSomeone">I talked through the questions with someone</MenuItem>
+            <MenuItem value="translate">Someone else translate the questions to me</MenuItem>
           </Select>
         </FormControl>
       </ThemeProvider>

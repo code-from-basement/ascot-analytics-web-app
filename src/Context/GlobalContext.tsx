@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { SnackbarAlert } from "../Components/UI/Snackbar/SnackbarAlert";
 
-
 interface globalContextProps {
   children: React.ReactNode;
   value: string;
@@ -56,14 +55,14 @@ function GlobalProvider({ children }: globalContextProps) {
   // });
 
   useEffect(() => {
-    const series = listItem.map((item) => {
+    const series = listItem.map((item: any) => {
       return { name: item.data.lineChart.name, data: item.data.lineChart.data };
     });
     setLineChartData(series);
   }, [listItem]);
 
   useEffect(() => {
-    const series = listItem.map((item) => {
+    const series = listItem.map((item: any) => {
       return { name: item.data.barChart.name, data: item.data.barChart.data };
     });
     setBarChartData(series);
@@ -88,7 +87,7 @@ function GlobalProvider({ children }: globalContextProps) {
   const [isLoading, setIsLoading] = useState(false);
   /* Contact support Layout */
   const [showContact, setShowContact] = useState(false);
-
+  //-------------------------------------------//
   /**Add new item to the list (fetching) */
   async function fetchingNewItem() {
     if (lengthOfListItem === 4) {
@@ -96,24 +95,22 @@ function GlobalProvider({ children }: globalContextProps) {
       return;
     }
     try {
+      setIsLoading(true);
       const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formSelectedDataArr),
       });
       const data = await response.json();
       setListItem((prevData) => {
         return [...prevData, { ["id"]: Math.random(), data }];
       });
-    } catch {
-      console.log("error");
-      <SnackbarAlert severity="error" message="Error, please try again later." />;
+    } catch (error) {
+      console.log(error);
     } finally {
       console.log("finalized");
-      console.log(JSON.stringify(formSelectedDataArr));
-      <SnackbarAlert severity="success" message="New item added to the list." />;
+      setIsLoading(false);
+      // console.log(JSON.stringify(formSelectedDataArr));
     }
   }
   console.log(listItem);

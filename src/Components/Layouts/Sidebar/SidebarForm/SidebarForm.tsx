@@ -19,7 +19,9 @@ function SidebarForm() {
 
   /**on submit handler*/
   const onClickAddNewItem = (e) => {
+    //
     e.preventDefault();
+    //
     fetchingNewItem();
     setFormSelectedData({
       country: "",
@@ -30,6 +32,7 @@ function SidebarForm() {
       livingSituation: "",
       surveyFiller: "",
     });
+    //
   };
 
   return (
@@ -68,7 +71,7 @@ function SidebarForm() {
         <FilterPanel />
 
         <br />
-        <Button type="btn-primary">
+        <Button onClick={() => {}} type="btn-primary">
           {limitationListItemError ? "please, remove an item" : "Add municipality"}
           {limitationListItemError ? "" : <AddCircleOutlineRoundedIcon />}
         </Button>
