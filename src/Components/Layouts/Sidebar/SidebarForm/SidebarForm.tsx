@@ -70,7 +70,7 @@ function SidebarForm() {
         <FilterPanel />
 
         <br />
-        <Button type="btn-primary">
+        <Button onClick={() => {}} type="btn-primary">
           {limitationListItemError ? "please, remove an item" : "Add municipality"}
           {limitationListItemError ? "" : <AddCircleOutlineRoundedIcon />}
         </Button>

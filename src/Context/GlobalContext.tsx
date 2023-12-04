@@ -109,7 +109,9 @@ function GlobalProvider({ children }: globalContextProps) {
       console.log(error);
     } finally {
       console.log("finalized");
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
       // console.log(JSON.stringify(formSelectedDataArr));
     }
   }
