@@ -69,7 +69,7 @@ function FilterPanel() {
 
         <FormControl variant="outlined">
           <InputLabel id="assistance">Assistance</InputLabel>
-          <Select required labelId="assistance" id="assistance" label="assistance" name="assistance" value={formSelectedData.assistance} onChange={(e) => onChangeFormDataHandler(e)}>
+          <Select required labelId="assistance" id="assistance" label="assistance" name="surveyFiller" value={formSelectedData.assistance} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="1">I did’t have any help</MenuItem>
             <MenuItem value="2">Someone else read the questions to me</MenuItem>
             <MenuItem value="3">Someone else translate the questions to me</MenuItem>
