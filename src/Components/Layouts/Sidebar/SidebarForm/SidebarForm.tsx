@@ -8,10 +8,10 @@ import { AddCircleOutlineRoundedIcon, FormatListBulletedRoundedIcon } from "../.
 import { useGlobalContext } from "../../../../Context/GlobalContext";
 
 function SidebarForm() {
-  const { setFormSelectedData, formSelectedData, fetchingNewItem, limitationListItemError } :any = useGlobalContext();
+  const { setFormSelectedData, formSelectedData, fetchingNewItem, limitationListItemError }: any = useGlobalContext();
 
-  const onChangeFormDataHandler = (e:any) => {
-    setFormSelectedData((prevData : any) => {
+  const onChangeFormDataHandler = (e: any) => {
+    setFormSelectedData((prevData: any) => {
       return { ...prevData, [e.target.name]: e.target.value };
     });
   };
@@ -57,8 +57,8 @@ function SidebarForm() {
 
         <br />
         <Button onClick={onClickAddNewItem} type="btn-primary">
-          {limitationListItemError ? "please, remove an item" : "add municipality"}
-          <AddCircleOutlineRoundedIcon />
+          {limitationListItemError ? "please, remove an item" : "Add municipality"}
+          {limitationListItemError ? "" : <AddCircleOutlineRoundedIcon />}
         </Button>
       </ThemeProvider>
     </div>
