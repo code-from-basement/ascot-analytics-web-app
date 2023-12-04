@@ -8,6 +8,7 @@ import SidebarForm from "./SidebarForm/SidebarForm";
 import ContactSupport from "../../UI/Contact Support/ContactSupport";
 import { useGlobalContext } from "../../../Context/GlobalContext";
 
+
 const year = new Date().getFullYear();
 
 function Sidebar() {
@@ -22,7 +23,7 @@ function Sidebar() {
         <img className={Styles.logoImage} src={logoImage} alt="hestia agora brand logo image" />
       </div>
       <div className={Styles.row}>
-        <SidebarForm />
+        <SidebarForm/>
       </div>
       <div className={Styles.row}>
         <Button onClick={handleClick} type="btn-outline">

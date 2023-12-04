@@ -18,7 +18,7 @@ function SidebarForm() {
   };
 
   /**on submit handler*/
-  const onClickAddNewItem = (e) => {
+  const onClickAddNewItem = (e :any) => {
     e.preventDefault();
     fetchingNewItem();
     setFormSelectedData({
@@ -43,7 +43,7 @@ function SidebarForm() {
         <FormControl variant="outlined" required>
           <InputLabel id="country">Country</InputLabel>
           <Select id="country" labelId="country" label="country" name="country" value={formSelectedData.country} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="Sweden">Sweden</MenuItem>
+            <MenuItem value="sweden">Sweden</MenuItem>
           </Select>
         </FormControl>
 
@@ -58,8 +58,8 @@ function SidebarForm() {
         <FormControl variant="outlined" required>
           <InputLabel id="municipality">Municipality</InputLabel>
           <Select labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="Lund">Lund</MenuItem>
-            <MenuItem value="Malmö">Malmö</MenuItem>
+            <MenuItem value="lund">Lund</MenuItem>
+            <MenuItem value="malmö">Malmö</MenuItem>
           </Select>
         </FormControl>
 
@@ -68,7 +68,7 @@ function SidebarForm() {
         <FilterPanel />
 
         <br />
-        <Button type="btn-primary">
+        <Button onClick={()=>{}} type="btn-primary">
           {limitationListItemError ? "please, remove an item" : "Add municipality"}
           {limitationListItemError ? "" : <AddCircleOutlineRoundedIcon />}
         </Button>

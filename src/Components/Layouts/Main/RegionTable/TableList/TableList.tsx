@@ -5,6 +5,9 @@ import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function TableList() {
   const { listItem, limitationListItemError } :any = useGlobalContext();
+  // const modListItem = listItem.map((item)=>{
+  //   return item.replace("_", " ").toUppercase();
+  // })
   return (
     <div className={Styles.tableList}>
       {listItem && listItem.map((item:any) => 

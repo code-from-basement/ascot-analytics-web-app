@@ -51,9 +51,9 @@ function FilterPanel() {
           <FormControl variant="outlined">
             <InputLabel id="gender">Gender</InputLabel>
             <Select labelId="gender" id="gender" label="gender" name="gender" value={formSelectedData.gender} onChange={(e) => onChangeFormDataHandler(e)}>
-              <MenuItem value="Male">Male</MenuItem>
-              <MenuItem value="Female">Female</MenuItem>
-              <MenuItem value="Other">Other</MenuItem>
+              <MenuItem value="male">Male</MenuItem>
+              <MenuItem value="female">Female</MenuItem>
+              <MenuItem value="other">Other</MenuItem>
             </Select>
           </FormControl>
         </div>
@@ -61,21 +61,21 @@ function FilterPanel() {
         <FormControl variant="outlined">
           <InputLabel id="Living situation">Living situation</InputLabel>
           <Select labelId="Living situation" id="Living situation" label="Living situation" name="livingSituation" value={formSelectedData.livingSituation} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="Living_at_home">Living at home</MenuItem>
-            <MenuItem value="Living_at_home_with_home_care">Living at home with home care</MenuItem>
-            <MenuItem value="Living_in_a_nursing_home">Living in a nursing home</MenuItem>
+            <MenuItem value="living_at_home">Living at home</MenuItem>
+            <MenuItem value="living_at_home_with_home_care">Living at home with home care</MenuItem>
+            <MenuItem value="living_in_a_nursing_home">Living in a nursing home</MenuItem>
           </Select>
         </FormControl>
 
         <FormControl variant="outlined">
           <InputLabel id="assistance">Assistance</InputLabel>
-          <Select labelId="assistance" id="assistance" label="assistance" name="surveyFiller" value={formSelectedData.assistance} onChange={(e) => onChangeFormDataHandler(e)}>
-            <MenuItem value="1">I did’t have any help</MenuItem>
-            <MenuItem value="2">Someone else read the questions to me</MenuItem>
-            <MenuItem value="3">Someone else translate the questions to me</MenuItem>
-            <MenuItem value="4">Someone else wrote down the answer for me</MenuItem>
-            <MenuItem value="5">I talked through the questions with someone</MenuItem>
-            <MenuItem value="6">Someone else translate the questions to me</MenuItem>
+          <Select labelId="assistance" id="assistance" label="assistance" name="surveyFiller" value={formSelectedData.surveyFiller} onChange={(e) => onChangeFormDataHandler(e)}>
+            <MenuItem value="i_didn´t_have_any_help">I did’t have any help</MenuItem>
+            <MenuItem value="someone_else_read_the_questions_to_me">Someone else read the questions to me</MenuItem>
+            <MenuItem value="someone_else_translated_the_questions_for_me">Someone else translate the questions to me</MenuItem>
+            <MenuItem value="someone_else_wrote_down_the_answers_for_me">Someone else wrote down the answer for me</MenuItem>
+            <MenuItem value="i_talked_through_the_questions_with_someone_else">I talked through the questions with someone</MenuItem>
+            <MenuItem value="someone_answered_for_me_without_asking_me_the_questions">Someone else translate the questions to me</MenuItem>
           </Select>
         </FormControl>
       </ThemeProvider>
