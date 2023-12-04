@@ -1,6 +1,7 @@
 import Styles from "./ChartContainer.module.css";
-import React from "react";
+import React , {useState} from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import { SnackbarAlert } from "../../../UI/Snackbar/SnackbarAlert";
 
 function ChartContainer() {
   return (
@@ -16,6 +17,7 @@ function ChartContainer() {
       </nav>
       <div className={Styles.dividedLine}>
         <hr />
+          <SnackbarAlert severity="info" message="Select a chart type to view the information" />
       </div>
       <Outlet />
     </div>

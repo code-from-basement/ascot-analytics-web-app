@@ -95,3 +95,46 @@ export const loadingTheme =createTheme({
     },
   },
 });
+
+/*Theme for snackbar Alert */
+export const snackbarTheme = createTheme({
+  components: {
+    MuiSnackbar: {
+      defaultProps:{
+        anchorOrigin: {
+          vertical: 'bottom',
+          horizontal: 'right',
+        },
+        
+      },
+      styleOverrides: {
+        root: {
+          width: "400px", 
+              
+        },
+      },
+      
+    },
+  // MuiAlert: {
+  //   styleOverrides:{
+  //     root:{
+  //       eventHandlers:  {
+  //         onClose: {
+  //           color: 'red',
+  //           backgroundColor: 'black',
+  //           opacity: 0.8,
+  //           fontSize: '1.5rem',
+  //           fontWeight: 500,
+  //           fontFamily: 'Roboto',
+  //           '&:hover': {
+  //             opacity: 1,
+  //           },
+  //         },
+  //       }, 
+  //     }
+  //   }
+  // }
+  },
+})
+
+  
