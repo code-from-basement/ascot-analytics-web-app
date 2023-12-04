@@ -30,7 +30,7 @@ function GlobalProvider({ children }: globalContextProps) {
     ageGroup: "",
     gender: "",
     livingSituation: "",
-    assistance: "",
+    surveyFiller: "",
   });
 
   /*the object use for main fetching*/
@@ -43,7 +43,7 @@ function GlobalProvider({ children }: globalContextProps) {
       { ageGroup: formSelectedData.ageGroup },
       { gender: formSelectedData.gender },
       { livingSituation: formSelectedData.livingSituation },
-      { assistance: formSelectedData.assistance },
+      { surveyFiller: formSelectedData.surveyFiller },
     ],
   };
 
