@@ -101,17 +101,27 @@ function GlobalProvider({ children }: globalContextProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formSelectedDataArr),
       });
+
+      // console.log(response);
+      // if (response.statusText === "No reports matching filters") {
+      //   throw new Error(response.statusText);
+      // }
+
       const data = await response.json();
-      setListItem((prevData) => {
-        return [...prevData, { ["id"]: Math.random(), data }];
-      });
+      if (data.barChart && data.lineChart && data.info && data.qolAvg) {
+        setListItem((prevData) => {
+          return [...prevData, { ["id"]: Math.random(), data }];
+        });
+      } else {
+        alert("there is no fucking information");
+      }
     } catch (error) {
       console.log(error);
     } finally {
       console.log("finalized");
       setTimeout(() => {
         setIsLoading(false);
-      }, 500);
+      }, 1000);
       // console.log(JSON.stringify(formSelectedDataArr));
     }
   }

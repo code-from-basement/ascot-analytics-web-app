@@ -31,8 +31,8 @@ function SidebarForm() {
       livingSituation: "",
       surveyFiller: "",
     });
-    //
   };
+  //
 
   return (
     <form className={Styles.form} onSubmit={onClickAddNewItem}>
