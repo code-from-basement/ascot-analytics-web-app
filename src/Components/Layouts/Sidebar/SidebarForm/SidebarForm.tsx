@@ -49,11 +49,11 @@ function SidebarForm() {
           </Select>
         </FormControl>
 
-        <FormControl variant="outlined">
+        <FormControl variant="outlined" required>
           <InputLabel id="region">Region</InputLabel>
           <Select labelId="region" id="region" label="region" name="region" value={formSelectedData.region} onChange={(e) => onChangeFormDataHandler(e)}>
             <MenuItem value="">None</MenuItem>
-            <MenuItem value="Skane">Skane</MenuItem>
+            <MenuItem value="skåne">Skane</MenuItem>
           </Select>
         </FormControl>
 
