@@ -6,11 +6,11 @@ import { DeleteRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
 import QolBar from "./QolBar/QolBar";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
-function TableItem({ id,country, region, municipality, ageGroup, gender, livingSituation, assistance, qolAvg }:any) {
-  const { listItem, setListItem, setLimitationListItemError, lengthOfListItem } : any= useGlobalContext();
+function TableItem({ id, country, region, municipality, ageGroup, gender, livingSituation, assistance, qolAvg }: any) {
+  const { listItem, setListItem, setLimitationListItemError, lengthOfListItem }: any = useGlobalContext();
 
   const onClickItemDeleteHandler = (id: number) => {
-    setListItem(listItem.filter((item :any) => item.id !== id));
+    setListItem(listItem.filter((item: any) => item.id !== id));
     //
     if (lengthOfListItem <= 4) {
       setLimitationListItemError(false);
@@ -28,18 +28,10 @@ function TableItem({ id,country, region, municipality, ageGroup, gender, livingS
       <div className={Styles.tableItem__qofBar}>
         <QolBar qolAvg={qolAvg} />
       </div>
-      <p className={Styles.tableItem__ageGroup}>
-        {ageGroup ? ageGroup : "-"}
-      </p>
-      <p className={Styles.tableItem__gender}>
-        {gender ? gender : "-"}
-      </p>
-      <p className={Styles.tableItem__livingSituation}>
-        {livingSituation ? livingSituation : "-"}
-      </p>
-      <p className={Styles.tableItem__assistance}>
-        {assistance ? assistance : "-"}
-      </p>
+      <p className={Styles.tableItem__ageGroup}>{ageGroup ? ageGroup : "-"}</p>
+      <p className={Styles.tableItem__gender}>{gender ? gender : "-"}</p>
+      <p className={Styles.tableItem__livingSituation}>{livingSituation ? livingSituation : "-"}</p>
+      <p className={Styles.tableItem__assistance}>{assistance ? assistance : "-"}</p>
       <button className={Styles.tableItem__remove} onClick={() => onClickItemDeleteHandler(id)}>
         <DeleteRoundedIcon />
       </button>

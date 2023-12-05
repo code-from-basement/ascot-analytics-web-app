@@ -87,6 +87,7 @@ function GlobalProvider({ children }: globalContextProps) {
   const [isLoading, setIsLoading] = useState(false);
   /* Contact support Layout */
   const [showContact, setShowContact] = useState(false);
+
   //-------------------------------------------//
   /**Add new item to the list (fetching) */
   async function fetchingNewItem() {
