@@ -50,10 +50,6 @@ function GlobalProvider({ children }: globalContextProps) {
   const [lineChartData, setLineChartData] = useState();
   const [barChartData, setBarChartData] = useState();
 
-  // const yearForChart = listItem.map((item)=>{
-  //   return (item.data.lineChart.year);
-  // });
-
   useEffect(() => {
     const series = listItem.map((item: any) => {
       return { name: item.data.lineChart.name, data: item.data.lineChart.data };
@@ -122,7 +118,7 @@ function GlobalProvider({ children }: globalContextProps) {
       console.log("finalized");
       setTimeout(() => {
         setIsLoading(false);
-      }, 500);
+      }, 1000);
       // console.log(JSON.stringify(formSelectedDataArr));
     }
   }

@@ -9,8 +9,9 @@ function TableList() {
   return (
     <div className={Styles.tableList}>
       {listItem &&
-        listItem.map((item: any) => (
+        listItem.map((item: any, index: number) => (
           <TableItem
+            index={index}
             key={item.id}
             item={item}
             id={item.id}

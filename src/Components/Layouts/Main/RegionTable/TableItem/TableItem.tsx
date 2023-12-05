@@ -6,7 +6,7 @@ import { DeleteRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
 import QolBar from "./QolBar/QolBar";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
-function TableItem({ id, country, region, municipality, ageGroup, gender, livingSituation, assistance, qolAvg }: any) {
+function TableItem({ id, country, region, municipality, ageGroup, gender, livingSituation, assistance, qolAvg, index }: any) {
   const { listItem, setListItem, setLimitationListItemError, lengthOfListItem }: any = useGlobalContext();
 
   const onClickItemDeleteHandler = (id: number) => {
@@ -18,9 +18,11 @@ function TableItem({ id, country, region, municipality, ageGroup, gender, living
     //
   };
 
+  console.log("this is  the key", index);
+
   return (
     <div className={Styles.tableItem}>
-      <ColorTag />
+      <ColorTag index={index} />
       {/* <p className={Styles.tableItem__title}>&nbsp;</p> */}
       <p className={Styles.tableItem__country}>{country}</p>
       <p className={Styles.tableItem__region}>{region}</p>

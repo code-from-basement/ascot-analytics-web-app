@@ -64,12 +64,10 @@ function SidebarForm() {
             <MenuItem value="malmö">Malmö</MenuItem>
           </Select>
         </FormControl>
-
         <div className={Styles.divider}>&nbsp;</div>
 
         <FilterPanel />
 
-        <br />
         <Button onClick={() => {}} type="btn-primary">
           {limitationListItemError ? "please, remove an item" : "Add municipality"}
           {limitationListItemError ? "" : <AddCircleOutlineRoundedIcon />}
