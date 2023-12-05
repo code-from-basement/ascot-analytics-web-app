@@ -5,9 +5,7 @@ import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function TableList() {
   const { listItem, limitationListItemError } :any = useGlobalContext();
-  // const modListItem = listItem.map((item)=>{
-  //   return item.replace("_", " ").toUppercase();
-  // })
+ 
   return (
     <div className={Styles.tableList}>
       {listItem && listItem.map((item:any) => 
@@ -19,8 +17,8 @@ function TableList() {
           municipality={item.data.info.municipality}
           ageGroup={item.data.info.age}
           gender={item.data.info.gender}
-          livingSituation={item.data.info.livingSituation}
-          assistance={item.data.info.assistance}
+          livingSituation={item.data.info.livingSituation.charAt(0).toUpperCase() + item.data.info.livingSituation.replaceAll("_", " ").slice(1)}
+          assistance={item.data.info.assistance.charAt(0).toUpperCase() + item.data.info.assistance.replaceAll("_", " ").slice(1)}
           qolAvg={item.data.qolAvg}
         />
       )}
