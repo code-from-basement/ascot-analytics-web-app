@@ -113,7 +113,7 @@ function GlobalProvider({ children }: globalContextProps) {
           return [...prevData, { ["id"]: Math.random(), data }];
         });
       } else {
-        alert("there is no fucking information");
+        alert("There is no such information as you requested, please try again");
       }
     } catch (error) {
       console.log(error);
@@ -121,7 +121,7 @@ function GlobalProvider({ children }: globalContextProps) {
       console.log("finalized");
       setTimeout(() => {
         setIsLoading(false);
-      }, 1000);
+      }, 500);
       // console.log(JSON.stringify(formSelectedDataArr));
     }
   }
