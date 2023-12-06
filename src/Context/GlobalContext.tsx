@@ -76,11 +76,16 @@ function GlobalProvider({ children }: globalContextProps) {
     year: "numeric",
   });
   //
-  /**error handling during fetching m,ore then 4 items */
+
+  /**error handling during fetching more then 4 items */
   const [limitationListItemError, setLimitationListItemError] = useState(false);
   //
   /* Loading Layout */
   const [isLoading, setIsLoading] = useState(false);
+
+  /* Container for table and chart container*/
+  const [showContainerLayout, setShowContainerLayout] = useState(true);
+
   /* Contact support Layout */
   const [showContact, setShowContact] = useState(false);
 
@@ -139,6 +144,7 @@ function GlobalProvider({ children }: globalContextProps) {
         limitationListItemError,
         lineChartData,
         barChartData,
+        showContainerLayout,
         // yearForChart,
         setIsLoading,
         setShowContact,
@@ -146,6 +152,7 @@ function GlobalProvider({ children }: globalContextProps) {
         fetchingNewItem,
         setListItem,
         setLimitationListItemError,
+        setShowContainerLayout,
       }}
     >
       {children}

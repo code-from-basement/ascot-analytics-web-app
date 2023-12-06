@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Styles from "./TableList.module.css";
 import TableItem from "../TableItem/TableItem";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function TableList() {
-  const { listItem, limitationListItemError }: any = useGlobalContext();
+  const { listItem, limitationListItemError, setShowContainerLayout }: any = useGlobalContext();
+
+  useEffect(() => {
+    const listItemLength = listItem.length;
+    if (listItemLength === 0) {
+      setShowContainerLayout(true);
+    } else setShowContainerLayout(false);
+  }, [listItem, setShowContainerLayout]);
 
   return (
     <div className={Styles.tableList}>

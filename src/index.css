@@ -59,8 +59,8 @@ li {
   --color-blue: #1122aa;
   --color-blue-tint: #eaecfd;
   --color-green: #16d5bc;
-  --color-purple: #744df5;
-  --color-purple-tint: #f6f3fe;
+  --color-purple: #6337f3;
+  --color-purple-tint: #ebe6fe;
   --color-red: #ff2e2e;
   --color-red-tint: #fdeeee;
 
@@ -83,6 +83,7 @@ li {
   --font-poppins: "Poppins", sans-serif;
 
   /* Icon size */
+  --icon-size-48: 4.8rem;
   --icon-size-32: 3.2rem;
   --icon-size-24: 2.4rem;
   --icon-size-16: 1.6rem;

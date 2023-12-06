@@ -11,4 +11,31 @@
   order: 1;
   grid-column: 1/-1;
   grid-row: 1/2;
+  position: relative;
+  overflow: hidden;
+  z-index: var(--z-index-100);
+}
+.layoutContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  height: 100%;
+  z-index: var(--z-index-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* gap: var(--spacing-sm); */
+  color: var(--color-gray-900);
+}
+
+.layoutContainer h2 {
+  font-weight: var(--font-w-semiBold);
+}
+
+.layoutContainer svg {
+  margin: var(--spacing-sm);
+  font-size: var(--icon-size-32);
 }
