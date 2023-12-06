@@ -52,10 +52,11 @@ function GlobalProvider({ children }: globalContextProps) {
 
   useEffect(() => {
     const series = listItem.map((item: any) => {
-      return { name: item.data.lineChart.name, data: item.data.lineChart.data };
+      return { name: item.data.lineChart.name.charAt(0).toUpperCase() + item.data.lineChart.name.slice(1), data: [{ x: item.data.lineChart.year, y: item.data.lineChart.data }] };
     });
     setLineChartData(series);
   }, [listItem]);
+  console.log(lineChartData, "_____line chart____");
 
   useEffect(() => {
     const series = listItem.map((item: any) => {
@@ -63,6 +64,8 @@ function GlobalProvider({ children }: globalContextProps) {
     });
     setBarChartData(series);
   }, [listItem]);
+
+  console.log(barChartData, "___bar chart___");
 
   /* colors */
   const colors = ["#4895ef", "#ef476f", "#16d5bc", "#744df5"];

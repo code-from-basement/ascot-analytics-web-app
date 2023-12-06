@@ -5,7 +5,7 @@ import { ApexOptions } from "apexcharts";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function BarChart() {
-  const { barChartData } :any = useGlobalContext();
+  const { barChartData, isLoading }: any = useGlobalContext();
 
   const [state, setState] = useState({
     options: {
@@ -105,7 +105,7 @@ function BarChart() {
   return (
     <div className={Styles.barChart}>
       <div className={Styles.title}>Total Quality of life</div>
-      <Chart options={state.options} series={barChartData} width={1500} height={320} type="bar" />
+      {!isLoading && <Chart options={state.options} series={barChartData} width={1500} height={320} type="bar" />}
     </div>
   );
 }

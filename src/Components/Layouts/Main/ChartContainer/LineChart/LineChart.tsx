@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./LineChart.module.css";
-import { ApexOptions } from "apexcharts";
 import Chart from "react-apexcharts";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function LineChart() {
-  const { lineChartData, yearForChart }: any = useGlobalContext();
+  const { lineChartData, isLoading }: any = useGlobalContext();
 
   const [state, setState] = useState({
     options: {
@@ -89,7 +88,8 @@ function LineChart() {
         labels: {
           rotate: 45,
         },
-        categories: [2020, 2021, 2022, 2023],
+        type: "year",
+        // categories: [2020, 2021, 2022, 2023],
         // categories: yearForChart,
       },
       yaxis: {
@@ -114,11 +114,7 @@ function LineChart() {
     },
   });
 
-  return (
-    <div className={Styles.lineChart}>
-      <Chart options={state.options} series={lineChartData} width={1500} height={320} type="line" />
-    </div>
-  );
+  return <div className={Styles.lineChart}>{!isLoading && <Chart options={state.options} series={lineChartData} width={1500} height={320} type="line" />}</div>;
 }
 
 export default LineChart;
