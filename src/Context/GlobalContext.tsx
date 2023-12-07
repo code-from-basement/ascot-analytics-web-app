@@ -46,7 +46,36 @@ function GlobalProvider({ children }: globalContextProps) {
     ],
   };
 
-  /**rendering charts */
+  /**Fetching List Items in filters */
+  const [filtersListData, setFiltersListsData] = useState({
+    countries: "",
+    regions: "",
+    municipalities: "",
+  });
+  async function fetchingFiltersLists(urlLists: []) {
+    try {
+      setIsLoading(true);
+      const response = await Promise.all(urlLists.map((url) => fetch(url)));
+      const data = await Promise.all(response.map((item) => item.json()));
+
+      setFiltersListsData({
+        countries: data[0].COUNTRIES,
+        regions: data[1].REGIONS,
+        municipalities: data[2].MUNICIPALITIES,
+      });
+    } catch (error) {
+      console.log("list error");
+    } finally {
+      console.log("list finally");
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+    }
+  }
+
+  // -------------------------------//
+
+  /**Rendering charts */
   const [lineChartData, setLineChartData] = useState();
   const [barChartData, setBarChartData] = useState();
 
@@ -64,7 +93,6 @@ function GlobalProvider({ children }: globalContextProps) {
     });
     setBarChartData(series);
   }, [listItem]);
-
   console.log(barChartData, "___bar chart___");
 
   /* colors */
@@ -99,6 +127,7 @@ function GlobalProvider({ children }: globalContextProps) {
       setLimitationListItemError(true);
       return;
     }
+
     try {
       setIsLoading(true);
       const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
@@ -127,7 +156,6 @@ function GlobalProvider({ children }: globalContextProps) {
       setTimeout(() => {
         setIsLoading(false);
       }, 1000);
-      // console.log(JSON.stringify(formSelectedDataArr));
     }
   }
   console.log(listItem);
@@ -148,6 +176,7 @@ function GlobalProvider({ children }: globalContextProps) {
         lineChartData,
         barChartData,
         showContainerLayout,
+        filtersListData,
         // yearForChart,
         setIsLoading,
         setShowContact,
@@ -156,6 +185,7 @@ function GlobalProvider({ children }: globalContextProps) {
         setListItem,
         setLimitationListItemError,
         setShowContainerLayout,
+        fetchingFiltersLists,
       }}
     >
       {children}

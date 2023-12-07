@@ -7,7 +7,7 @@ import { useGlobalContext } from "../../../../../Context/GlobalContext";
 import { SnackbarAlert } from "../../../../UI/Snackbar/SnackbarAlert";
 
 function FilterPanel() {
-  const { formSelectedData, setFormSelectedData }: any = useGlobalContext();
+  const { formSelectedData, setFormSelectedData, isLoading }: any = useGlobalContext();
   const [showFIlterPanel, setShowFilterPanel] = useState<null | boolean>(false);
 
   /**toggle function to open and close th emore option filter panel in sidebar */
