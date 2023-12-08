@@ -82,10 +82,10 @@ function SidebarForm() {
         <FormControl variant="outlined" required>
           <InputLabel id="country">Country</InputLabel>
           <Select id="country" labelId="country" label="country" name="country" value={formSelectedData.country} onChange={(e) => onChangeFormDataHandler(e)}>
-            {filtersListData.countries.map((item, index) => {
+            {filtersListData.countries.map((item:any, index) => {
               return (
                 <MenuItem key={index} value={item}>
-                  {item}
+                  {item.charAt(0).toUpperCase()+item.slice(1)}
                 </MenuItem>
               );
             })}
@@ -95,10 +95,10 @@ function SidebarForm() {
         <FormControl variant="outlined" required>
           <InputLabel id="region">Region</InputLabel>
           <Select labelId="region" id="region" label="region" name="region" value={formSelectedData.region} onChange={(e) => onChangeFormDataHandler(e)}>
-            {filtersListData.regions.map((item, index) => {
+            {filtersListData.regions.map((item:any, index) => {
               return (
                 <MenuItem key={index} value={item}>
-                  {item.replaceAll("_", " ")}
+                  {item.charAt(0).toUpperCase()+item.slice(1).replaceAll("_", " ")}
                 </MenuItem>
               );
             })}
@@ -108,10 +108,10 @@ function SidebarForm() {
         <FormControl variant="outlined" required>
           <InputLabel id="municipality">Municipality</InputLabel>
           <Select labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
-            {filtersListData.municipalities.map((item, index) => {
+            {filtersListData.municipalities.map((item:any, index) => {
               return (
                 <MenuItem key={index} value={item}>
-                  {item}
+                  {item.charAt(0).toUpperCase()+item.slice(1)}
                 </MenuItem>
               );
             })}

@@ -5,15 +5,15 @@ import Main from "../../Layouts/Main/Main";
 import Sidebar from "../../Layouts/Sidebar/Sidebar";
 import ContactSupport from "../../UI/Contact Support/ContactSupport";
 import { useGlobalContext } from "../../../Context/GlobalContext";
-import { SnackbarAlert } from "./../../UI/Snackbar/SnackbarAlert";
+import toast, { Toaster } from 'react-hot-toast';
 
 function Application() {
-  const { showContact, openSnackBar, snackBarSuccess }: any = useGlobalContext();
+  const { showContact,setOpenNotify, openNotify,notifyAlert}: any = useGlobalContext();
 
   return (
     <div className={Styles.application}>
       {showContact && <ContactSupport />}
-      {openSnackBar && <SnackbarAlert autoHideDuration={2000} severity={snackBarSuccess ? "info" : "error"} message={snackBarSuccess ? "Item successfully have added" : "The item has been deleted "} />}
+      {openNotify && notifyAlert()}
       <Sidebar />
       <Header />
       <Main />

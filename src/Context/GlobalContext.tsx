@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { SnackbarAlert } from "../Components/UI/Snackbar/SnackbarAlert";
-import { AlertCard } from "../Components/Pages/Application/Application";
+import toast, { Toaster } from 'react-hot-toast';
 
 interface globalContextProps {
   children: React.ReactNode;
@@ -121,9 +120,18 @@ function GlobalProvider({ children }: globalContextProps) {
   /* Contact support Layout */
   const [showContact, setShowContact] = useState(false);
 
-  /** Snack bar Variables */
-  const [openSnackBar, setOpenSnackBar] = useState(false);
-  const [snackBarSuccess, setSnackBarSuccess] = useState();
+  //-------------------------------------------//
+  /* Hot Toast Alert */
+  const notify = () => toast.success('this is successFul message');
+  const [openNotify, setOpenNotify] = useState(false);
+   const notifyAlert= () =>{
+    return(
+      <div>
+      {notify()}
+      <Toaster position="bottom-right" reverseOrder={false}/>
+      </div>
+    )
+  }
 
   //-------------------------------------------//
   /**Add new item to the list (fetching) */
@@ -151,8 +159,8 @@ function GlobalProvider({ children }: globalContextProps) {
         setListItem((prevData) => {
           return [...prevData, { ["id"]: Math.random(), data }];
         });
-        setSnackBarSuccess(true);
-        setOpenSnackBar(true);
+        setOpenNotify(true);
+        
       } else {
         alert("There is no such information as you requested, please try again");
       }
@@ -163,7 +171,7 @@ function GlobalProvider({ children }: globalContextProps) {
       setTimeout(() => {
         setIsLoading(false);
       }, 1000);
-      setSnackBarSuccess(false);
+  
     }
   }
   console.log(listItem);
@@ -185,8 +193,7 @@ function GlobalProvider({ children }: globalContextProps) {
         barChartData,
         showContainerLayout,
         filtersListData,
-        openSnackBar,
-        snackBarSuccess,
+        openNotify,
         setIsLoading,
         setShowContact,
         setFormSelectedData,
@@ -195,8 +202,9 @@ function GlobalProvider({ children }: globalContextProps) {
         setLimitationListItemError,
         setShowContainerLayout,
         fetchingFiltersLists,
-        setOpenSnackBar,
-        setSnackBarSuccess,
+        setOpenNotify,
+        notifyAlert
+      
       }}
     >
       {children}
