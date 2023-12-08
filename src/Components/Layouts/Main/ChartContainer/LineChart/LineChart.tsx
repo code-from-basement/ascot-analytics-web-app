@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Styles from "./LineChart.module.css";
 import Chart from "react-apexcharts";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function LineChart() {
-  const { lineChartData, isLoading }: any = useGlobalContext();
+  const array = [0.3, 0.2, 0.1, 0.3];
+  const { lineChartData, listItem, isLoading }: any = useGlobalContext();
+  const seriesData = listItem.map((item) => {
+    return { name: item.data.lineChart.name, data: item.data.lineChart.data };
+  });
 
+  console.log(seriesData, "form line chart----------");
   const [state, setState] = useState({
     options: {
       colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
@@ -89,8 +94,7 @@ function LineChart() {
           rotate: 45,
         },
         type: "year",
-        // categories: [2020, 2021, 2022, 2023],
-        // categories: yearForChart,
+        categories: [2020, 2021, 2022, 2023],
       },
       yaxis: {
         title: {
@@ -112,9 +116,10 @@ function LineChart() {
         max: 1,
       },
     },
+    // series: [{ name: "test", data: [0.2, 0.7, 0.2, 0.9] }],
   });
 
-  return <div className={Styles.lineChart}>{!isLoading && <Chart options={state.options} series={lineChartData} width={1500} height={320} type="line" />}</div>;
+  return <div className={Styles.lineChart}>{!isLoading && <Chart options={state.options} series={seriesData} width={1500} height={320} type="line" />}</div>;
 }
 
 export default LineChart;

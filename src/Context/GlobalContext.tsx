@@ -84,6 +84,7 @@ function GlobalProvider({ children }: globalContextProps) {
       return { name: item.data.lineChart.name.charAt(0).toUpperCase() + item.data.lineChart.name.slice(1), data: [{ x: item.data.lineChart.year, y: item.data.lineChart.data }] };
     });
     setLineChartData(series);
+    console.log(listItem, "list item");
   }, [listItem]);
   console.log(lineChartData, "_____line chart____");
 
@@ -121,16 +122,16 @@ function GlobalProvider({ children }: globalContextProps) {
   const [showContact, setShowContact] = useState(false);
 
   //-------------------------------------------//
-  /* Hot Toast Alert */
+  /* Hot Toast Alert for adding and deleting item from list */
   const [notifyStatus, setNotifyStatus] = useState("");
   const notifyAddItem = (message: string) => {
     setNotifyStatus("success");
-    toast.success(`${message}`);
+    toast.success(`${message}`, { duration: 3000 });
   };
 
   const notifyDeleteItem = (message: string) => {
     setNotifyStatus("error");
-    toast.error(`${message}`);
+    toast.error(`${message}`, { duration: 3000 });
   };
 
   //-------------------------------------------//
@@ -163,7 +164,7 @@ function GlobalProvider({ children }: globalContextProps) {
       console.log("finalized");
       setTimeout(() => {
         setIsLoading(false);
-      }, 1000);
+      }, 300);
     }
   }
   console.log(listItem);

@@ -11,7 +11,7 @@ function Application() {
   const { showContact, notifyStatus }: any = useGlobalContext();
 
   /**Style for notification (deleting and adding) */
-  const notifyStyles = { color: "white", fontSize: "16px", backgroundColor: `${notifyStatus === "success" ? "#2a850e" : "#ba0c0c"}` };
+  const notifyStyles = { color: "white", fontSize: "14px", backgroundColor: `${notifyStatus === "success" ? "#2a850e" : "#ba0c0c"}` };
 
   return (
     <div className={Styles.application}>
