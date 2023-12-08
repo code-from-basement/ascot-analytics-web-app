@@ -5,15 +5,18 @@ import Main from "../../Layouts/Main/Main";
 import Sidebar from "../../Layouts/Sidebar/Sidebar";
 import ContactSupport from "../../UI/Contact Support/ContactSupport";
 import { useGlobalContext } from "../../../Context/GlobalContext";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 function Application() {
-  const { showContact,setOpenNotify, openNotify,notifyAlert}: any = useGlobalContext();
+  const { showContact, notifyStatus }: any = useGlobalContext();
+
+  /**Style for notification (deleting and adding) */
+  const notifyStyles = { color: "white", fontSize: "16px", backgroundColor: `${notifyStatus === "success" ? "#2a850e" : "#ba0c0c"}` };
 
   return (
     <div className={Styles.application}>
       {showContact && <ContactSupport />}
-      {openNotify && notifyAlert()}
+      <Toaster toastOptions={{ style: notifyStyles }} position="bottom-right" />
       <Sidebar />
       <Header />
       <Main />

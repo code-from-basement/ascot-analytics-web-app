@@ -7,10 +7,12 @@ import QolBar from "./QolBar/QolBar";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function TableItem({ id, country, region, municipality, ageGroup, gender, livingSituation, assistance, qolAvg, index }: any) {
-  const { listItem, setListItem, setLimitationListItemError, lengthOfListItem }: any = useGlobalContext();
+  const { listItem, setListItem, setLimitationListItemError, lengthOfListItem, notifyDeleteItem }: any = useGlobalContext();
 
+  /**deleting item from list logic */
   const onClickItemDeleteHandler = (id: number) => {
     setListItem(listItem.filter((item: any) => item.id !== id));
+    notifyDeleteItem("Item Successfully Deleted from the list.");
     //
     if (lengthOfListItem <= 4) {
       setLimitationListItemError(false);

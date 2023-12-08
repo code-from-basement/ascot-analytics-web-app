@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 interface globalContextProps {
   children: React.ReactNode;
@@ -122,16 +122,16 @@ function GlobalProvider({ children }: globalContextProps) {
 
   //-------------------------------------------//
   /* Hot Toast Alert */
-  const notify = () => toast.success('this is successFul message');
-  const [openNotify, setOpenNotify] = useState(false);
-   const notifyAlert= () =>{
-    return(
-      <div>
-      {notify()}
-      <Toaster position="bottom-right" reverseOrder={false}/>
-      </div>
-    )
-  }
+  const [notifyStatus, setNotifyStatus] = useState("");
+  const notifyAddItem = (message: string) => {
+    setNotifyStatus("success");
+    toast.success(`${message}`);
+  };
+
+  const notifyDeleteItem = (message: string) => {
+    setNotifyStatus("error");
+    toast.error(`${message}`);
+  };
 
   //-------------------------------------------//
   /**Add new item to the list (fetching) */
@@ -148,18 +148,12 @@ function GlobalProvider({ children }: globalContextProps) {
         body: JSON.stringify(formSelectedDataArr),
       });
 
-      // console.log(response);
-      // if (response.statusText === "No reports matching filters") {
-      //   throw new Error(response.statusText);
-      // }
-
       const data = await response.json();
       if (data.barChart && data.lineChart && data.info && data.qolAvg) {
         setListItem((prevData) => {
           return [...prevData, { ["id"]: Math.random(), data }];
         });
-        setOpenNotify(true);
-        
+        notifyAddItem("New municipality Successfully  added to the list.");
       } else {
         alert("There is no such information as you requested, please try again");
       }
@@ -170,7 +164,6 @@ function GlobalProvider({ children }: globalContextProps) {
       setTimeout(() => {
         setIsLoading(false);
       }, 1000);
-  
     }
   }
   console.log(listItem);
@@ -192,7 +185,7 @@ function GlobalProvider({ children }: globalContextProps) {
         barChartData,
         showContainerLayout,
         filtersListData,
-        openNotify,
+        notifyStatus,
         setIsLoading,
         setShowContact,
         setFormSelectedData,
@@ -201,9 +194,8 @@ function GlobalProvider({ children }: globalContextProps) {
         setLimitationListItemError,
         setShowContainerLayout,
         fetchingFiltersLists,
-        setOpenNotify,
-        notifyAlert
-      
+        notifyAddItem,
+        notifyDeleteItem,
       }}
     >
       {children}
