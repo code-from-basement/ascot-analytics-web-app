@@ -126,12 +126,12 @@ function GlobalProvider({ children }: globalContextProps) {
   const [notifyStatus, setNotifyStatus] = useState("");
   const notifyAddItem = (message: string) => {
     setNotifyStatus("success");
-    toast.success(`${message}`, { duration: 3000 });
+    toast.success(`${message}`, { duration: 2000 });
   };
 
   const notifyDeleteItem = (message: string) => {
     setNotifyStatus("error");
-    toast.error(`${message}`, { duration: 3000 });
+    toast.error(`${message}`, { duration: 2000 });
   };
 
   //-------------------------------------------//

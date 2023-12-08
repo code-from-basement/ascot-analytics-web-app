@@ -8,7 +8,7 @@ import { useGlobalContext } from "../../../Context/GlobalContext";
 import toast, { Toaster } from "react-hot-toast";
 
 function Application() {
-  const { showContact, notifyStatus }: any = useGlobalContext();
+  const { showContact, notifyStatus, isLoading }: any = useGlobalContext();
 
   /**Style for notification (deleting and adding) */
   const notifyStyles = { color: "white", fontSize: "14px", backgroundColor: `${notifyStatus === "success" ? "#2a850e" : "#ba0c0c"}` };
