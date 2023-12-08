@@ -7,6 +7,7 @@ import { selectInputTheme } from "../../../UI/Material UI Theme/MaterialUITheme"
 import { AddCircleOutlineRoundedIcon, FormatListBulletedRoundedIcon } from "../../../UI/Icons/IconsLibrary";
 import { useGlobalContext } from "../../../../Context/GlobalContext";
 
+/**all the URLs for the filter list fetching */
 const countryListUrl = "https://hestia-agora.com/ascot/country/";
 const regionListUrl = "https://hestia-agora.com/ascot/regions/";
 const municipalityListUrl = "https://hestia-agora.com/ascot/municipality/";
@@ -16,15 +17,11 @@ function SidebarForm() {
   const { setFormSelectedData, formSelectedData, fetchingNewItem, limitationListItemError, setIsLoading }: any = useGlobalContext();
 
   /**Fetching List Items in filters */
-
   const [filtersListData, setFiltersListsData] = useState({
     countries: [],
     regions: [],
     municipalities: [],
   });
-
-  console.log(filtersListData, "----------------");
-
   async function fetchingFiltersLists(urlLists: []) {
     try {
       setIsLoading(true);
@@ -45,12 +42,10 @@ function SidebarForm() {
       }, 1000);
     }
   }
-
-  // -------------------------------//
-
   useEffect(() => {
     fetchingFiltersLists(urlLists);
   }, []);
+  // -------------------------------//
 
   /**on change function to create formSelectedData */
   const onChangeFormDataHandler = (e: any) => {
@@ -60,7 +55,7 @@ function SidebarForm() {
   };
 
   /**on submit handler*/
-  const onClickAddNewItem = (e) => {
+  const onClickAddNewItem = (e: any) => {
     e.preventDefault();
     //
     fetchingNewItem();
