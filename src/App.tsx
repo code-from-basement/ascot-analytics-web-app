@@ -5,12 +5,8 @@ import Login from "./Components/Pages/Login/Login";
 import HomePage from "./Components/Pages/HomePage/HomePage";
 import BarChart from "./Components/Layouts/Main/ChartContainer/BarChart/BarChart";
 import LineChart from "./Components/Layouts/Main/ChartContainer/LineChart/LineChart";
-import { useEffect } from "react";
-import { useGlobalContext } from "./Context/GlobalContext";
 
 function App() {
-  const { fetchingFiltersLists, filtersListData } = useGlobalContext();
-
   return (
     <BrowserRouter>
       <Routes>
