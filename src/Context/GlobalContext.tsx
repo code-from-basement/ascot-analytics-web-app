@@ -132,7 +132,6 @@ function GlobalProvider({ children }: globalContextProps) {
       setLimitationListItemError(true);
       return;
     }
-
     try {
       setIsLoading(true);
       const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
