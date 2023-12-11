@@ -7,10 +7,10 @@ import { useGlobalContext } from "../../../../../Context/GlobalContext";
 function BarChart() {
   const { barChartData, isLoading }: any = useGlobalContext();
   const barChartOptions = {
-    colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
+    colors: ["#4895ef", "#ef476f", "#16d5bc", "#6337f3"],
     xaxis: {
-      categories: ["how was the assistance".charAt(0).toUpperCase(),
-       "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"],
+      // categories: ["how was the assistance".charAt(0).toUpperCase(),
+      categories:["Q1","Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"],
   },
     yaxis: {
       title: {

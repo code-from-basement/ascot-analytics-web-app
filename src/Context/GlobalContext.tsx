@@ -97,7 +97,7 @@ function GlobalProvider({ children }: globalContextProps) {
   console.log(barChartData, "___bar chart___");
 
   /* colors */
-  const colors = ["#4895ef", "#ef476f", "#16d5bc", "#744df5"];
+  const colors = ["#4895ef", "#ef476f", "#16d5bc", "#6337f3"];
 
   /* date Generator function */
   const event = new Date(Date.now());

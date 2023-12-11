@@ -1,7 +1,7 @@
 import Styles from "./TableItem.module.css";
 import React, { useEffect } from "react";
 import ColorTag from "./ColorTag/ColorTag";
-import { DeleteRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
+import { DeleteRoundedIcon, RemoveRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
 import QolBar from "./QolBar/QolBar";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
@@ -32,10 +32,10 @@ function TableItem({ id, country, region, municipality, ageGroup, gender, living
       <div className={Styles.tableItem__qofBar}>
         <QolBar qolAvg={qolAvg} />
       </div>
-      <p className={Styles.tableItem__ageGroup}>{ageGroup ? ageGroup : "-"}</p>
-      <p className={Styles.tableItem__gender}>{gender ? gender : "-"}</p>
-      <p className={Styles.tableItem__livingSituation}>{livingSituation ? livingSituation : "-"}</p>
-      <p className={Styles.tableItem__assistance}>{assistance ? assistance : "-"}</p>
+      <p className={Styles.tableItem__ageGroup}>{ageGroup ? ageGroup : <RemoveRoundedIcon/>}</p>
+      <p className={Styles.tableItem__gender}>{gender ? gender : <RemoveRoundedIcon/>}</p>
+      <p className={Styles.tableItem__livingSituation}>{livingSituation ? livingSituation : <RemoveRoundedIcon/>}</p>
+      <p className={Styles.tableItem__assistance}>{assistance ? assistance : <RemoveRoundedIcon/>}</p>
       <button className={Styles.tableItem__remove} onClick={() => onClickItemDeleteHandler(id)}>
         <DeleteRoundedIcon />
       </button>

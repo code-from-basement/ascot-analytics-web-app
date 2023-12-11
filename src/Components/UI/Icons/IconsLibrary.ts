@@ -28,6 +28,7 @@ import ReplayRoundedIcon from "@mui/icons-material/ReplayRounded";
 import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
 import FormatListBulletedRoundedIcon from "@mui/icons-material/FormatListBulletedRounded";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
+import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 
 export {
   DeleteRoundedIcon,
@@ -60,4 +61,5 @@ export {
   TuneRoundedIcon,
   FormatListBulletedRoundedIcon,
   ErrorOutlineOutlinedIcon,
+  RemoveRoundedIcon
 };

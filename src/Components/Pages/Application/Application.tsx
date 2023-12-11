@@ -14,10 +14,10 @@ function Application() {
   /**Style for notification (deleting and adding) */
   const notifyStyles = {
     height: "7rem",
-    border: `${notifyStatus === "success" ? "1px solid #52c41a" : "1px solid #ff2e2e"}`,
-    color: `${notifyStatus === "success" ? "#52c41a" : "#ff2e2e"}`,
+    color: "#fff",
     fontSize: "14px",
-    backgroundColor: `${notifyStatus === "success" ? "#f3fff5" : "#fff0f0"}`,
+    backgroundColor: `${notifyStatus === "success" ? "#389e0d" : "#d00000"}`,
+    boxShadow: "none",
   };
 
   return (
