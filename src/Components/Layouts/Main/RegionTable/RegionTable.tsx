@@ -2,13 +2,13 @@ import Styles from "./Region.module.css";
 import React from "react";
 import TableHeader from "./TableHeader/TableHeader";
 import TableList from "./TableList/TableList";
-import { ErrorOutlineOutlinedIcon } from "../../../UI/Icons/IconsLibrary";
 import { useGlobalContext } from "../../../../Context/GlobalContext";
+import { Empty } from "antd";
 
 const LayoutContainer = () => {
   return (
     <div className={Styles.layoutContainer}>
-      <ErrorOutlineOutlinedIcon />
+      <Empty description=""/>
       <h2>Right now the table list is empty</h2>
       <h2>Please, add new municipality to the list.</h2>
     </div>

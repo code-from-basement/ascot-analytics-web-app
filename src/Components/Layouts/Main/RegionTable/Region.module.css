@@ -33,6 +33,7 @@
 
 .layoutContainer h2 {
   font-weight: var(--font-w-semiBold);
+  color: var(--color-gray-700);
 }
 
 .layoutContainer svg {

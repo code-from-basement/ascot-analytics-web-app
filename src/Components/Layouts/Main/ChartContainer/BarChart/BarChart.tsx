@@ -9,8 +9,9 @@ function BarChart() {
   const barChartOptions = {
     colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
     xaxis: {
-      categories: ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"],
-    },
+      categories: ["how was the assistance".charAt(0).toUpperCase(),
+       "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"],
+  },
     yaxis: {
       title: {
         text: "Quality of Life",
@@ -36,7 +37,15 @@ function BarChart() {
       style: {
         fontSize: "1.4rem",
       },
+    
     },
+  //   plotOptions: {
+  //   bar:{
+  //     columnWidth: "40rem",
+  //     endingShape: "rounded",
+  //     startingShape: "rounded",
+  //   }
+  // }
   };
 
   // const [state, setState] = useState({

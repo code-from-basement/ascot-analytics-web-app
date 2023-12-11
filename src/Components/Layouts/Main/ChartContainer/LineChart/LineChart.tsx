@@ -68,7 +68,7 @@ function LineChart() {
         options={chartOptions}
         series={seriesData}
         type="line"
-        height={350}
+        height={320}
         width="100%"
       />}
     </div>
