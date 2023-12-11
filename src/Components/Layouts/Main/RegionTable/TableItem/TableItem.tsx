@@ -2,7 +2,6 @@ import Styles from "./TableItem.module.css";
 import React, { useEffect } from "react";
 import ColorTag from "./ColorTag/ColorTag";
 import { DeleteRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
-
 import QolBar from "./QolBar/QolBar";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 

@@ -7,7 +7,7 @@ function TableHeader() {
       <div>
         <h2 className={Styles.header__title}>Municipality List</h2>
       </div>
-      <hr/>
+      <hr />
       <div className={Styles.tableHeader}>
         {/* <h2 className={Styles.header__title}>Municipality List</h2> */}
         <h3 className={Styles.header__country}>Country</h3>

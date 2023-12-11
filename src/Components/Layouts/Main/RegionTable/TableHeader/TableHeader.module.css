@@ -1,17 +1,16 @@
 .tableHeader {
   width: 100%;
   display: grid;
-  grid-template-columns: 
-  minmax(100px, 0.4fr)
-  minmax(100px, 0.4fr) 
-  minmax(100px, 0.5fr) 
-  minmax(300px, 0.7fr) 
-  minmax(100px, 0.3fr) 
-  minmax(100px, 0.3fr)
-  minmax(100px, 0.8fr)
-  minmax(100px, 0.8fr)
-  minmax(100px, 0.4fr)
-  ;
+  grid-template-columns:
+    minmax(70px, 0.4fr)
+    minmax(60px, 0.4fr)
+    minmax(60px, 0.5fr)
+    minmax(200px, 0.7fr)
+    minmax(60px, 0.3fr)
+    minmax(60px, 0.3fr)
+    minmax(90px, 0.8fr)
+    minmax(80px, 0.8fr)
+    minmax(60px, 0.4fr);
 }
 /* .tableHeader h2 {
   font-weight: var(--font-w-regular);
@@ -29,10 +28,9 @@
   align-self: center;
   justify-self: center;
   margin-bottom: 2rem;
-  
 }
 
-hr{
+hr {
   margin-bottom: 2rem;
   border: 1px solid var(--color-gray-300);
   width: 100%;
@@ -42,9 +40,8 @@ hr{
   align-self: center;
   justify-self: start;
   margin-left: 2rem;
-  
-  /* margin-left: 4rem; */
-  
+
+  margin-left: 4rem;
 }
 
 .header__region {
@@ -61,30 +58,27 @@ hr{
   align-self: center;
   justify-self: center;
 }
-.header__ageGroup{
+.header__ageGroup {
   align-self: center;
   justify-self: center;
-
 }
-.header__gender{
+.header__gender {
   align-self: center;
   justify-self: center;
-
 }
-.header__livingSituation{
+.header__livingSituation {
   align-self: center;
   justify-self: center;
-
 }
-.header__assistance{
+.header__assistance {
   align-self: center;
   justify-self: center;
-
 }
 
 .header__remove {
   justify-self: end;
   align-self: center;
+  margin-right: 1rem;
 
   /* margin-right: var(--spacing-md); */
 }

@@ -58,8 +58,8 @@ li {
   --color-primary-tint: #fff5f1;
   --color-blue: #1122aa;
   --color-blue-tint: #eaecfd;
-  --color-green: ##52c41a;
-  --color-green: #f3fff5;
+  --color-green: #52c41a;
+  --color-green-tint: #f3fff5;
   --color-purple: #6337f3;
   --color-purple-tint: #ebe6fe;
   --color-red: #ff2e2e;
@@ -137,4 +137,18 @@ li {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-gray-700);
+}
+
+/* Breakpoints */
+
+@media screen and (max-width: 1484px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  html {
+    font-size: 43.75%;
+  }
 }

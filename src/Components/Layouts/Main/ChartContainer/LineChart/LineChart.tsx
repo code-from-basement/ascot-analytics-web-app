@@ -4,34 +4,32 @@ import Chart from "react-apexcharts";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function LineChart() {
-  
   const array = [0.3, 0.2, 0.1, 0.3];
   const { lineChartData, listItem, isLoading }: any = useGlobalContext();
-  const seriesData = listItem.map((item:any) => {
-    return { name: item.data.lineChart.name.charAt(0).toUpperCase() + item.data.lineChart.name.slice(1)
-      , data: item.data.lineChart.data };
+  const seriesData = listItem.map((item: any) => {
+    return { name: item.data.lineChart.name.charAt(0).toUpperCase() + item.data.lineChart.name.slice(1), data: item.data.lineChart.data };
   });
 
   console.log(seriesData, "form line chart----------");
   const chartOptions = {
     // Define your chart options here
-   colors:['#4895ef', '#ef476f', '#16d5bc', '#744df5'],
+    colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
     xaxis: {
       categories: [2020, 2021, 2022, 2023],
-      type: "year"
+      type: "year",
     },
     yaxis: {
-      min:0,
-      max:1,
-      title:{
-        text:"Quality of life",
-        offsetX:-5,
-        style:{
-          color:"#222224",
-          fontSize:"1.4rem",
-          fontWeight:"600",
-        }
-      }
+      min: 0,
+      max: 1,
+      title: {
+        text: "Quality of life",
+        offsetX: -5,
+        style: {
+          color: "#222224",
+          fontSize: "1.4rem",
+          fontWeight: "600",
+        },
+      },
     },
     markers: {
       size: 6,
@@ -54,25 +52,14 @@ function LineChart() {
         sizeOffset: 3,
       },
     },
-    tooltip:{
-      style:{
-        fontSize:"1.4rem",
-      }
-    }
+    tooltip: {
+      style: {
+        fontSize: "1.4rem",
+      },
+    },
   };
 
-  return (
-    <div>
-      {!isLoading && 
-      <Chart
-        options={chartOptions}
-        series={seriesData}
-        type="line"
-        height={350}
-        width="100%"
-      />}
-    </div>
-  );
-};
+  return <div>{!isLoading && <Chart options={chartOptions} series={seriesData} type="line" height={320} width="100%" />}</div>;
+}
 
 export default LineChart;
