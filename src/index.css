@@ -58,12 +58,12 @@ li {
   --color-primary-tint: #fff5f1;
   --color-blue: #1122aa;
   --color-blue-tint: #eaecfd;
-  --color-green: #0fa833;
-  --color-green: #effff2;
+  --color-green: ##52c41a;
+  --color-green: #f3fff5;
   --color-purple: #6337f3;
   --color-purple-tint: #ebe6fe;
   --color-red: #ff2e2e;
-  --color-red-tint: #fdeeee;
+  --color-red-tint: #fff0f0;
 
   /* color-gray */
   --color-gray-100: #f5f5f7;

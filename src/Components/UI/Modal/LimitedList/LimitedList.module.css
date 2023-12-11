@@ -54,7 +54,7 @@
 }
 .container__body p {
   font-size: var(--font-s-sm);
-  font-weight: var(--font-w-light);
+  font-weight: var(--font-w-normal);
 }
 .container__footer {
   width: 100%;

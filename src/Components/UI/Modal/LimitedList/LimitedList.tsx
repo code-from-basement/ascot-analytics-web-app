@@ -14,13 +14,13 @@ function LimitedList() {
     <div className={Styles.limitedList}>
       <div className={Styles.limitedList__container}>
         <div className={Styles.container__header}>
-          <h3>Limited List</h3>
+          <h3>Limitation list</h3>
           <button onClick={closeTheLimitedListModal}>
             <CloseRoundedIcon />
           </button>
         </div>
         <div className={Styles.container__body}>
-          <p>You are reach to limitation of list, you can continue adding new item after deleting at least a added item </p>
+          <p>You are reach to limitation of list, you can continue adding new item after deleting at least a added item.</p>
         </div>
         <div className={Styles.container__footer}>
           <Button onClick={closeTheLimitedListModal} type="btn-primary">
