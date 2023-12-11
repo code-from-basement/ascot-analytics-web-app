@@ -90,8 +90,7 @@ function GlobalProvider({ children }: globalContextProps) {
 
   useEffect(() => {
     const series = listItem.map((item: any) => {
-      return { name: item.data.barChart.name.charAt(0).toUpperCase()+item.data.barChart.name.slice(1)
-        , data: item.data.barChart.data };
+      return { name: item.data.barChart.name.charAt(0).toUpperCase() + item.data.barChart.name.slice(1), data: item.data.barChart.data };
     });
     setBarChartData(series);
   }, [listItem]);
@@ -113,6 +112,8 @@ function GlobalProvider({ children }: globalContextProps) {
   /**error handling during fetching more then 4 items */
   const [limitationListItemError, setLimitationListItemError] = useState(false);
   //
+  //**Limited List item modal message show */
+  const [limitedListShow, setLimitedListShow] = useState(false);
   /* Loading Layout */
   const [isLoading, setIsLoading] = useState(false);
 
@@ -141,6 +142,7 @@ function GlobalProvider({ children }: globalContextProps) {
   async function fetchingNewItem() {
     if (lengthOfListItem === 4) {
       setLimitationListItemError(true);
+      setLimitedListShow(true);
       return;
     }
     try {
@@ -156,7 +158,10 @@ function GlobalProvider({ children }: globalContextProps) {
         setListItem((prevData) => {
           return [...prevData, { ["id"]: Math.random(), data }];
         });
-        notifyAddItem("New municipality Successfully  added to the list.");
+
+        setTimeout(() => {
+          notifyAddItem("New municipality Successfully  added to the list.");
+        }, 500);
       } else {
         alert("There is no such information as you requested, please try again");
       }
@@ -166,7 +171,7 @@ function GlobalProvider({ children }: globalContextProps) {
       console.log("finalized");
       setTimeout(() => {
         setIsLoading(false);
-      }, 300);
+      }, 500);
     }
   }
   console.log(listItem);
@@ -189,6 +194,7 @@ function GlobalProvider({ children }: globalContextProps) {
         showContainerLayout,
         filtersListData,
         notifyStatus,
+        limitedListShow,
         setIsLoading,
         setShowContact,
         setFormSelectedData,
@@ -199,6 +205,7 @@ function GlobalProvider({ children }: globalContextProps) {
         fetchingFiltersLists,
         notifyAddItem,
         notifyDeleteItem,
+        setLimitedListShow,
       }}
     >
       {children}

@@ -5,11 +5,12 @@ interface buttonProps {
   children: React.ReactNode;
   type?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  disabled: boolean;
 }
 
-function Button({ children, type, onClick }: buttonProps) {
+function Button({ children, type, disabled, onClick }: buttonProps) {
   return (
-    <button className={`${Styles.button} ${Styles[`${type}`]}`} onClick={onClick}>
+    <button disabled={disabled} className={`${Styles.button} ${Styles[`${type}`]}`} onClick={onClick}>
       {children}
     </button>
   );
