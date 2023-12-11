@@ -1,13 +1,13 @@
 import Styles from "./ChartContainer.module.css";
 import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { ErrorOutlineOutlinedIcon } from "../../../UI/Icons/IconsLibrary";
 import { useGlobalContext } from "../../../../Context/GlobalContext";
+import { Empty } from 'antd';
 //
 const LayoutContainer = () => {
   return (
     <div className={Styles.layoutContainer}>
-      <ErrorOutlineOutlinedIcon />
+      <Empty description=""/>
       <h2>Right now the charts are empty</h2>
       <h2>Please, add new municipality to the chart</h2>
     </div>

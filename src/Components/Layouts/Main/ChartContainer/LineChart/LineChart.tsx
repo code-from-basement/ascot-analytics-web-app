@@ -59,7 +59,7 @@ function LineChart() {
     },
   };
 
-  return <div>{!isLoading && <Chart options={chartOptions} series={seriesData} type="line" height={320} width="100%" />}</div>;
+  return <div>{!isLoading && <Chart options={chartOptions} series={seriesData} type="line" height={350} width="100%" />}</div>;
 }
 
 export default LineChart;
