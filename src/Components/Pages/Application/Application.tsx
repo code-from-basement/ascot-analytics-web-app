@@ -12,7 +12,13 @@ function Application() {
   const { showContact, notifyStatus, limitedListShow }: any = useGlobalContext();
 
   /**Style for notification (deleting and adding) */
-  const notifyStyles = { color: "white", fontSize: "14px", backgroundColor: `${notifyStatus === "success" ? "#2a850e" : "#ba0c0c"}` };
+  const notifyStyles = {
+    height: "7rem",
+    border: `${notifyStatus === "success" ? "1px solid #0fa833" : "1px solid #ff2e2e"}`,
+    color: `${notifyStatus === "success" ? "#0fa833" : "#ff2e2e"}`,
+    fontSize: "14px",
+    backgroundColor: `${notifyStatus === "success" ? "#effff2" : "#fdeeee"}`,
+  };
 
   return (
     <div className={Styles.application}>

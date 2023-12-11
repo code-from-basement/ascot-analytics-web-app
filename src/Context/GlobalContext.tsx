@@ -90,8 +90,7 @@ function GlobalProvider({ children }: globalContextProps) {
 
   useEffect(() => {
     const series = listItem.map((item: any) => {
-      return { name: item.data.barChart.name.charAt(0).toUpperCase()+item.data.barChart.name.slice(1)
-        , data: item.data.barChart.data };
+      return { name: item.data.barChart.name.charAt(0).toUpperCase() + item.data.barChart.name.slice(1), data: item.data.barChart.data };
     });
     setBarChartData(series);
   }, [listItem]);
@@ -159,7 +158,10 @@ function GlobalProvider({ children }: globalContextProps) {
         setListItem((prevData) => {
           return [...prevData, { ["id"]: Math.random(), data }];
         });
-        notifyAddItem("New municipality Successfully  added to the list.");
+
+        setTimeout(() => {
+          notifyAddItem("New municipality Successfully  added to the list.");
+        }, 500);
       } else {
         alert("There is no such information as you requested, please try again");
       }
@@ -169,7 +171,7 @@ function GlobalProvider({ children }: globalContextProps) {
       console.log("finalized");
       setTimeout(() => {
         setIsLoading(false);
-      }, 300);
+      }, 500);
     }
   }
   console.log(listItem);

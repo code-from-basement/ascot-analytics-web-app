@@ -12,6 +12,7 @@ function TableItem({ id, country, region, municipality, ageGroup, gender, living
   /**deleting item from list logic */
   const onClickItemDeleteHandler = (id: number) => {
     setListItem(listItem.filter((item: any) => item.id !== id));
+
     notifyDeleteItem("Item Successfully Deleted from the list.");
     //
     if (lengthOfListItem <= 4) {
