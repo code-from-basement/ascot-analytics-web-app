@@ -4,7 +4,7 @@ import Button from "../../../UI/Buttons/Buttons";
 import FilterPanel from "./FilterPanel/FilterPanel";
 import { FormControl, Select, InputLabel, MenuItem, ThemeProvider } from "@mui/material";
 import { selectInputTheme } from "../../../UI/Material UI Theme/MaterialUITheme";
-import { AddCircleOutlineRoundedIcon, FormatListBulletedRoundedIcon } from "../../../UI/Icons/IconsLibrary";
+import { AddCircleOutlineRoundedIcon, CloseRoundedIcon, FormatListBulletedRoundedIcon } from "../../../UI/Icons/IconsLibrary";
 import { useGlobalContext } from "../../../../Context/GlobalContext";
 
 /**all the URLs for the filter list fetching */
@@ -82,10 +82,10 @@ function SidebarForm() {
         <FormControl variant="outlined" required>
           <InputLabel id="country">Country</InputLabel>
           <Select id="country" labelId="country" label="country" name="country" value={formSelectedData.country} onChange={(e) => onChangeFormDataHandler(e)}>
-            {filtersListData.countries.map((item:any, index) => {
+            {filtersListData.countries.map((item: any, index) => {
               return (
                 <MenuItem key={index} value={item}>
-                  {item.charAt(0).toUpperCase()+item.slice(1)}
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
                 </MenuItem>
               );
             })}
@@ -95,10 +95,10 @@ function SidebarForm() {
         <FormControl variant="outlined" required>
           <InputLabel id="region">Region</InputLabel>
           <Select labelId="region" id="region" label="region" name="region" value={formSelectedData.region} onChange={(e) => onChangeFormDataHandler(e)}>
-            {filtersListData.regions.map((item:any, index) => {
+            {filtersListData.regions.map((item: any, index) => {
               return (
                 <MenuItem key={index} value={item}>
-                  {item.charAt(0).toUpperCase()+item.slice(1).replaceAll("_", " ")}
+                  {item.charAt(0).toUpperCase() + item.slice(1).replaceAll("_", " ")}
                 </MenuItem>
               );
             })}
@@ -108,10 +108,10 @@ function SidebarForm() {
         <FormControl variant="outlined" required>
           <InputLabel id="municipality">Municipality</InputLabel>
           <Select labelId="municipality" id="municipality" name="municipality" label="Municipality" value={formSelectedData.municipality} onChange={(e) => onChangeFormDataHandler(e)}>
-            {filtersListData.municipalities.map((item:any, index) => {
+            {filtersListData.municipalities.map((item: any, index) => {
               return (
                 <MenuItem key={index} value={item}>
-                  {item.charAt(0).toUpperCase()+item.slice(1)}
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
                 </MenuItem>
               );
             })}
@@ -121,8 +121,8 @@ function SidebarForm() {
 
         <FilterPanel />
 
-        <Button onClick={() => {}} type="btn-primary">
-          {limitationListItemError ? "please, remove an item" : "Add municipality"}
+        <Button onClick={() => {}} disabled={limitationListItemError ? true : false} type={limitationListItemError ? "btn-disable" : "btn-primary"}>
+          {limitationListItemError ? "Please, remove an item" : "Add municipality"}
           {limitationListItemError ? "" : <AddCircleOutlineRoundedIcon />}
         </Button>
       </ThemeProvider>

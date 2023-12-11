@@ -47,6 +47,7 @@
   background-color: var(--color-gray-300) !important;
   color: var(--color-gray-700) !important;
   cursor: not-allowed !important;
+  opacity: var(--opacity-75) !important;
 }
 
 .btn-link {

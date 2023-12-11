@@ -112,6 +112,8 @@ function GlobalProvider({ children }: globalContextProps) {
   /**error handling during fetching more then 4 items */
   const [limitationListItemError, setLimitationListItemError] = useState(false);
   //
+  //**Limited List item modal message show */
+  const [limitedListShow, setLimitedListShow] = useState(false);
   /* Loading Layout */
   const [isLoading, setIsLoading] = useState(false);
 
@@ -140,6 +142,7 @@ function GlobalProvider({ children }: globalContextProps) {
   async function fetchingNewItem() {
     if (lengthOfListItem === 4) {
       setLimitationListItemError(true);
+      setLimitedListShow(true);
       return;
     }
     try {
@@ -188,6 +191,7 @@ function GlobalProvider({ children }: globalContextProps) {
         showContainerLayout,
         filtersListData,
         notifyStatus,
+        limitedListShow,
         setIsLoading,
         setShowContact,
         setFormSelectedData,
@@ -198,6 +202,7 @@ function GlobalProvider({ children }: globalContextProps) {
         fetchingFiltersLists,
         notifyAddItem,
         notifyDeleteItem,
+        setLimitedListShow,
       }}
     >
       {children}

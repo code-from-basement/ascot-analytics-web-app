@@ -32,7 +32,7 @@ function TableList() {
             qolAvg={item.data.qolAvg}
           />
         ))}
-      {limitationListItemError && <h1>error</h1>}
+      {/* {limitationListItemError && <h1>error</h1>} */}
     </div>
   );
 }
