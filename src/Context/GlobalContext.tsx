@@ -135,6 +135,7 @@ function GlobalProvider({ children }: globalContextProps) {
   };
 
   //-------------------------------------------//
+
   /**Add new item to the list (fetching) */
   async function fetchingNewItem() {
     if (lengthOfListItem === 4) {
