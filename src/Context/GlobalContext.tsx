@@ -90,7 +90,8 @@ function GlobalProvider({ children }: globalContextProps) {
 
   useEffect(() => {
     const series = listItem.map((item: any) => {
-      return { name: item.data.barChart.name, data: item.data.barChart.data };
+      return { name: item.data.barChart.name.charAt(0).toUpperCase()+item.data.barChart.name.slice(1)
+        , data: item.data.barChart.data };
     });
     setBarChartData(series);
   }, [listItem]);

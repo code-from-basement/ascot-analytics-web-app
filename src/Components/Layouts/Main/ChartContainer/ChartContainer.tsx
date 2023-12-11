@@ -16,7 +16,7 @@ const LayoutContainer = () => {
 //
 
 function ChartContainer() {
-  const { showContainerLayout, setShowContainerLayout } = useGlobalContext();
+  const { showContainerLayout}:any = useGlobalContext();
   return (
     <div className={Styles.chartContainer}>
       {showContainerLayout && <LayoutContainer />}
