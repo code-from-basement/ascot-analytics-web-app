@@ -10,7 +10,10 @@ function BarChart() {
     colors: ["#4895ef", "#ef476f", "#16d5bc", "#6337f3"],
     xaxis: {
       // categories: ["how was the assistance".charAt(0).toUpperCase(),
-      categories:["Q1","Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"],
+      categories:["Control of Life","Mental Health", "Social Contact",
+                  "Home Cleanliness", "Personal Freedom", "Felling of Safety",
+                  "Food and Drink", "Personal Cleanliness"
+                ],
   },
     yaxis: {
       title: {

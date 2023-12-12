@@ -81,12 +81,12 @@ function GlobalProvider({ children }: globalContextProps) {
 
   useEffect(() => {
     const series = listItem.map((item: any) => {
-      return { name: item.data.lineChart.name.charAt(0).toUpperCase() + item.data.lineChart.name.slice(1), data: [{ x: item.data.lineChart.year, y: item.data.lineChart.data }] };
+      return { name: item.data.lineChart.name.charAt(0).toUpperCase() + item.data.lineChart.name.slice(1), data: { x: item.data.lineChart.year, y: item.data.lineChart.data } };
     });
     setLineChartData(series);
     console.log(listItem, "list item");
   }, [listItem]);
-  console.log(lineChartData, "_____line chart____");
+  console.log(lineChartData, "_____line chart DAta____");
 
   useEffect(() => {
     const series = listItem.map((item: any) => {

@@ -6,16 +6,36 @@ import { useGlobalContext } from "../../../../../Context/GlobalContext";
 function LineChart() {
   const array = [0.3, 0.2, 0.1, 0.3];
   const { lineChartData, listItem, isLoading }: any = useGlobalContext();
-  const seriesData = listItem.map((item: any) => {
-    return { name: item.data.lineChart.name.charAt(0).toUpperCase() + item.data.lineChart.name.slice(1), data: item.data.lineChart.data };
-  });
+  const newSeries = [
+    {name:"malmo", data:{x:[2020,2021,2022,2023], y:[0.1,0.3,0.2,0.8]}},
+    {name:"lund", data:{x:[2020,2021,2022,2023], y:[null,null,0.3,0.6]}},
+  ]
+  const seriesData = newSeries?.map((item, num)=>{
+    return {
+      name: item.name,
+      data: newSeries[num].data.x.map((element,index)=>{
+        return{
+          x:element,
+          y:newSeries[num].data.y[index]
+        }
+      })
+    }
+  })
 
-  console.log(seriesData, "form line chart----------");
+
+
+ 
+  // const seriesData = listItem.map((item: any) => {
+  //   return { name: item.data.lineChart.name,
+  //       data: item.data.lineChart.data };
+  // });
+
+  // console.log(seriesData, "form line chart----------");
   const chartOptions = {
     // Define your chart options here
     colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
     xaxis: {
-      categories: [2020, 2021, 2022, 2023],
+      //  categories: [2020, 2021, 2022, 2023],
       type: "year",
     },
     yaxis: {
@@ -30,6 +50,9 @@ function LineChart() {
           fontWeight: "600",
         },
       },
+    },
+    stroke: {
+      curve: 'smooth',
     },
     markers: {
       size: 6,
@@ -59,7 +82,7 @@ function LineChart() {
     },
   };
 
-  return <div>{!isLoading && <Chart options={chartOptions} series={seriesData} type="line" height={320} width="100%" />}</div>;
+  return  <div>{!isLoading && <Chart options={chartOptions} series={seriesData} type="line" height={320} width="100%" />}</div>;
 }
 
 export default LineChart;

@@ -4,6 +4,7 @@ import ColorTag from "./ColorTag/ColorTag";
 import { DeleteRoundedIcon, RemoveRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
 import QolBar from "./QolBar/QolBar";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
+import { Progress, Space } from "antd";
 
 function TableItem({ id, country, region, municipality, ageGroup, gender, livingSituation, assistance, qolAvg, index }: any) {
   const { listItem, setListItem, setLimitationListItemError, lengthOfListItem, notifyDeleteItem }: any = useGlobalContext();
@@ -30,7 +31,14 @@ function TableItem({ id, country, region, municipality, ageGroup, gender, living
       <p className={Styles.tableItem__region}>{region}</p>
       <p className={Styles.tableItem__municipality}>{municipality}</p>
       <div className={Styles.tableItem__qofBar}>
-        <QolBar qolAvg={qolAvg} />
+        <Progress
+          className={Styles.progress}
+          percent={qolAvg*100}
+          status="active"
+          format={() => qolAvg}
+          strokeColor={{ from: "#108ee9", to: "#87d068" }}
+        />
+        {/* <QolBar qolAvg={qolAvg} /> */}
       </div>
       <p className={Styles.tableItem__ageGroup}>{ageGroup ? ageGroup : <RemoveRoundedIcon/>}</p>
       <p className={Styles.tableItem__gender}>{gender ? gender : <RemoveRoundedIcon/>}</p>
