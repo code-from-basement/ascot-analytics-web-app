@@ -10,11 +10,8 @@ function BarChart() {
     colors: ["#4895ef", "#ef476f", "#16d5bc", "#6337f3"],
     xaxis: {
       // categories: ["how was the assistance".charAt(0).toUpperCase(),
-      categories:["Control of Life","Mental Health", "Social Contact",
-                  "Home Cleanliness", "Personal Freedom", "Felling of Safety",
-                  "Food and Drink", "Personal Cleanliness"
-                ],
-  },
+      categories: ["Control of Life", "Mental Health", "Social Contact", "Home Cleanliness", "Personal Freedom", "Felling of Safety", "Food and Drink", "Personal Cleanliness"],
+    },
     yaxis: {
       title: {
         text: "Quality of Life",
@@ -40,15 +37,14 @@ function BarChart() {
       style: {
         fontSize: "1.4rem",
       },
-    
     },
-  //   plotOptions: {
-  //   bar:{
-  //     columnWidth: "40rem",
-  //     endingShape: "rounded",
-  //     startingShape: "rounded",
-  //   }
-  // }
+    //   plotOptions: {
+    //   bar:{
+    //     columnWidth: "40rem",
+    //     endingShape: "rounded",
+    //     startingShape: "rounded",
+    //   }
+    // }
   };
 
   // const [state, setState] = useState({
@@ -110,6 +106,6 @@ function BarChart() {
   // },
   // });
 
-  return <div>{!isLoading && <Chart options={barChartOptions} series={barChartData} type="bar" width="100%" height={320} />}</div>;
+  return <div className={Styles.barChart}>{!isLoading && <Chart options={barChartOptions} series={barChartData} type="bar" width="100%" height={320} />}</div>;
 }
 export default BarChart;

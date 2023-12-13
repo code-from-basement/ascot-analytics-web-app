@@ -1,4 +1,7 @@
 .tableItem {
+  height: 100%;
+  min-height: 7rem;
+  max-height: 9rem;
   position: relative;
   display: grid;
   /* width: 100%; */
@@ -7,11 +10,12 @@
     minmax(70px, 0.4fr)
     minmax(60px, 0.4fr)
     minmax(60px, 0.5fr)
-    minmax(200px, 0.7fr)
+    minmax(75px, 0.5fr)
     minmax(60px, 0.3fr)
     minmax(60px, 0.3fr)
     minmax(90px, 0.8fr)
     minmax(80px, 0.8fr)
+    minmax(85px, 0.4fr)
     minmax(60px, 0.4fr);
 
   border: 2px solid var(--color-gray-200);
@@ -73,6 +77,10 @@
   align-self: center;
   justify-self: center;
 }
+.tableItem__elderlyNum {
+  align-self: center;
+  justify-self: center;
+}
 
 .tableItem__remove {
   display: flex;
@@ -96,11 +104,25 @@
   background-color: var(--color-gray-200);
   color: var(--color-red);
 }
-/* .progress span{
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress span {
   position: absolute;
-  top:-50%;
-  left:50%;
-  margin:0 !important;
-  transform: translate(50%,0);
-  
-} */
+  top: -50%;
+  left: 50%;
+  margin: 0 !important;
+  transform: translate(-50%, -50%);
+  font-weight: var(--font-w-medium);
+}
+
+.tableItem__elderlyNum span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-w-semiBold) !important;
+  color: var(--color-gray-900);
+}

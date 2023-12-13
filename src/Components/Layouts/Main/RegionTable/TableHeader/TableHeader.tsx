@@ -18,6 +18,7 @@ function TableHeader() {
         <h3 className={Styles.header__gender}>Gender</h3>
         <h3 className={Styles.header__livingSituation}>Living Situation</h3>
         <h3 className={Styles.header__assistance}>Assistance</h3>
+        <h3 className={Styles.header__assistance}>Elderly number</h3>
         <h3 className={Styles.header__remove}>Remove</h3>
       </div>
     </div>

@@ -6,6 +6,7 @@
   justify-content: flex-start;
   gap: var(--padding-xs);
   overflow-y: scroll;
+  padding: var(--spacing-md);
 }
 .tableList::-webkit-scrollbar {
   display: none;

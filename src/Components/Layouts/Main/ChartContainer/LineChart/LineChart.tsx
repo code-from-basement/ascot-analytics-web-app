@@ -7,24 +7,21 @@ function LineChart() {
   const array = [0.3, 0.2, 0.1, 0.3];
   const { lineChartData, listItem, isLoading }: any = useGlobalContext();
   const newSeries = [
-    {name:"malmo", data:{x:[2020,2021,2022,2023], y:[0.1,0.3,0.2,0.8]}},
-    {name:"lund", data:{x:[2020,2021,2022,2023], y:[null,null,0.3,0.6]}},
-  ]
-  const seriesData = newSeries?.map((item, num)=>{
+    { name: "malmo", data: { x: [2020, 2021, 2022, 2023], y: [0.1, 0.3, 0.2, 0.8] } },
+    { name: "lund", data: { x: [2020, 2021, 2022, 2023], y: [null, null, 0.3, 0.6] } },
+  ];
+  const seriesData = newSeries?.map((item, num) => {
     return {
       name: item.name,
-      data: newSeries[num].data.x.map((element,index)=>{
-        return{
-          x:element,
-          y:newSeries[num].data.y[index]
-        }
-      })
-    }
-  })
+      data: newSeries[num].data.x.map((element, index) => {
+        return {
+          x: element,
+          y: newSeries[num].data.y[index],
+        };
+      }),
+    };
+  });
 
-
-
- 
   // const seriesData = listItem.map((item: any) => {
   //   return { name: item.data.lineChart.name,
   //       data: item.data.lineChart.data };
@@ -52,7 +49,7 @@ function LineChart() {
       },
     },
     stroke: {
-      curve: 'smooth',
+      curve: "smooth",
     },
     markers: {
       size: 6,
@@ -82,7 +79,7 @@ function LineChart() {
     },
   };
 
-  return  <div>{!isLoading && <Chart options={chartOptions} series={seriesData} type="line" height={320} width="100%" />}</div>;
+  return <div className={Styles.lineChart}>{!isLoading && <Chart options={chartOptions} series={seriesData} type="line" height={320} width="100%" />}</div>;
 }
 
 export default LineChart;

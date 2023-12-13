@@ -46,7 +46,6 @@ function GlobalProvider({ children }: globalContextProps) {
     ],
   };
 
-
   /**Rendering charts */
   const [lineChartData, setLineChartData] = useState();
   const [barChartData, setBarChartData] = useState();
@@ -127,7 +126,7 @@ function GlobalProvider({ children }: globalContextProps) {
 
       const data = await response.json();
       if (data.barChart && data.lineChart && data.info && data.qolAvg) {
-        setListItem((prevData) => {
+        setListItem((prevData): any => {
           return [...prevData, { ["id"]: Math.random(), data }];
         });
 
