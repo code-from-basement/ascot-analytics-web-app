@@ -12,14 +12,14 @@
   width: 100%;
   margin-top: 1rem;
 }
-.questionLists {
+.questionListsButton {
   position: absolute;
   top: 0;
   right: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--transparent);
+  background-color: var(--color-white);
   border: none;
   outline: none;
   z-index: var(--z-index-100);
@@ -28,18 +28,19 @@
   gap: var(--spacing-xs);
   border-radius: var(--border-radius-sm);
   cursor: pointer;
+  color: var(--color-gray-800);
 }
-.questionLists:hover {
+.questionListsButton:hover {
   background-color: var(--color-gray-100);
 }
-.questionLists:active {
+.questionListsButton:active {
   background-color: var(--color-gray-200);
 }
-.questionLists:hover svg {
+.questionListsButton:hover svg {
   color: var(--color-gray-700);
 }
 
-.questionLists svg {
+.questionListsButton svg {
   font-size: var(--icon-size-24);
   color: var(--color-gray-700);
 }
