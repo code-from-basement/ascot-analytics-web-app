@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   padding: 0 var(--spacing-md);
+  position: relative;
 }
 .title {
   display: flex;
@@ -10,4 +11,25 @@
   height: 3rem;
   width: 100%;
   margin-top: 1rem;
+}
+.questionLists {
+  position: absolute;
+  top: 0;
+  right: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--transparent);
+  border: none;
+  outline: none;
+  z-index: var(--z-index-800);
+}
+.questionLists:hover svg {
+  color: var(--color-gray-800);
+}
+
+.questionLists svg {
+  cursor: pointer;
+  font-size: var(--icon-size-24);
+  color: var(--color-gray-700);
 }
