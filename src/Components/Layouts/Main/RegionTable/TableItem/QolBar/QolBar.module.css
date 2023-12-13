@@ -1,15 +1,15 @@
 .bar {
   display: flex;
   position: relative;
-  width: 90%;
-  max-width: 90%;
-  height: 80%;
+  width: 70%;
+  max-width: 80%;
+  height: 35%;
   align-items: stretch;
   justify-content: flex-start;
   border-radius: var(--border-radius-sm);
-  border: 2px solid var(--color-gray-300);
+  border: 1px solid var(--color-gray-300);
   background-color: var(--color-gray-100);
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: var(--transition);
 }
 .bar:hover .bar__filler {
@@ -25,14 +25,16 @@
 }
 
 .bar__filler {
+  background: linear-gradient(90deg, #108ee9 0%, #87d068 200%);
   background-color: var(--color-gray-400);
   width: 0%;
   transition: var(--transition);
+  border-radius: var(--border-radius-sm);
 }
 
 .bar__percentage {
   position: absolute;
-  top: 50%;
+  top: -90%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: var(--transition);

@@ -7,6 +7,7 @@ import BarChart from "./Components/Layouts/Main/ChartContainer/BarChart/BarChart
 import LineChart from "./Components/Layouts/Main/ChartContainer/LineChart/LineChart";
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Routes>

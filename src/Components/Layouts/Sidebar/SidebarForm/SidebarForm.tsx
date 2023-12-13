@@ -22,6 +22,7 @@ function SidebarForm() {
     regions: [],
     municipalities: [],
   });
+
   async function fetchingFiltersLists(urlLists: []) {
     try {
       setIsLoading(true);
