@@ -6,6 +6,7 @@ import { useGlobalContext } from "../../../../../Context/GlobalContext";
 import { HelpOutlineRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
 
 function BarChart() {
+  const [questionListShow, setQuestionListShow] = useState<boolean>(false);
   const { barChartData, isLoading }: any = useGlobalContext();
   const barChartOptions = {
     colors: ["#4895ef", "#ef476f", "#16d5bc", "#6337f3"],
@@ -50,9 +51,24 @@ function BarChart() {
 
   return (
     <div className={Styles.barChart}>
-      <button className={Styles.questionLists}>
+      <button onClick={() => setQuestionListShow(!questionListShow)} className={Styles.questionLists}>
+        Question List
         <HelpOutlineRoundedIcon />
       </button>
+      {questionListShow && (
+        <div className={Styles.questionListsContainer}>
+          <ul>
+            <li>1.Which of the following statements best describes how clean and comfortable your home is?</li>
+            <li>2. Which of the following statements best describes how clean and comfortable your home is?</li>
+            <li>3. Which of the following statements best describes how clean and comfortable your home is?</li>
+            <li>4. Which of the following statements best describes how clean and comfortable your home is?</li>
+            <li>5. Which of the following statements best describes how clean and comfortable your home is?</li>
+            <li>6. Which of the following statements best describes how clean and comfortable your home is?</li>
+            <li>7. Which of the following statements best describes how clean and comfortable your home is?</li>
+            <li>8. Which of the following statements best describes how clean and comfortable your home is?</li>
+          </ul>
+        </div>
+      )}
       {!isLoading && <Chart options={barChartOptions} series={barChartData} type="bar" width="100%" height={320} />}
     </div>
   );

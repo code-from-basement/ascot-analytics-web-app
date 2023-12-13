@@ -18,18 +18,61 @@
   right: 6rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: var(--transparent);
   border: none;
   outline: none;
-  z-index: var(--z-index-800);
+  z-index: var(--z-index-100);
+  padding: 0 var(--spacing-xs);
+  border: 1px solid var(--color-gray-600);
+  gap: var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+}
+.questionLists:hover {
+  background-color: var(--color-gray-100);
+}
+.questionLists:active {
+  background-color: var(--color-gray-200);
 }
 .questionLists:hover svg {
-  color: var(--color-gray-800);
+  color: var(--color-gray-700);
 }
 
 .questionLists svg {
-  cursor: pointer;
   font-size: var(--icon-size-24);
   color: var(--color-gray-700);
+}
+
+.questionListsContainer {
+  width: 30rem;
+  height: 30rem;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 0;
+  right: 19rem;
+  border: 1px solid var(--color-gray-600);
+  border-radius: var(--border-radius-md);
+  z-index: var(--z-index-100);
+  padding: var(--spacing-sm);
+  overflow-y: scroll;
+}
+
+.questionListsContainer ul {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.questionListsContainer ul li {
+  width: 100%;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-s-xs);
+}
+.questionListsContainer ul li:hover {
+  background-color: var(--color-gray-100);
 }
