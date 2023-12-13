@@ -46,34 +46,6 @@ function GlobalProvider({ children }: globalContextProps) {
     ],
   };
 
-  /**Fetching List Items in filters */
-  const [filtersListData, setFiltersListsData] = useState({
-    countries: "",
-    regions: "",
-    municipalities: "",
-  });
-  async function fetchingFiltersLists(urlLists: []) {
-    try {
-      setIsLoading(true);
-      const response = await Promise.all(urlLists.map((url) => fetch(url)));
-      const data = await Promise.all(response.map((item) => item.json()));
-
-      setFiltersListsData({
-        countries: data[0].COUNTRIES,
-        regions: data[1].REGIONS,
-        municipalities: data[2].MUNICIPALITIES,
-      });
-    } catch (error) {
-      console.log("list error");
-    } finally {
-      console.log("list finally");
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
-    }
-  }
-
-  // -------------------------------//
 
   /**Rendering charts */
   const [lineChartData, setLineChartData] = useState();
@@ -192,7 +164,6 @@ function GlobalProvider({ children }: globalContextProps) {
         lineChartData,
         barChartData,
         showContainerLayout,
-        filtersListData,
         notifyStatus,
         limitedListShow,
         setIsLoading,
@@ -202,7 +173,6 @@ function GlobalProvider({ children }: globalContextProps) {
         setListItem,
         setLimitationListItemError,
         setShowContainerLayout,
-        fetchingFiltersLists,
         notifyAddItem,
         notifyDeleteItem,
         setLimitedListShow,
