@@ -143,9 +143,9 @@ function GlobalProvider({ children }: globalContextProps) {
       setTimeout(() => {
         setIsLoading(false);
       }, 500);
+      console.log(listItem , "list item");
     }
   }
-  console.log(listItem);
 
   //
 
