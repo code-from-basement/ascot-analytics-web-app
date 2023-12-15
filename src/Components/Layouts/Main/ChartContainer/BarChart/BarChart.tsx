@@ -52,7 +52,7 @@ function BarChart() {
   return (
     <div className={Styles.barChart}>
       <button onClick={() => setQuestionListShow(!questionListShow)} className={Styles.questionListsButton}>
-        Question List
+        Questions List
         <HelpOutlineRoundedIcon />
       </button>
       {questionListShow && (

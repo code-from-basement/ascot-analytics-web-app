@@ -4,35 +4,36 @@ import Chart from "react-apexcharts";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function LineChart() {
-  const array = [0.3, 0.2, 0.1, 0.3];
   const { lineChartData, listItem, isLoading }: any = useGlobalContext();
-  const newSeries = [
-    { name: "malmo", data: { x: [2020, 2021, 2022, 2023], y: [0.1, 0.3, 0.2, 0.8] } },
-    { name: "lund", data: { x: [2020, 2021, 2022, 2023], y: [null, null, 0.3, 0.6] } },
-  ];
-  const seriesData = newSeries?.map((item, num) => {
+  const rangeYearsOfData = [2020, 2021, 2022, 2023];
+
+  // const newSeries = [
+  //   { name: "malmo", data: { x: [2020, 2021, 2022, 2023], y: [0.1, 0.3, 0.2, 0.8] } },
+  //   { name: "lund", data: { x: [2020, 2021, 2022, 2023], y: [null, null, 0.3, 0.6] } },
+  // ];
+
+  const seriesData = lineChartData?.map((item, num) => {
+    const newY = Array(4).fill(null);
+    const newArr = newY;
+    for (let i = 0; i < rangeYearsOfData.length; i++) {
+      if (item?.data.x.includes(rangeYearsOfData[i])) {
+        const indexInX = item?.data.x.indexOf(rangeYearsOfData[i]);
+        newY[i] = item?.data.y[indexInX];
+      }
+    }
+
     return {
       name: item.name,
-      data: newSeries[num].data.x.map((element, index) => {
-        return {
-          x: element,
-          y: newSeries[num].data.y[index],
-        };
-      }),
+      data: newArr,
     };
   });
 
-  // const seriesData = listItem.map((item: any) => {
-  //   return { name: item.data.lineChart.name,
-  //       data: item.data.lineChart.data };
-  // });
-
-  // console.log(seriesData, "form line chart----------");
+  console.log(seriesData, "series----------");
   const chartOptions = {
     // Define your chart options here
-    colors: ["#4895ef", "#ef476f", "#16d5bc", "#744df5"],
+    colors: ["#4895EF", "#EF476F", "#16D5BC", "#744DF5"],
     xaxis: {
-      //  categories: [2020, 2021, 2022, 2023],
+      categories: [2020, 2021, 2022, 2023],
       type: "year",
     },
     yaxis: {
@@ -78,6 +79,13 @@ function LineChart() {
       },
     },
   };
+
+  // const seriesData = listItem.map((item: any) => {
+  //   return { name: item.data.lineChart.name,
+  //       data: item.data.lineChart.data };
+  // });
+
+  // console.log(seriesData, "form line chart----------");
 
   return <div className={Styles.lineChart}>{!isLoading && <Chart options={chartOptions} series={seriesData} type="line" height={320} width="100%" />}</div>;
 }
