@@ -30,6 +30,8 @@ function TableList() {
             livingSituation={item.data.info.livingSituation.charAt(0).toUpperCase() + item.data.info.livingSituation.replaceAll("_", " ").slice(1)}
             assistance={item.data.info.assistance.charAt(0).toUpperCase() + item.data.info.assistance.replaceAll("_", " ").slice(1)}
             qolAvg={item.data.qolAvg}
+            numberOfReports={item.data.numberOfReports}
+
           />
         ))}
       {/* {limitationListItemError && <h1>error</h1>} */}

@@ -6,7 +6,7 @@ import QolBar from "./QolBar/QolBar";
 import { useGlobalContext } from "../../../../../Context/GlobalContext";
 import { Badge, Progress, Space } from "antd";
 
-function TableItem({ id, country, region, municipality, ageGroup, gender, livingSituation, assistance, qolAvg, index }: any) {
+function TableItem({ id, country, region, municipality, ageGroup, gender, livingSituation, assistance, qolAvg, numberOfReports, index }: any) {
   const { listItem, setListItem, setLimitationListItemError, lengthOfListItem, notifyDeleteItem }: any = useGlobalContext();
 
   /**deleting item from list logic */
@@ -39,7 +39,7 @@ function TableItem({ id, country, region, municipality, ageGroup, gender, living
       <p className={Styles.tableItem__livingSituation}>{livingSituation ? livingSituation : <RemoveRoundedIcon />}</p>
       <p className={Styles.tableItem__assistance}>{assistance ? assistance : <RemoveRoundedIcon />}</p>
       <div className={Styles.tableItem__elderlyNum}>
-        <Badge count={666666} showZero overflowCount={999999} color="#dfdfe0" />
+        <Badge count={numberOfReports} showZero overflowCount={999999} color="#dfdfe0" />
       </div>
       <button className={Styles.tableItem__remove} onClick={() => onClickItemDeleteHandler(id)}>
         <DeleteRoundedIcon />

@@ -53,9 +53,9 @@ li {
   --spacing-xl: 8rem;
 
   /* colors */
-  --color-primary: #ff4500;
-  --color-primary-hover: #ff7050;
-  --color-primary-tint: #fff5f1;
+  --color-primary: #6f3f90;
+  --color-primary-hover: #9b61c1;
+  --color-primary-tint: #f1dcff;
   --color-blue: #1122aa;
   --color-blue-tint: #eaecfd;
   --color-green: #389e0d;
