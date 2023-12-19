@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Styles from "./LoginCognito.module.css";
+import "./loginCognito.css";
 import { Amplify } from "aws-amplify";
 import awsExports from "./aws-exports";
 import { Authenticator } from "@aws-amplify/ui-react";
