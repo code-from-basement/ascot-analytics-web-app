@@ -21,14 +21,12 @@ function LineChart() {
         newY[i] = item?.data.y[indexInX];
       }
     }
-
     return {
       name: item.name,
       data: newArr,
     };
   });
 
-  console.log(seriesData, "series----------");
   const chartOptions = {
     // Define your chart options here
     colors: ["#4895EF", "#EF476F", "#16D5BC", "#744DF5"],
