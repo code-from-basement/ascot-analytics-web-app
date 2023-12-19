@@ -33,7 +33,7 @@ function Header() {
           </div>
         </div>
         <div className={Styles.logoutContainer}>
-          <Button type="btn-link" onClick={onClickSignOutHandler}>
+          <Button disabled={null} type="btn-link" onClick={onClickSignOutHandler}>
             Logout
             <LogoutIcon />
           </Button>
