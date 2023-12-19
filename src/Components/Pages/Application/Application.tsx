@@ -7,6 +7,7 @@ import ContactSupport from "../../UI/Contact Support/ContactSupport";
 import { useGlobalContext } from "../../../Context/GlobalContext";
 import toast, { Toaster } from "react-hot-toast";
 import LimitedList from "../../UI/Modal/LimitedList/LimitedList";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 
 function Application() {
   const { showContact, notifyStatus, limitedListShow }: any = useGlobalContext();

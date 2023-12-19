@@ -16,6 +16,12 @@ interface globalContextProps {
 const GlobalContext = createContext();
 
 function GlobalProvider({ children }: globalContextProps) {
+  //**Sign in event management */
+  const [signInInfo, setSignInInfo] = useState({
+    info: "",
+    signOutFunc: "",
+  });
+
   //**List Item  */
   const [listItem, setListItem] = useState([]);
   //
@@ -143,7 +149,7 @@ function GlobalProvider({ children }: globalContextProps) {
       setTimeout(() => {
         setIsLoading(false);
       }, 500);
-      console.log(listItem , "list item");
+      console.log(listItem, "list item");
     }
   }
 
@@ -165,6 +171,7 @@ function GlobalProvider({ children }: globalContextProps) {
         showContainerLayout,
         notifyStatus,
         limitedListShow,
+        signInInfo,
         setIsLoading,
         setShowContact,
         setFormSelectedData,
@@ -175,6 +182,7 @@ function GlobalProvider({ children }: globalContextProps) {
         notifyAddItem,
         notifyDeleteItem,
         setLimitedListShow,
+        setSignInInfo,
       }}
     >
       {children}
