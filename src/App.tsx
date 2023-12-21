@@ -9,10 +9,12 @@ import { withAuthenticator } from "@aws-amplify/ui-react";
 import { useGlobalContext } from "./Context/GlobalContext";
 
 function App({ user, signOut }: any) {
-  const { signInInfo, setSignInInfo } :any = useGlobalContext();
+  const { signInInfo, setSignInInfo }: any = useGlobalContext();
+  const { signOutFunc } = signInInfo;
 
   useEffect(() => {
-    if (user) setSignInInfo({ info: user, signOutFunc: signOut });
+    user && setSignInInfo({ info: user, signOutFunc: signOut });
+    // !user?.info?.signInDetails && signOutFunc;
   }, [user]);
 
   return (
