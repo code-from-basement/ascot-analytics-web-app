@@ -11,7 +11,6 @@ function Header() {
   const navigate = useNavigate();
 
   const onClickSignOutHandler = () => {
-    navigate("../login");
     signOutFunc();
   };
   return (
@@ -29,7 +28,7 @@ function Header() {
           {/* <div className={Styles.userName}>Pernilla Bell</div> */}
           <div className={Styles.email}>
             <AccountCircleOutlinedIcon />
-            {info.signInDetails.loginId}
+            {info?.signInDetails?.loginId}
           </div>
         </div>
         <div className={Styles.logoutContainer}>

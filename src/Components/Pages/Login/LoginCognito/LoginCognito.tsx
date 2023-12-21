@@ -17,7 +17,7 @@ function LoginCognito({}) {
       {({ signOut, user }) => {
         useEffect(() => {
           setTimeout(() => {
-            navigate("/application");
+            navigate("/application/barchart");
           }, 1000);
         }, []);
         return (
