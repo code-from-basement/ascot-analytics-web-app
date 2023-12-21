@@ -127,7 +127,7 @@ function GlobalProvider({ children }: globalContextProps) {
       setIsLoading(true);
       const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${signInInfo.idToken}`, "X-CSRFToken": null },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${signInInfo.idToken}`, "X-CSRFToken": "" },
 
         body: JSON.stringify(formSelectedDataArr),
       });

@@ -24,11 +24,9 @@ function SidebarForm() {
     regions: [],
     municipalities: [],
   });
-
   async function fetchingFiltersLists(urlLists: []) {
     try {
       setIsLoading(true);
-
       const response = await Promise.all(
         urlLists.map((url) =>
           fetch(url, {

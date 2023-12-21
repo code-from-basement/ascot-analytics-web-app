@@ -9,6 +9,7 @@ function Header() {
   const { info, signOutFunc } = signInInfo;
   console.log(signInInfo);
 
+  /**Set timeOut for SignOut the user */
   useEffect(() => {
     setTimeout(() => {
       signOutFunc;

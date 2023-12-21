@@ -21,6 +21,7 @@ function App({ user, signOut }: any) {
       });
   }, [user]);
 
+  /**Fetching the idToken from AuthSession */
   useEffect(() => {
     async function currentSession() {
       try {
