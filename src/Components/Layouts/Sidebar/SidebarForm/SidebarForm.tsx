@@ -41,9 +41,9 @@ function SidebarForm() {
       console.log(data);
 
       setFiltersListsData({
-        countries: data[0].COUNTRIES,
-        regions: data[1].REGIONS,
-        municipalities: data[2].MUNICIPALITIES,
+        countries: data[0]?.COUNTRIES,
+        regions: data[1]?.REGIONS,
+        municipalities: data[2]?.MUNICIPALITIES,
       });
     } catch (error) {
       console.log("list error");

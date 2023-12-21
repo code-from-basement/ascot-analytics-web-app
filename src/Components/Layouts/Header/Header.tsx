@@ -3,12 +3,11 @@ import React, { useEffect } from "react";
 import { AccountCircleOutlinedIcon, LogoutIcon } from "../../UI/Icons/IconsLibrary";
 import Button from "../../UI/Buttons/Buttons";
 import { useGlobalContext } from "../../../Context/GlobalContext";
-import { useNavigate } from "react-router-dom";
 
 function Header() {
   const { signInInfo }: any = useGlobalContext();
   const { info, signOutFunc } = signInInfo;
-  const navigate = useNavigate();
+  console.log(signInInfo);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,7 +26,7 @@ function Header() {
     //   document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
     // });
   };
-  console.log(signInInfo);
+  console.log(signInInfo, "sign in ifo from header");
   return (
     <div className={Styles.header}>
       <div className={Styles.titleContainer}>
