@@ -6,13 +6,18 @@ import { useGlobalContext } from "../../../Context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
-  const { signInInfo } = useGlobalContext();
+  const { signInInfo }:any = useGlobalContext();
   const { info, signOutFunc } = signInInfo;
   const navigate = useNavigate();
 
   const onClickSignOutHandler = () => {
-    navigate("../login");
+    // navigate("../login");
     signOutFunc();
+    localStorage.clear();
+    // document.cookie.split(';').forEach((c) => {
+    //   document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
+    // });
+    window.location.href = "/login";
   };
   return (
     <div className={Styles.header}>
@@ -25,13 +30,12 @@ function Header() {
         </div>
       </div>
       <div className={Styles.rightContainer}>
-        <div className={Styles.userContainer}>
-          {/* <div className={Styles.userName}>Pernilla Bell</div> */}
-          <div className={Styles.email}>
-            <AccountCircleOutlinedIcon />
-            {info.signInDetails.loginId}
-          </div>
+        {/* <div className={Styles.userName}>Pernilla Bell</div> */}
+        <div className={Styles.email}>
+          <AccountCircleOutlinedIcon />
+          {info?.signInDetails?.loginId}
         </div>
+
         <div className={Styles.logoutContainer}>
           <Button type="btn-link" onClick={onClickSignOutHandler}>
             Logout

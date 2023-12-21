@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import Styles from "./LoginCognito.module.css";
 import "./loginCognito.css";
 import { Amplify } from "aws-amplify";
+import "@aws-amplify/ui-react/styles.css";
 import awsExports from "./aws-exports";
 import { Authenticator } from "@aws-amplify/ui-react";
-import "@aws-amplify/ui-react/styles.css";
 import { useNavigate } from "react-router-dom";
 
 Amplify.configure(awsExports);
