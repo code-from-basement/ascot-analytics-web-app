@@ -51,22 +51,27 @@
   font-size: var(--font-s-sm);
   color: var(--color-gray-900);
 }
-.userName svg{
+.email svg{
   font-size: var(--font-s-lg);
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   transform: translateX(-2px);
-  color: var(--color-gray-900);
-  
+  color: var(--color-gray-700);  
 }
 .email{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color-gray-700);
-  font-size: var(--font-s-xs);
+  font-size: var(--font-s-sm);
   font-weight: var(--font-w-light);
   letter-spacing: -0.5px;
-  margin-top: 0.3rem;
+  /* margin-top: 0.3rem; */
+}
+.email:hover{
+  color: var(--color-primary-hover);
 }
 .logoutContainer{
   display: flex;
