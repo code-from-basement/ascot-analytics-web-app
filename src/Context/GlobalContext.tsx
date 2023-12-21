@@ -20,6 +20,7 @@ function GlobalProvider({ children }: globalContextProps) {
   const [signInInfo, setSignInInfo] = useState({
     info: "",
     signOutFunc: "",
+    idToken: "",
   });
 
   //**List Item  */
@@ -126,7 +127,8 @@ function GlobalProvider({ children }: globalContextProps) {
       setIsLoading(true);
       const response = await fetch("https://hestia-agora.com/ascot/filteredresponse/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${signInInfo.idToken}`, "X-CSRFToken": null },
+
         body: JSON.stringify(formSelectedDataArr),
       });
 

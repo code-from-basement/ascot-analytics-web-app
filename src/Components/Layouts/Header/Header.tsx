@@ -15,11 +15,11 @@ function Header() {
       signOutFunc;
       localStorage.clear();
       window.location.href = "/login";
-    }, 5000);
+    }, 100000);
   }, []);
 
   const onClickSignOutHandler = () => {
-    signOutFunc();
+    signOutFunc;
     localStorage.clear();
     window.location.href = "/login";
     // navigate("../login");

@@ -15,6 +15,8 @@ const urlLists: any = [countryListUrl, regionListUrl, municipalityListUrl];
 
 function SidebarForm() {
   const { setFormSelectedData, formSelectedData, fetchingNewItem, limitationListItemError, setIsLoading }: any = useGlobalContext();
+  const { signInInfo } = useGlobalContext();
+  const { idToken } = signInInfo;
 
   /**Fetching List Items in filters */
   const [filtersListData, setFiltersListsData] = useState({
@@ -26,8 +28,17 @@ function SidebarForm() {
   async function fetchingFiltersLists(urlLists: []) {
     try {
       setIsLoading(true);
-      const response = await Promise.all(urlLists.map((url) => fetch(url)));
+
+      const response = await Promise.all(
+        urlLists.map((url) =>
+          fetch(url, {
+            method: "GET",
+            headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}`, "X-CSRFToken": "" },
+          })
+        )
+      );
       const data = await Promise.all(response.map((item) => item.json()));
+      console.log(data);
 
       setFiltersListsData({
         countries: data[0].COUNTRIES,
