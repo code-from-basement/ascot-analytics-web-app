@@ -12,7 +12,7 @@ function LineChart() {
   //   { name: "lund", data: { x: [2020, 2021, 2022, 2023], y: [null, null, 0.3, 0.6] } },
   // ];
 
-  const seriesData = lineChartData?.map((item, num) => {
+  const seriesData = lineChartData?.map((item :any, num:number) => {
     const newY = Array(4).fill(null);
     const newArr = newY;
     for (let i = 0; i < rangeYearsOfData.length; i++) {
@@ -27,7 +27,7 @@ function LineChart() {
     };
   });
 
-  const chartOptions = {
+  const chartOptions : any = {
     // Define your chart options here
     colors: ["#4895EF", "#EF476F", "#16D5BC", "#744DF5"],
     xaxis: {
