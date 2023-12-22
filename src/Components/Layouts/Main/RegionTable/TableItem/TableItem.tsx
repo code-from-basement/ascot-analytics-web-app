@@ -31,7 +31,7 @@ function TableItem({ id, country, region, municipality, ageGroup, gender, living
       <p className={Styles.tableItem__region}>{region}</p>
       <p className={Styles.tableItem__municipality}>{municipality}</p>
       <div className={Styles.tableItem__qofBar}>
-        <Progress size={[200, 13]} className={Styles.progress} percent={qolAvg * 100} status="active" format={() => qolAvg} strokeColor={{ from: "#108ee9", to: "#87d068" }} />
+        <Progress size={[200, 13]} className={Styles.progress} percent={qolAvg * 100} status="normal" format={() => qolAvg} strokeColor={{ from: "#108ee9", to: "#87d068" }} />
         {/* <QolBar qolAvg={qolAvg} /> */}
       </div>
       <p className={Styles.tableItem__ageGroup}>{ageGroup ? ageGroup : <RemoveRoundedIcon />}</p>

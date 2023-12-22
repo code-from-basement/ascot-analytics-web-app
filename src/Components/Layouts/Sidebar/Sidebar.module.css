@@ -8,7 +8,7 @@
   justify-content: flex-start;
   flex-direction: column;
   border-right: 1px solid var(--color-gray-400);
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .row {
@@ -37,4 +37,5 @@
   text-align: center;
   line-height: 1.5;
   font-size: 0.8rem;
+
 }

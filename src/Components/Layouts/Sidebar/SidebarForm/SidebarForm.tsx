@@ -15,7 +15,7 @@ const urlLists: any = [countryListUrl, regionListUrl, municipalityListUrl];
 
 function SidebarForm() {
   const { setFormSelectedData, formSelectedData, fetchingNewItem, limitationListItemError, setIsLoading }: any = useGlobalContext();
-  const { signInInfo } = useGlobalContext();
+  const { signInInfo }: any = useGlobalContext();
   const { idToken } = signInInfo;
 
   /**Fetching List Items in filters */
