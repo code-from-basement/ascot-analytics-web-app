@@ -3,7 +3,6 @@ import React from "react";
 import logoImage from "./../../../assets/Image/hestiaAgora-logo.png";
 import Button from "../../UI/Buttons/Buttons";
 import { HeadsetMicRoundedIcon } from "./../../UI/Icons/IconsLibrary";
-import { FormControl, FormLabel, Select } from "@mui/material";
 import SidebarForm from "./SidebarForm/SidebarForm";
 import { useGlobalContext } from "../../../Context/GlobalContext";
 

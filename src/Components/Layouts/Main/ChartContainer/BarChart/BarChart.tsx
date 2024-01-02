@@ -8,10 +8,10 @@ import { HelpOutlineRoundedIcon } from "../../../../UI/Icons/IconsLibrary";
 function BarChart() {
   const [questionListShow, setQuestionListShow] = useState<boolean>(false);
   const { barChartData, isLoading }: any = useGlobalContext();
+  
   const barChartOptions : any = {
     colors: ["#4895ef", "#ef476f", "#16d5bc", "#6337f3"],
     xaxis: {
-      // categories: ["how was the assistance".charAt(0).toUpperCase(),
       categories: ["Control of Life", "Mental Health", "Social Contact", "Home Cleanliness", "Personal Freedom", "Felling of Safety", "Food and Drink", "Personal Cleanliness"],
     },
     yaxis: {

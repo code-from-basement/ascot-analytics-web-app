@@ -12,7 +12,7 @@ import { useGlobalContext } from "./Context/GlobalContext";
 
 function App({ user, signOut }: any) {
   const { signInInfo, setSignInInfo }: any = useGlobalContext();
-  const { signOutFunc, idToken } = signInInfo;
+  // const { signOutFunc, idToken } = signInInfo;
 
   useEffect(() => {
     if (user)
@@ -39,7 +39,6 @@ function App({ user, signOut }: any) {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<HomePage />} /> */}
         <Route index element={<Navigate to="login" />} />
         <Route path="login" element={<LoginCognito />} />
         <Route index element={<Navigate to="application" />} />

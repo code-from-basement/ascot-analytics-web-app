@@ -15,7 +15,7 @@ function Header() {
       signOutFunc;
       localStorage.clear();
       window.location.href = "/login";
-    }, 100000);
+    }, 500000);
   }, []);
 
   const onClickSignOutHandler = () => {
@@ -39,12 +39,10 @@ function Header() {
         </div>
       </div>
       <div className={Styles.rightContainer}>
-        {/* <div className={Styles.userName}>Pernilla Bell</div> */}
         <div className={Styles.email}>
           <AccountCircleOutlinedIcon />
           {info?.signInDetails?.loginId}
         </div>
-
         <div className={Styles.logoutContainer}>
           <Button type="btn-link" onClick={onClickSignOutHandler}>
             Logout
