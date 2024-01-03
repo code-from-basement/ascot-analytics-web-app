@@ -5,7 +5,7 @@ import { useGlobalContext } from "../../../../../Context/GlobalContext";
 
 function LineChart() {
   const { lineChartData, listItem, isLoading }: any = useGlobalContext();
-  const rangeYearsOfData = [2020, 2021, 2022, 2023];
+  const rangeYearsOfData = [2020, 2021, 2022, 2023, 2024];
 
   // const newSeries = [
   //   { name: "malmo", data: { x: [2020, 2021, 2022, 2023], y: [0.1, 0.3, 0.2, 0.8] } },
@@ -31,7 +31,7 @@ function LineChart() {
     // Define your chart options here
     colors: ["#4895EF", "#EF476F", "#16D5BC", "#744DF5"],
     xaxis: {
-      categories: [2020, 2021, 2022, 2023],
+      categories: [2020, 2021, 2022, 2023, 2024],
       type: "year",
     },
     yaxis: {

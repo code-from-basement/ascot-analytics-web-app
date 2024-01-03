@@ -1,5 +1,5 @@
 import Styles from "./Header.module.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AccountCircleOutlinedIcon, LogoutIcon } from "../../UI/Icons/IconsLibrary";
 import Button from "../../UI/Buttons/Buttons";
 import { useGlobalContext } from "../../../Context/GlobalContext";
@@ -10,24 +10,21 @@ function Header() {
   console.log(signInInfo);
 
   /**Set timeOut for SignOut the user */
-  useEffect(() => {
-    setTimeout(() => {
-      signOutFunc;
-      localStorage.clear();
-      window.location.href = "/login";
-    }, 500000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     signOutFunc;
+  //     localStorage.clear();
+  //     window.location.href = "/login";
+  //   }, 5000000);
+  // }, []);
 
   const onClickSignOutHandler = () => {
     signOutFunc;
     localStorage.clear();
     window.location.href = "/login";
-    // navigate("../login");
-    // document.cookie.split(';').forEach((c) => {
-    //   document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
-    // });
   };
   console.log(signInInfo, "sign in ifo from header");
+  
   return (
     <div className={Styles.header}>
       <div className={Styles.titleContainer}>
